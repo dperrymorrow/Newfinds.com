@@ -33,5 +33,4 @@ I made this debug module when I was working on a intensive UI that I frequently 
 
 ---
 [JQuery Tracer On GitHub](https://github.com/dperrymorrow/JQuery-Tracer-Module)  
-[Try It Out Here](/public/docs/demos/tracer.html)  
 

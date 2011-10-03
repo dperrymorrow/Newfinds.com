@@ -1,6 +1,6 @@
 title: Auto, On Demand Loading
 -
-date: 2011, April
+date: 302 Downloads
 -
 teaser: Very simple library, but yet it alleviates the need to ever load a model, library, spark, or helper again.
 -

@@ -1,0 +1,47 @@
+title: Shaver.js
+-
+date: 2011, July
+-
+teaser: Shaver.js loads and parses javascript templates and stores them in an object on a Singleton class for easy access when rendering.
+-
+content:
+Shaver lets you load a static file to use as javascript templates. 
+You can have groups and templates within in each file. Shaver uses JQuery for loading the file, if you do not like JQuery,
+do a pull request with a patch  for loading this file without JQuery.
+
+###Usage
+- create a jst file
+- load the jst file
+- trace out your available templates console.log( Shaver.jst );
+
+###Example Template file Structure
+    
+    [html]
+    <!-- {{GROUP=feedback}} -->
+
+    <!-- {TEMPLATE=modalMessage} -->
+    <div class="close"></div>
+    <div class="content">
+      <h2>{{title}}</h2>
+      <p>{{message}}</p>
+    </div>
+
+    <!-- {TEMPLATE=formAsset} -->
+    <input type="hidden" name="asset_ids[]" value="{{id}}"/>
+    
+###Example 1 loading an external jst file
+    
+    [javascript]
+    // Shaver is a singleton, you need to call get() to get instance
+    window.Shaver.get().onComplete=function(){
+      // trace out all the templates that are now available for use with Mustache
+      console.log(window.Shaver.get().jst);
+    }
+    // will take an array of files or a single file...
+    window.Shaver.get().loadTemplates( "example.jst.html" );
+
+###Example 2 on page parsing
+
+    [javascript]
+    window.dpm.Shaver.get().parseJst( $('#exampleJst').text() );
+    console.log( window.dpm.Shaver.get().jst  );

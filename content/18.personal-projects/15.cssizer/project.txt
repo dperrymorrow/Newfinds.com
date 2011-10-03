@@ -9,7 +9,6 @@ Inspired by [Jsbin](http://jsbin.com/), I wanted to do the equivalent for CSS. I
 
 There are many features I want to add like...
 
-- Visual editing of styles you know color pickers and sliders and all that stuff...
 - Pulling in css libraries via drop down like Jsbin does with JS
 - Ability to pick the hash key
 - And I'm sure ill think of more

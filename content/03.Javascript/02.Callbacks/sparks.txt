@@ -1,0 +1,31 @@
+title: Callbacks.js
+-
+date: 2011, April
+-
+teaser: lets you globally listen for events across all scopes and instances. Callbacks is a singleton, so you can access it from anywhere.
+-
+content: 
+
+### Example:
+    [javascript]
+     // your function you want to handle the event
+     function callbackListener(obj){
+       console.log( "callback fired passed in " + obj );
+     }
+     
+     // add your callback with your scope and function, (method as a string)
+     dpm.Callbacks.get().addCallback('testCallback',this,'callbackListener');
+     
+     // then somewhere else, does not matter the scope, fire the callback, 
+     dpm.Callbacks.get().fireCallback('testCallback',{foo:"bar"});
+     
+     // if you want to remove a listener, simply...
+     dpm.Callbacks.get().removeCallback:('testCallback', this, 'callbackListener');
+
+---
+[View on Github](https://github.com/dperrymorrow/callbacks.js)
+	
+	
+	
+	
+	

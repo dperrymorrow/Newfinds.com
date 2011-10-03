@@ -1,6 +1,6 @@
 title: Fire Log Spark
 -
-date: 2011, February
+date: 420 Downloads
 -
 teaser: Browse and filter Code Igniter log files without having to ssh to your box and sift through huge text files.
 -

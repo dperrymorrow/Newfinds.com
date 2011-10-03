@@ -1,6 +1,6 @@
 title: Tracer Spark
 -
-date: 2011, March
+date: 344 Downloads
 -
 teaser: A very simple yet useful helper for CI tracing out data while you are working. Will trace out strings and arrays recursively.
 -

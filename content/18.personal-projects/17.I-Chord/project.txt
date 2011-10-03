@@ -1,0 +1,15 @@
+title: I-Chord
+-
+date: 2011, June
+-
+teaser: A mobile web-site for quickly looking up guitar chords
+-
+content: 
+A simple mobile web site that I created when I was learning guitar. As you type it shows you all the related chord fingering charts. It came in pretty handy on my I-Touch when I was learning new chords. 
+
+The workings of are very simple, its all static with a list of images with tag names that I search relevance with jQuery selectors.
+
+---
+[View Website](http://dev.newfinds.com/chords/)
+[View Source](https://github.com/dperrymorrow/I-Chord)
+
