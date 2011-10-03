@@ -1,0 +1,51 @@
+title: Javascript Classes
+-
+date: 2011, April
+-
+teaser: Confused how to make an instance based Javascript class or a singleton?
+-
+content: 
+### So How do you make a Javascript class?
+
+If you are like me when I first started using Javascript I was confused as to how to make a class. There are no classes or package declarations like there is in Actionscript. Turns out its pretty simple, lets take a look.
+
+### Making a Javascript class that you can instantiate.
+
+    [javascript]
+    function MainClass( param1, param2 ){
+
+		this.param1 = param1;
+		this.param2 = param2;
+		
+		this.build = function(){
+			/*
+			* treat this as your constructor
+			* does not need to be build, can name anything you would like
+			*/
+		}
+		
+		this.doSomething( param ){
+			// an example of a method
+		}
+		
+		this.build();
+	}
+	
+### Build your singleton class
+
+    [javascript]
+    var Singleton = {};
+
+	Singleton.doSomething = function(){
+		/*
+		* your method that can be accessed from anywhere
+		*/
+	}
+	
+### Now you can access the class from anywhere.
+
+    [javascript]
+    Singleton.doSomething();
+
+
+

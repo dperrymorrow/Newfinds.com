@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>JQuery Tracer Example</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/Tracer.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script type="text/javascript" charset="utf-8">
+		 $( document ).ready( function(){
+			var myObj = {foobar:true, content:"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut."};
+			
+			$( '#tracerTrigger').click( function(){
+				Tracer.trace( $( '#tracerText').val() );
+			});
+			
+		});
+	    
+	</script>
+</head>
+<body>
+<h1>Enter Text And Trace</h1>
+<textarea name="TracerDemo" rows="20" cols="100" id="tracerText">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</textarea>
+<hr>
+<input type="submit" name="test" value="Trace It" id="tracerTrigger">
+</body>	
+</html>

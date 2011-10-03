@@ -1,0 +1,11 @@
+page_description: Projects Index
+-
+title: Assorted Projects
+-
+content:
+## I'm a PHP/Javascript/HTML developer. 
+## I love frameworks & UI that make sense & are fun to use.
+
+ 
+
+

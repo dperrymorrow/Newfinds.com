@@ -1,0 +1,28 @@
+{
+foreach $root do  
+  if $children do
+    "projects": [
+    foreach $children do
+      {
+        "title": "@title",
+        "thumb": "@thumb",
+        "url": "@url",
+        "date": "@date",
+        "updated": "@updated",
+        "title": "@title",
+        "content": "@content",   
+        "images": [
+          foreach $images do
+            "url": "@url",
+            "name": "@name"
+          endforeach
+          ],
+      }
+      if !@is_last do
+      ,
+      endif
+    endforeach
+    ]
+  endif
+endforeach
+}

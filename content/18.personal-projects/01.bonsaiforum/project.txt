@@ -1,0 +1,16 @@
+title: Bonsaiforum
+-
+date: 2010, August
+-
+teaser: Buying and selling portal for bonsai enthusiasts. Saving Hobbyists from the hell that is E-bay...
+-
+content: 
+I'm and avid bonsai enthusiast, _(yeah I know its weird but we all have our hobbies)_. Unfortunately eBay is full of crap as far as bonsai goes, so I teamed up with my bonsai instructor to make this alternative for a place for folks to buy and sell bonsai stuff. It works off Pay-pal tokens that you credit to your account. 
+
+I designed this site as well as built it by myself in spare time. I used CodeIgniter as the framework on this project, and its what really got me hooked on CodeIgniter and haven't looked back since as far as frameworks go.
+
+The hardest part of the project was dealing with Pay-pal. God their api sucks...
+
+---
+[View Website](http://bonsaiforum.com/)
+

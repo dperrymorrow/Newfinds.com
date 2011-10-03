@@ -1,0 +1,53 @@
+title: Fire Log Spark
+-
+date: 2011, February
+-
+teaser: Browse and filter Code Igniter log files without having to ssh to your box and sift through huge text files.
+-
+content: 
+### Now with pagination to increase performance on large log files.
+
+-  You can filter what types of items you would like to view DEBUG, ERROR, INFO
+-  You can delete logs files from Fire Log to clear out your logs
+-  Fire log uses a view that you can easily customize
+-  You can change if tags are stripped in logs or not from the config
+-  Language file for all text used
+
+![Fire Log](http://dl.dropbox.com/u/9683877/spark_imgs/fire_log_0.5.png "Fire Log Example")
+
+### To Install The Spark
+From terminal, you must have sparks installed prior, see [sparks page](http://newfinds.com/code-igniter-sparks) for instructions.
+
+    [bash]
+	cd /path_to_your_CI_reactor_build
+	php tools/spark install fire_log
+
+
+### Usage
+
+Really Simple...
+    
+	// in your controller
+	function logs(){
+		/*
+		highly advised that you use authentification 
+		before running this controller to keep the world out of your logs!!!
+		you can use whatever method you like does not have to be logs
+		*/
+		$this->load->spark( 'fire_log/x.x');
+		// thats it, ill take if from there
+	}
+
+
+
+[Log Issues or Suggestions](https://github.com/dperrymorrow/Fire-Log/issues)  
+[Sparks Page](http://getsparks.org/packages/fire_log/versions/HEAD/show)  
+
+---
+
+
+
+	
+
+
+

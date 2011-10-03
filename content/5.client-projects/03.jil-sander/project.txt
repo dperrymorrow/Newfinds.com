@@ -1,0 +1,21 @@
+title: Jil Sander
+-
+date: 2009, June
+-
+teaser: Jil Sander Ruby On Rails admin for existing Flash web site.
+-
+content: 
+### Client: Jil Sander | Intersect NYC
+I built a Rails admin for the existing full flash site for Jil Sander. The Rails admin features included 
+
+- Localization suport
+- Assets sharing accross localizations
+- Preview/Publish functionality
+- Flat XML feed caching for improved performance
+
+---
+[View Website](http://jilsander.com/corporate)
+
+
+
+

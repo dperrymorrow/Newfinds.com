@@ -1,0 +1,17 @@
+title: 779ltd.com
+-
+date: 2010, Sept
+-
+teaser: Designed & built custom CMS/media management system for 779ltd video production company.
+-
+content: 
+### Client: 779ltd
+
+Designed & built a custom content/media management system for 779 using CakePHP. The site allows them to add/edit pages and upload videos to a CDN to be served up via a custom Flash video player within the site. The page structure allows for inline videos and media as well.
+
+---
+[View Website](http://779ltd.com)
+
+
+
+

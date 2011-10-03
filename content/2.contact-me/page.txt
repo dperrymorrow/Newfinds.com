@@ -1,0 +1,14 @@
+title: Contact Me
+-
+content:
+Hi I am David Morrow, a indy PHP, Javascript, HTML developer. I also spent over 8 years developing OOP Actionscript applications at large NY Design Firms.  
+
+I love frameworks and creating web-apps with them. I have used many frameworks including Ruby on Rails, CakePHP, CodeIgniter, and versions of my own PHP framework. At the moment I favor CodeIgniter and am watching FuelPHP. I love JQuery and JQuery UI. I hate know-it-alls. Im a formally trained graphic designer. _(no those two statements are not inherently opposing :)_
+
+If you think I would be a good fit for your project please contact me via one of the methods below.  
+Best, Dave
+
+---
+
+I can be emailed at: <dperrymorrow@gmail.com>  
+Or follow me on Twitter: [@dperrymorrow](http://twitter.com/#!/dperrymorrow "Follow me on Twitter") 

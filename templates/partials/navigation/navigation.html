@@ -1,0 +1,15 @@
+
+<div id="rightCol">
+	<div id="logoHolder">
+		<img src="/public/images/logo.png" width="185" height="70" alt="Logo">
+	</div>
+	<ul id="mainNav">
+		foreach $root do
+		<li>
+			<a href="@url" if @is_current do class="active" endif>@title</a>
+			:children
+		</li>
+		endforeach
+	</ul>
+	:twitter
+</div>

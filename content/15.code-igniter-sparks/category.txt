@@ -1,0 +1,18 @@
+page_description: Code Igniter sparks by David Morrow
+-
+title: Code Igniter Sparks
+-
+content:
+## Sparks is a package management system for Code Igniter that will allow you install high-quality libraries into your applications instantly.
+
+Imagine that you wanted to find an 'Auth' for an app you're writing. You're sure there must be something for CodeIgniter already written by another member of the community. You check the Sparks repository, and sure enough, there's a featured spark for auth on the front page.
+    
+    [bash]
+    php tools/spark install auth
+
+How easy was that? Its dope, [go get sparks](http://getsparks.org) and torch it!
+
+
+
+
+

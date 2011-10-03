@@ -1,0 +1,10 @@
+if $children do
+  <ol class="children">
+  foreach $children do
+    <li class="children">
+      <a href="@url" if @is_current do class="active" endif>@page_name</a>
+      :children
+    </li>
+  endforeach
+  </ol>
+endif

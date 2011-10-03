@@ -1,0 +1,15 @@
+if $children do
+  <ul class="projects">
+    foreach $children do
+      <li>
+        <div class="date">@date</div>
+          if @thumb do <a href="@url"><img src="@thumb" class="project-thumb" alt="@title"></a> endif
+        <h2>
+          <a href="@url">@title</a>
+        </h2>
+		@teaser
+		<!--<a href="@url">Read On...</a>-->
+      </li>
+    endforeach
+  </ul>
+endif
