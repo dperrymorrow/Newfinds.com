@@ -3,7 +3,7 @@ page_description: Projects Index
 title: Assorted Projects
 -
 content:
-## If i had to describe myself id say I'm a UI Developer that does a ton of server-side as well. I love MVC frameworks & UI code that is extensible and easy to maintain.
+## I am a programmer with a designer's eye. I love MVC frameworks and well organized client side code. I enjoy building rich clients that run off JSON endpoints. 
 
  
 
