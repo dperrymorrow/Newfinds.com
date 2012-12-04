@@ -1,9 +1,11 @@
 title: Contact Me
 -
 content:
-Hi I am David Morrow, a indy PHP, Javascript, HTML developer. I also spent over 8 years developing OOP Actionscript applications at large NY Design Firms. I now live in beautiful Boulder, CO.
+Hi I am David Morrow, Javascript / Ruby On Rails developer. I live in Portland, Oregon. I like building rich clients on Ruby On Rails enpoints. 
 
-I love frameworks and creating web-apps with them. I have used many frameworks including Ruby on Rails, CakePHP, CodeIgniter, and versions of my own PHP framework. At the moment I favor CodeIgniter and am watching FuelPHP. I love JQuery and JQuery UI. I also love small modular Javascript libraries like those on [Microjs.com](http://microjs.com) and have made a few of my own. 
+I often work with Backbone.js and have build rather complicated single page applications with it. I am a competent Rails developer, and can accomplish most common tasks with Rails the right way. 
+
+I use Test Driven Development whenever possible. I test all my Javascript code with either Jasmine or QUnit. I like HAML, SASS, and have use Coffeescript extensivly in the past. I am currently however enjoying writing raw Javascript as it keeps me better in touch with the language I am ultimately writing for.
 
 I hate know-it-alls. Im a formally trained graphic designer. _(no those two statements are not inherently opposing :)_
 
