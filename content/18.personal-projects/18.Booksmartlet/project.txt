@@ -1,0 +1,16 @@
+title: Booksmartlet
+-
+date: 2012, February
+-
+teaser: A Javascript Bookmarklet that allows you to tag and store your bookmarks in the cloud.
+-
+content: 
+A little prototype that I have been building over the past few months. This allows you to tag and store your bookmarks and notes. You can search then as well all from within the dom of the page you are currently viewing. 
+
+Built in Ruby On Rails and Postrgres and hoste on Heroku, It is a simple javascript bookmarklet that holds an iFrame to the hosted app. It passes in info from the page via javascript as ural params on the iframe. The iFrame is a Backbone app on top of Rails JSON endpoints.
+
+Check out the sourcecode at the link below.
+
+---
+[View Source](https://github.com/dperrymorrow/bookmartket)
+
