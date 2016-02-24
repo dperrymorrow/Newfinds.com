@@ -1,0 +1,33 @@
+//= require normalize-css/normalize.css
+//= require animate.css/animate.css
+//= require fonts.css
+//= require onepage-scroll/onepage-scroll.css
+//= require flex-grid.scss
+//= require intro.scss
+
+
+
+html, body {
+  display: block;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  font-family: 'futura_lt_btlight';
+}
+
+.panel {
+  background-color: black;
+
+  &.white {
+    background-color: white;
+  }
+}
+
+.project {
+}
+
+
+
+
+

@@ -1,6 +1,0 @@
-page_description: Personal Projects
--
-title: Personal Projects
--
-content:
-## You have to have your own thing going on. If you only do work for hire you will eventually go mad or stale or both. Here is what i've been up to lately.

@@ -1,0 +1,25 @@
+{
+  "name": "Newfinds.com",
+  "homepage": "https://github.com/dperrymorrow/Newfinds.com",
+  "authors": [
+    "David Morrow <dperrymorrow@gmail.com>"
+  ],
+  "description": "Newfinds.com website",
+  "main": "index.html",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize-css": "normalize.css#~3.0.3",
+    "animate.css": "~3.5.1",
+    "onepage-scroll": "~1.3.1",
+    "jquery": "~2.2.0"
+  }
+}

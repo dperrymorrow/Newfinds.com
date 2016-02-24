@@ -1,0 +1,19 @@
+
+// colors
+$black: black;
+$grayDark: lighten(black, 20%);
+$grayMedium: lighten(black, 40%);
+$grayLight: lighten(black, 60%);
+$grayLightest: lighten(black, 80%);
+$red: #86002a;
+
+// fonts
+$fontBlack: 'futura_xblk_btextra_black', Helvetica, Arial, sans-serif;
+$fontHeavy: 'futura_hv_btheavy', Helvetica, Arial, sans-serif;
+$fontMedium: 'futura_md_btmedium', Helvetica, Arial, sans-serif;
+$fontLight: 'futura_lt_btlight', Helvetica, Arial, sans-serif;
+
+
+.red {
+	color: $red;
+}

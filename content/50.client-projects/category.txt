@@ -1,7 +1,0 @@
-page_description: Client Projects
--
-title: Client Projects
--
-content:
-## A small sampling of projects that I have done for hire in the past. A wide variety really, ranging from dynamic Flash sites, to full on web apps.
-

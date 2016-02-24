@@ -1,6 +1,0 @@
-name: David Morrow
--
-profession: Developer/Designer
--
-email: 
-<dperrymorrow@gmail.com>
