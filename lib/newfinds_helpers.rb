@@ -6,4 +6,9 @@ module NewfindsHelpers
     end
   end
 
+  def article_summary article
+    txt = strip_tags article.summary(250, '…')
+    txt.split(article.title).last
+  end
+
 end

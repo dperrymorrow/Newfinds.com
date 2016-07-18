@@ -1,33 +1,58 @@
 //= require normalize-css/normalize.css
 //= require animate.css/animate.css
-//= require fonts.css
-//= require onepage-scroll/onepage-scroll.css
-//= require flex-grid.scss
-//= require intro.scss
 
+@import 'vars';
+@import "../../bower_components/sass-flex-mixin/_flex";
 
 
 html, body {
+  @include body;
+
   display: block;
   height: 100%;
   margin: 0;
   padding: 0;
   background-color: white;
-  font-family: 'futura_lt_btlight';
+  text-align: center;
+  color: $grayMedium;
 }
 
-.panel {
-  background-color: black;
-
-  &.white {
-    background-color: white;
-  }
+p {
+  font-size: $fontSize;
 }
 
-.project {
+a {
+  color: $grayDark;
+}
+
+.menu {
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 300px;
+  height: 100%;
+  text-align: left;
+  background-color: $grayLightest;
 }
 
 
+h1 {
+  @include header;
+  font-size: $fontSize*2;
+}
+
+.container {
+  text-align: left;
+  background-color: white;
+  width: 800px;
+  display: inline-block;
+}
 
 
 

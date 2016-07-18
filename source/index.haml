@@ -2,31 +2,18 @@
 title: Welcome to Middleman
 ---
 
-.panel-container
-  #heading-container.panel.flex-centered
+- blog.articles[0..5].each do |article|
+  %article
+    %h1
+      = link_to article.title, article.url
+      %time= article.date.strftime('%b %e %Y')
 
-    .typography-box.animated.fadeIn
+    %p
+      = article_summary article
+      = link_to 'Read More', article.url
 
-      .flex-row
+%hr
 
-        .flex-centered
-          = image_tag "face.jpg", class: 'face animated fadeInDownBig'
-
-        .flex-column
-          .text
-            Hi, I’m
-            %span.red David Morrow,
-            %br
-            A full stack developer
-          / .text Specialized in Front-End development
-
-      %p
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        
-
-  = partial 'projects/measureful'
-  = partial 'projects/measureful'
-  = partial 'projects/measureful'
+- project_articles.each do |article|
+  %article
+    %h1= article.title

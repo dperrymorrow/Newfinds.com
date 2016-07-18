@@ -7,13 +7,26 @@ $grayLight: lighten(black, 60%);
 $grayLightest: lighten(black, 80%);
 $red: #86002a;
 
+$fontSize: 14px;
+
 // fonts
 $fontBlack: 'futura_xblk_btextra_black', Helvetica, Arial, sans-serif;
 $fontHeavy: 'futura_hv_btheavy', Helvetica, Arial, sans-serif;
 $fontMedium: 'futura_md_btmedium', Helvetica, Arial, sans-serif;
 $fontLight: 'futura_lt_btlight', Helvetica, Arial, sans-serif;
 
+@mixin body {
+  font-family: 'Source Serif Pro', serif;
+  color: $grayMedium;
+}
+
+
+@mixin header {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: $grayDark;
+  font-weight: 700;
+}
 
 .red {
-	color: $red;
+  color: $red;
 }
