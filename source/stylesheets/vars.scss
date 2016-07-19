@@ -4,27 +4,33 @@ $black: black;
 $grayDark: lighten(black, 20%);
 $grayMedium: lighten(black, 40%);
 $grayLight: lighten(black, 60%);
-$grayLightest: lighten(black, 80%);
+$grayLightest: lighten(black, 90%);
 $red: #86002a;
 
-$fontSize: 14px;
+$fontSize: 16px;
+$displayFont: 'Lato', sans-serif;
+$bodyFont: 'Roboto Slab', serif;
+$padding: 25px;
 
-// fonts
-$fontBlack: 'futura_xblk_btextra_black', Helvetica, Arial, sans-serif;
-$fontHeavy: 'futura_hv_btheavy', Helvetica, Arial, sans-serif;
-$fontMedium: 'futura_md_btmedium', Helvetica, Arial, sans-serif;
-$fontLight: 'futura_lt_btlight', Helvetica, Arial, sans-serif;
+$desktop: 900px;
+$tablet: 700px;
+$phone: 500px;
 
 @mixin body {
-  font-family: 'Source Serif Pro', serif;
+  font-family: $bodyFont;
   color: $grayMedium;
 }
 
-
 @mixin header {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: $displayFont;
   color: $grayDark;
   font-weight: 700;
+}
+
+@mixin nav {
+  font-family: $displayFont;
+  color: $grayDark;
+  font-weight: 400;
 }
 
 .red {

@@ -2,7 +2,6 @@
 title: Rails Rumble
 date: 2012-11-04 00:00 UTC
 tags: Projects
-descrip: Entry into 2012 Rails Rumble contest
 ---
 
 # Rails Rumble

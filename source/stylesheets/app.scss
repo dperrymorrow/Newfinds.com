@@ -1,57 +1,82 @@
-//= require normalize-css/normalize.css
-//= require animate.css/animate.css
+//= require normalize.css/normalize
+//= require typebase.css/typebase
+//= require prismjs/themes/prism
+//= require syntax
 
 @import 'vars';
-@import "../../bower_components/sass-flex-mixin/_flex";
-
 
 html, body {
   @include body;
-
   display: block;
   height: 100%;
   margin: 0;
   padding: 0;
   background-color: white;
-  text-align: center;
-  color: $grayMedium;
+  font-size: 18px;
 }
 
 p {
-  font-size: $fontSize;
+  // font-size: $fontSize;
 }
 
 a {
-  color: $grayDark;
+  // color: $grayDark;
 }
 
-.menu {
-  position: fixed;
-  left: 0;
-  top: 0;
-}
-
-nav {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 300px;
-  height: 100%;
-  text-align: left;
-  background-color: $grayLightest;
-}
-
-
-h1 {
+h1, h2, h3, h4, h5, h6 {
   @include header;
-  font-size: $fontSize*2;
 }
+
 
 .container {
-  text-align: left;
-  background-color: white;
-  width: 800px;
-  display: inline-block;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+
+  nav {
+    height: 100%;
+    background-color: $grayLightest;
+    width: 200px;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .content {
+    flex: 1 0px;
+    text-align: center;
+    padding: $padding*2 0;
+
+    .main {
+      display: inline-block;
+      text-align: left;
+    }
+  }
+}
+
+@media (min-width: $desktop) {
+  .main {
+    width: 950px;
+    padding: $padding*2;
+
+    // pre {
+    //   margin-left: -$padding*2;
+    //   margin-right: -$padding*2;
+
+    //   code {
+    //     padding: $padding*2 !important;
+    //   }
+    // }
+  }
+}
+
+
+@media (min-width: 600px) {
+  .facet_sidebar {
+    display: none;
+  }
 }
 
 
