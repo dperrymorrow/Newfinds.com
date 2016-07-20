@@ -3,30 +3,29 @@ title: Javascript Patterns
 date: 2012-09-01 20:55 UTC
 tags: Javascript
 layout: blog
+intro: Modules, "classes", & other helpful habits for more organized Javascript.
 ---
 
-# Helpful Javascript Patterns
-
-## Modules, "classes", & other helpful habits.
 
 So you write JavaScript. That’s pretty much a given for today’s modern web apps. Unfortunately, JavaScript doesn’t always get the organization it deserves and ends up being a procedural mess of jQuery on ready statements.
 
 In this post, I’m going to show you two of my favorite patterns for keeping JavaScript well organized. But before I do, let’s go over a few prerequisites.
 
-###Namespace Your Code
+### Namespace Your Code
 One of the worst and most common JavaScript mistakes is assigning variable onto the global namespace (aka ‘window’) if you’re running JavaScript in a browser. This can lead to conflicting functions between you and other developers. And is just, well, messy. The best way to avoid to do this is namespacing as shown in this example:
 
-    {{javascript}}
-    window.NR = window.NR || {};
-    window.NR.myFunction = function () {
-      // your code...
-    };
-
+```javascript
+window.NR = window.NR || {};
+window.NR.myFunction = function () {
+  // your code...
+};
+```
 
 And avoid this example:
 
-    {{javascript}}
-    function myFunction () {   // your code... };
+```javascript
+function myFunction () {   // your code... };
+```
 
 ###Use Strict Mode
 Even inside a name spaced function, there can still be a problem. You can accidentally assign variables to the global namespace. To prevent this, prefix all variable declarations with var or this.
@@ -38,23 +37,23 @@ JSLint evaluates your JavaScript against Douglas Crockford’s coding suggestion
 
 The main benefits of using JSLint are:
 
-* Your code is checked for errors before running, saving you time and debugging effort.
-* Sharing linted code in a team unifies coding styles, making code more readable and consistent.
+- Your code is checked for errors before running, saving you time and debugging effort.
+- Sharing linted code in a team unifies coding styles, making code more readable and consistent.
 
 Even if you disagree with some of Douglas’s assertions about how your code should be formatted, you should still use JSLint. You can opt out of the rules with preference setting or comments on the top of your JavaScript file.
 
-## The Module
+### The Module
 The module pattern is great if you only need one, such as in a navigation system, and you want to be able to access the object from any scope. By convention, a module should be camelCased with a lower case first letterer.
 
 There are many benefits and drawbacks to using the module pattern:
 
-### Pros:
+__Pros:__
 
 - There’s no need to instantiate, just begin calling methods on it.
 - It’s accessible from anywhere. There’s no need to retain a handle to your instance.
 - It keeps state and variable values.
 
-### Cons:
+__Cons:__
 
 - You can only have one. Don’t make ten of these for each type of item on the DOM or a similar situation.
 - You don’t have a constructor function, so it won’t be fired automatically like with an instance.
@@ -62,78 +61,82 @@ There are many benefits and drawbacks to using the module pattern:
 
 __Example:__
 
-    {{javascript}}
-    (function () {
-      "use strict";
-      window.NR = window.NR || {};
-      window.NR.myModule = {
-        myVariable: "foo",
+```javascript
+(function () {
+  "use strict";
+  window.NR = window.NR || {};
+  window.NR.myModule = {
+    myVariable: "foo",
 
-        initialize: function () {
-          // your initialization code here
-        },
+    initialize: function () {
+      // your initialization code here
+    },
 
-        anotherMethod: function () {
-          this.myVariable = "foobar";
-        }
-      };
-    }());
+    anotherMethod: function () {
+      this.myVariable = "foobar";
+    }
+  };
+}());
+```
 
 __Usage:__
 
-    {{javascript}}
-    NR.myModule.initialize();
-    NR.myModule.anotherMethod();
-    console.log(NR.myModule.myVariable);
-    // outputs
-    // "foobar"
+```javascript
+NR.myModule.initialize();
+NR.myModule.anotherMethod();
+console.log(NR.myModule.myVariable);
+// outputs
+// "foobar"
+```
 
-## Classes
+### Classes
 Some folks will argue that your should never use ‘new’ when working with JavaScript as there are no true classes in the language. However, I find this pattern extremely helpful for a number of reasons described below. Also, many popular frameworks such as Backbone use class instantiation / extension patterns. Naming conventions for classes is CamelCase with an upper case first letter.
 
-### Pros
+__Pros__
 
 - It’s great for when you have many of an item and each needs its own state.
 - It’s a familiar OOP pattern / work flow for many developers.
 - It has a constructor function that’s immediately fired on instantiation.
 
-### Cons
+__Cons__
 
 - You have to remember to instantiate before you can use it. If you don’t, it will cause errors.
 - You have to keep a handle to the instance that’s returned from the constructor.
 
 __Example:__
 
-    {{javascript}}
-    window.NR = window.NR || {};
-    window.NR.MyClass = (function () {
-      "use strict";
+```javascript
+window.NR = window.NR || {};
+window.NR.MyClass = (function () {
+  "use strict";
 
-      function MyClass(val) {
-        this.instanceVar = MyClass.staticVar + val;
-      }
+  function MyClass(val) {
+    this.instanceVar = MyClass.staticVar + val;
+  }
 
-      MyClass.staticVar = "prefix-";
-      var instanceVar = "";
+  MyClass.staticVar = "prefix-";
+  var instanceVar = "";
 
-      MyClass.prototype.exampleFunction = function () {
-        alert('i am an additional function');
-      };
+  MyClass.prototype.exampleFunction = function () {
+    alert('i am an additional function');
+  };
 
-      return MyClass;
-    }());
+  return MyClass;
+}());
+```
 
 __Usage:__
 
-    {{javascript}}
-    var instance1 = new NR.MyClass('class 1');
-    console.log(instance1.instanceVar);
+```javascript
+var instance1 = new NR.MyClass('class 1');
+console.log(instance1.instanceVar);
 
-    NR.MyClass.staticVar = 'PREFIX-';
+NR.MyClass.staticVar = 'PREFIX-';
 
-    var instance2 = new NR.MyClass('class 2');
-    console.log(instance2.instanceVar);
+var instance2 = new NR.MyClass('class 2');
+console.log(instance2.instanceVar);
 
-    // Outputs
-    // "prefix-class 1"
-    // "PREFIX-class 2"
+// Outputs
+// "prefix-class 1"
+// "PREFIX-class 2"
+```

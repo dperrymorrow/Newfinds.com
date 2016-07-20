@@ -11,4 +11,16 @@ module NewfindsHelpers
     txt.split(article.title).last
   end
 
+  def nav_active path
+    current_page.path == path ? {:class => "active"} : {}
+  end
+
+  def nav_active_article article
+    if current_article
+      current_article.title == article.title ? {:class => "active"} : {}
+    else
+      return {}
+    end
+  end
+
 end

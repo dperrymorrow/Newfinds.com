@@ -8,3 +8,8 @@ gem "middleman", "~>3.4.0"
 gem "middleman-livereload", "~> 3.1.0"
 gem 'middleman-autoprefixer'
 gem "middleman-blog"
+
+
+# Code syntax highlighting
+gem 'middleman-syntax', '~> 2.1.0'
+gem 'redcarpet', '~> 3.3.4'

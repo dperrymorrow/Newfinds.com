@@ -17,14 +17,32 @@ html, body {
 
 p {
   // font-size: $fontSize;
+  line-height: 1.8em;
+  margin-top: $padding;
 }
 
 a {
-  // color: $grayDark;
+  color: $red;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
   @include header;
+}
+
+h2, h3, h4, h5, h6 {
+  color: $grayDark;
+}
+
+h1 {
+  color: black;
+  letter-spacing: -0.01em;
+  font-size: 250%;
+  line-height: 1em;
 }
 
 
@@ -35,12 +53,34 @@ h1, h2, h3, h4, h5, h6 {
   align-items: stretch;
 
   nav {
-    height: 100%;
-    background-color: $grayLightest;
-    width: 200px;
+    border-left: 1px solid $grayLightest;
+    box-sizing: border-box;
+    padding: $padding*2 $padding $padding $padding;
+
+    ul, li {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    li.active {
+      a {
+        color: black;
+        font-weight: 700;
+      }
+    }
 
     a {
       text-decoration: none;
+      font-size: 100%;
+      display: block;
+      border-bottom: $grayDark;
+      color: $grayDark;
+      padding: $padding/8 0;
+
+      &:hover {
+        color: $red;
+      }
     }
   }
 
@@ -52,14 +92,40 @@ h1, h2, h3, h4, h5, h6 {
     .main {
       display: inline-block;
       text-align: left;
+
+      .lead {
+        margin-bottom: $padding*2;
+
+        .date {
+          font-size: 110%;
+          float: left;
+        }
+
+        h1 {
+          // border: 1px solid green;
+          // margin: 0;
+          margin-top: $padding*2;
+        }
+
+        h2 {
+          background-color: $tan;
+          font-size: 110%;
+          line-height: 1.4em;
+          padding: $padding;
+        }
+      }
     }
   }
 }
 
 @media (min-width: $desktop) {
+
+  .nav {
+    width: 300px;
+  }
+
   .main {
-    width: 950px;
-    padding: $padding*2;
+    width: 750px;
 
     // pre {
     //   margin-left: -$padding*2;

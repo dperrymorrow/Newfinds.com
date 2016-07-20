@@ -14,6 +14,11 @@ set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
 set :images_dir, 'images'
 
+set :haml, { ugly: true }
+set :markdown_engine, :redcarpet
+set :markdown, fenced_code_blocks: true, smartypants: true, footnotes: true, link_attributes: { rel: 'nofollow' }, tables: true
+# activate :syntax, line_numbers: true
+
 sprockets.append_path File.join "#{root}", "node_modules"
 
 # Build-specific configuration
