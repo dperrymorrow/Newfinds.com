@@ -97,8 +97,10 @@ h1 {
         margin-bottom: $padding*2;
 
         .date {
-          font-size: 110%;
-          float: left;
+          font-size: 90%;
+          border-bottom: 1px solid $grayLightest;
+          // text-align: right;
+          padding-bottom: $padding/3;
         }
 
         h1 {
@@ -109,6 +111,8 @@ h1 {
 
         h2 {
           background-color: $tan;
+          border-top: 1px solid $grayLightest;
+          border-bottom: 1px solid $grayLightest;
           font-size: 110%;
           line-height: 1.4em;
           padding: $padding;

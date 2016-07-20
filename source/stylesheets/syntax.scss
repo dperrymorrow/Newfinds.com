@@ -4,4 +4,6 @@
 pre[class*="language-"] {
   padding: $padding;
   margin: $padding 0;
+  border-top: 1px solid $grayLightest;
+  border-bottom: 1px solid $grayLightest;
 }
