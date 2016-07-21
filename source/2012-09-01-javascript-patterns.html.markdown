@@ -2,8 +2,7 @@
 title: Javascript Patterns
 date: 2012-09-01 20:55 UTC
 tags: Javascript
-layout: blog
-intro: Modules, "classes", & other helpful habits for more organized Javascript.
+intro: Modules, “classes”, & other helpful habits for more organized Javascript.
 ---
 
 

@@ -8,7 +8,10 @@ end
 activate :automatic_image_sizes
 activate :directory_indexes
 activate :autoprefixer
-activate :blog
+
+activate :blog do |blog|
+  blog.layout = "blog"
+end
 
 set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
