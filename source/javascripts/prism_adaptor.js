@@ -7,7 +7,7 @@ class PrismAdaptor {
 
 
   prism() {
-    this.keys = ['ruby', 'html', 'css', 'javascript', 'html', 'bash'];
+    this.keys = ['ruby', 'html', 'css', 'javascript', 'html', 'bash', 'less'];
     document.querySelectorAll("code").forEach(this.lookForKeys.bind(this));
   }
 

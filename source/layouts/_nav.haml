@@ -8,10 +8,12 @@
     %li{nav_active('resume.html')}
       = link_to "Work Experience", 'resume.html'
 
+    - other = []
     - blog.tags.each do |tag, articles|
-      %li
-        %h4= tag
-        %ul
-          - articles.each do |article|
-            %li{nav_active_article(article)}
-              = link_to article.title, article.url
+      - if articles.length < 2
+        - other.push articles
+      - else
+        = partial 'layouts/tag_group', locals: {tag: tag, articles: articles}
+
+    - unless other.empty?
+      = partial 'layouts/tag_group', locals: {tag: 'Other', articles: other.flatten}
