@@ -11,6 +11,7 @@ activate :autoprefixer
 
 activate :blog do |blog|
   blog.layout = "blog"
+  blog.prefix = "articles"
 end
 
 set :css_dir, 'stylesheets'

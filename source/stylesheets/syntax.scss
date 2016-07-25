@@ -1,9 +1,9 @@
 @import 'vars';
 
-
 pre[class*="language-"] {
   padding: $padding;
   margin: $padding -$padding;
   border-top: 1px solid $grayLightest;
   border-bottom: 1px solid $grayLightest;
+  background-color: $grayBg !important;
 }

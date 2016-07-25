@@ -65,3 +65,26 @@ myModule.anotherPublicMethod();
 myModule.callbackMethod() // undefined
 callbackMethod() // undefined
 ```
+
+### How would this look in Node?
+
+It would be pretty similar in Node.
+
+```javascript
+module.exports = {
+  publicMethod: function () {
+      // can now call the method without binding scope.
+      document.getElementById("elId").addEventListener('click', callbackMethod);
+    },
+
+    anotherPublicMethod: function () {
+      // some public method
+    }
+  }
+};
+
+// simply leave this outside of your export.
+callbackMethod = function () {
+  console.log('privateMethod');
+}
+```

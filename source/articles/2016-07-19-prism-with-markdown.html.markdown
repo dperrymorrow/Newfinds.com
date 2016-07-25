@@ -1,7 +1,7 @@
 ---
 title: Prism.js & Markdown
 date: 2016-07-19 19:41 UTC
-tags: Javascript
+tags: Markdown
 intro: Overcoming the problem of keying off of class names in Prism to determine the language to syntax highlight.
 ---
 

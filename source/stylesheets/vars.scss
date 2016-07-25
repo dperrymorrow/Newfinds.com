@@ -5,6 +5,8 @@ $grayDark: lighten(black, 25%);
 $grayMedium: lighten(black, 40%);
 $grayLight: lighten(black, 60%);
 $grayLightest: lighten(black, 89%);
+$grayBg: lighten(#efefef, 4%);
+$headerColor: lighten(black, 25%);
 $tan: #f5f2f0;
 $red: #905;
 
@@ -19,7 +21,7 @@ $phone: 500px;
 
 @mixin body {
   font-family: $bodyFont;
-  color: $grayMedium;
+  color: $grayDark;
 }
 
 @mixin header {

@@ -1,16 +1,32 @@
 ---
 title: Welcome to Middleman
 ---
+.container
+  .content
+    .main
+      .lead
+        .date Blog of David Morrow
+        %h1 Recent Posts
+        %h2
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat.
 
-- blog.articles[0..5].each do |article|
-  %article
-    %h1
-      = link_to article.title, article.url
-      %time= article.date.strftime('%b %e %Y')
+      .blog-content
+        .index-articles
+          - blog.articles[0..5].each do |article|
+            %article
+              %h1
+                .date= article.date.strftime('%b %e %Y')
+                = link_to article.title, article.url
+                %small
+                  = article.data['intro']
 
-    %p
-      = article_summary article
-      = link_to 'Read More', article.url
+              -# %blockquote
+                -# = article.data['intro']
+                -# %br
+                -# = link_to 'Read More', article.url
 
 %hr
 

@@ -4,9 +4,9 @@
     %li{nav_active('index.html')}
       = link_to "Home", '/'
     %li{nav_active('about.html')}
-      = link_to "About Me", 'about.html'
+      = link_to "About Me", '/about.html'
     %li{nav_active('resume.html')}
-      = link_to "Work Experience", 'resume.html'
+      = link_to "Work Experience", '/resume.html'
 
     - other = []
     - blog.tags.each do |tag, articles|
@@ -17,3 +17,7 @@
 
     - unless other.empty?
       = partial 'layouts/tag_group', locals: {tag: 'Other', articles: other.flatten}
+
+    - 100.times do
+      %li
+        = link_to "home", 'index.html'
