@@ -1,0 +1,69 @@
+
+
+%body
+  .container
+    .content
+      .main
+        .lead
+          .date David Perry Morrow
+          %h1 Resume
+          %h2 Brief summary of work experiences, education, skills, and awards for David Morrow.
+
+        .blog-content.resume
+
+          .divider Work Experience
+
+          - data.resume.jobs.each do |job|
+            .item
+              .heading
+                %h3.company= job.company
+
+                - job.roles.each do |role|
+                  .role
+                    .title= "(#{role.role})"
+
+                    .time
+                      = human_time role.start
+                      = " - "
+                      = human_time role.end
+
+              %p.descrip= job.description
+
+          .divider Education
+
+          - data.resume.education.each do |ed|
+            .item
+              .heading
+                %h3.company= ed.school
+                .role
+                  .title= ed.title
+                  .time
+                    = human_time ed.start
+                    = " - "
+                    = human_time ed.end
+
+              %p.descrip= ed.description
+
+
+          .divider Skills
+
+          .item
+            %p.descrip
+              - data.resume.skills.each do |skill|
+                = "#{skill}, "
+
+          .divider Awards & Accolades
+
+
+          %table.awards
+            - data.resume.awards.each do |aw|
+              - aw.awards.each_with_index do |award, index|
+                %tr{class: index == 0 ? 'bordered' : ''}
+                  - if index == 0
+                    %td.project{rowspan: aw.awards.count}= aw.project
+
+                  %td.title= award.title
+                  %td.level= award.level
+
+
+

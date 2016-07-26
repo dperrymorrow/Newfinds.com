@@ -1,0 +1,91 @@
+@import 'vars';
+
+
+.resume {
+
+  .divider {
+    color: $grayMedium;
+    // text-align: right;
+    font-size: 80%;
+    font-weight: bold;
+    font-family: $displayFont;
+  }
+
+  table.awards {
+    td {
+      font-size: 90%;
+      border: none;
+      padding: 2px;
+      vertical-align: top;
+      line-height: 1.5em;
+
+      &.project {
+        // text-align: right;
+        font-family: $displayFont;
+        font-weight: bold;
+        padding-right: $padding/2;
+      }
+
+      &.level {
+        text-transform: capitalize;
+      }
+    }
+
+    tr.bordered {
+      td {
+        padding-top: $padding/2;
+      }
+    }
+  }
+
+  .item {
+
+    * {
+      // border: 1px solid green;
+    }
+
+    .heading {
+      margin-top: 0;
+      padding-bottom: $padding;
+
+      .company {
+        font-family: $displayFont;
+        color: $grayDark;
+        font-weight: bold;
+        margin-bottom: $padding/4;
+        letter-spacing: -0.03em;
+
+        .aquiredBy {
+          display: inline-block;
+        }
+      }
+
+      .role {
+        margin-bottom: $padding/4;
+
+        .title, .time {
+          display: inline-block;
+          font-size: 90%;
+          color: $grayMedium;
+        }
+
+        .title {
+          font-style: italic;
+        }
+
+        .time {
+          margin-left: $padding/3;
+        }
+      }
+    }
+
+    p.descrip {
+      page-break-inside: avoid;
+      page-break-before: avoid;
+
+      padding-left: $padding;
+      margin: 0 0 $padding*1.5 0;
+      border-left: 4px solid $grayLightest;
+    }
+  }
+}

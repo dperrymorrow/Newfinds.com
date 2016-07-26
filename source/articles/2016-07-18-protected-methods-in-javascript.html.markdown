@@ -73,8 +73,7 @@ It would be pretty similar in Node.
 ```javascript
 module.exports = {
   publicMethod: function () {
-      // can now call the method without binding scope.
-      document.getElementById("elId").addEventListener('click', callbackMethod);
+      protectedMethod();
     },
 
     anotherPublicMethod: function () {
@@ -84,7 +83,7 @@ module.exports = {
 };
 
 // simply leave this outside of your export.
-callbackMethod = function () {
+function protectedMethod() {
   console.log('privateMethod');
 }
 ```

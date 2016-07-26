@@ -23,4 +23,8 @@ module NewfindsHelpers
     end
   end
 
+  def human_time str
+    DateTime.parse(str).strftime '%b ’%y'
+  end
+
 end
