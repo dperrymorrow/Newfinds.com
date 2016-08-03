@@ -5,6 +5,6 @@
 //= require bootstrap/js/affix
 
 "use strict";
-let adaptor = new PrismAdaptor();
-adaptor.prism();
+let adaptor = new MarkdownShim();
+adaptor.prism().externalLinks();
 

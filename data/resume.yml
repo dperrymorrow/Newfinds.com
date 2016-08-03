@@ -74,7 +74,7 @@ jobs:
       Developed a white labeled, XML driven retirement planner for a financial institution client.
       Highlights of this project included a custom graphing library.
 
-  - company: RGA New York
+  - company: R/GA New York
     roles:
       - role: Graphic Designer
         start: 1999-09-01 00:00 UTC
@@ -113,12 +113,14 @@ education:
       Areas of concentration during my thesis projects included packaging and editorial design.
 
 skills:
-  - Ruby On Rails
   - Ruby
   - Javascript
-  - ES6
   - Node
   - PHP
+  - Ruby On Rails
+  - Gulp
+  - Grunt
+  - ES6
   - jQuery
   - Backbone.js
   - Bootstrap

@@ -6,22 +6,46 @@
   // flex-flow: row wrap;
   // justify-content: space-between;
 
+  .group {
+    padding-bottom: $padding*2;
+    border-bottom: 1px solid $grayLightest;
+    margin-bottom: $padding;
+  }
+
   article {
-    // width: 300px;
-    // padding: $padding;
-    // border: 1px solid $grayLightest;
+    padding-top: $padding;
+    display: block;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+
+    img {
+      margin-right: $padding/2;
+      border: 1px solid $grayMedium;
+    }
 
     p {
-      // font-size: 80%;
       margin-top: $padding/2;
     }
 
+    &.promoted {
+      h1 {
+        flex: 1 0px;
+        font-size: 200%;
+
+        small {
+          font-size: 76%;
+        }
+      }
+    }
+
     h1 {
-      margin: $padding 0;
-      font-size: 190%;
+      margin: 0;
+      font-size: 160%;
 
       small {
-        font-size: 70%;
+        font-size: 80%;
         font-weight: normal;
         font-family: $bodyFont;
         color: $grayMedium;
@@ -30,7 +54,7 @@
       .date {
         // float: right;
         // display: inline-block;
-        font-size: 50%;
+        font-size: 60%;
         font-weight: normal;
         font-family: $bodyFont;
         color: $grayLight;

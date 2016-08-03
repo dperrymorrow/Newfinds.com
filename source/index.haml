@@ -8,15 +8,33 @@ title: Welcome to Middleman
         .date Blog of David Morrow
         %h1 Recent Posts
         %h2
-          Posts are mostly documentation of solving a problem I had, or new interesting technologies.
-          Mostly for my benefit, if someone finds anything helpful, well that’s just icing on top.
+          Posts are mostly solving a problem I had, new interesting technologies, or something I have built.
+          I hope someone finds them helpful.
+
 
       .blog-content
+
         .index-articles
-          - blog.articles[0..10].each do |article|
-            %article
-              %h1
-                .date= article.date.strftime('%b %e %Y')
-                = link_to article.title, article.url
-                %small
-                  = article.data['intro']
+          .group
+            - articles_for_tag('promoted').each do |article|
+              %article.promoted
+
+                - if article.data['thumb']
+                  = link_to article.url do
+                    = image_tag(article.data['thumb'])
+
+                %h1
+                  -# .date= article.date.strftime('%b %e %Y')
+                  = link_to article.title, article.url
+                  %small
+                    = article.data['intro']
+
+
+          - blog.articles[0..5].each do |article|
+            - unless article.tags.include? 'Promoted'
+              %article
+                %h1
+                  .date= article.date.strftime('%b %e %Y')
+                  = link_to article.title, article.url
+                  %small
+                    = article.data['intro']

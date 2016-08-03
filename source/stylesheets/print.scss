@@ -1,0 +1,30 @@
+
+
+
+// html, body, .container, .content, .main, .lead, .resume, .item {
+//   float: none;
+// }
+
+* {
+  float: none !important;
+}
+
+.item {
+  page-break-before: always !important;
+  // border: 1px solid red;
+}
+
+.company {
+  display: relative;
+  page-break-inside: avoid;
+  font-size: 150%;
+}
+
+p {
+  display: block;
+  page-break-inside: avoid !important;
+}
+
+.no-print {
+  display: none;
+}

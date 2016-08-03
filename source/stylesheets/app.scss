@@ -17,6 +17,15 @@ html, body {
   background-color: white;
   font-size: 18px;
   letter-spacing: -0.02em;
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+.pull-right {
+  display: inline-block;
+  float: right;
 }
 
 p {
@@ -33,6 +42,7 @@ blockquote {
   border-left: 5px solid $grayLightest;
   margin-left: 0;
   padding-left: $padding;
+
 }
 
 a {
@@ -61,6 +71,7 @@ h1 {
 
     &:hover {
       color: $red;
+      text-decoration: none;
     }
   }
 }
@@ -167,9 +178,56 @@ h1 {
     .main {
       display: inline-block;
       text-align: left;
+      padding-bottom: $padding*4;
 
       .blog-content {
         padding: 0 0 0 $padding*2;
+
+        .gallery {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+
+          .item {
+            flex: 1 0px;
+            display: inline-block;
+            width: 50%;
+            margin-right: $padding/2;
+            position: relative;
+            overflow: hidden;
+
+            &:nth-child(even) {
+              margin-right: 0;
+            }
+
+            .caption {
+              position: absolute;
+              bottom: -300px;
+              left: 0;
+              background-color: rgba(0, 0, 0, 0.5);
+              width: 100%;
+              padding: $padding/2;
+              opacity: 0;
+              transition: all 0.7s;
+              color: white;
+              font-size: 80%;
+            }
+
+            img {
+              box-shadow: 0px 0px 1px #000;
+              width: 100%;
+              height: auto;
+              cursor: zoom-in;
+            }
+
+            &:hover {
+              .caption {
+                opacity: 1;
+                bottom: 3px;
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -187,6 +245,20 @@ table {
   td {
     padding: $padding/4;
     border: 1px solid $grayLightest;
+  }
+}
+
+.print-only {
+  display: none;
+}
+
+@media print {
+  body {
+    font-size: 12px;
+  }
+
+  .no-print {
+    display: none;
   }
 }
 

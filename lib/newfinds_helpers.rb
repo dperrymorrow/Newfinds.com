@@ -1,8 +1,8 @@
 module NewfindsHelpers
 
-  def project_articles
+  def articles_for_tag target_tag
     blog.tags.each do |tag, articles|
-      return articles if tag.downcase == 'projects'
+      return articles if tag.downcase == target_tag.downcase
     end
   end
 

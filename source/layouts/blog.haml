@@ -15,6 +15,15 @@
             %h2=current_article.data['intro']
 
         .blog-content
+
+          - if current_article.data['gallery']
+            .gallery
+              - current_article.data['gallery'].each do |item|
+                .item
+                  = image_tag(item.img)
+                  - if item.caption
+                    .caption= item.caption
+
           = yield
 
     = partial 'layouts/nav'
