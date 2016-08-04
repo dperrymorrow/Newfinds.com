@@ -8,6 +8,7 @@ gem "middleman", "~>3.4.0"
 gem "middleman-livereload", "~> 3.1.0"
 gem 'middleman-autoprefixer'
 gem "middleman-blog"
+gem 'middleman-gh-pages'
 
 
 # Code syntax highlighting
