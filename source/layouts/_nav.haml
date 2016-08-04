@@ -1,5 +1,5 @@
 
-%nav.no-print
+%nav.no-print#side-nav
   %ul
     %li{nav_active('index.html')}
       = link_to "Home", '/'
@@ -13,7 +13,7 @@
 
     - other = []
     - blog.tags.each do |tag, articles|
-      - unless tag.downcase == 'promoted'
+      - unless ['promoted', 'projects'].include?(tag.downcase)
         - if articles.length < 2
           - other.push articles
         - else

@@ -34,7 +34,7 @@ title: Welcome to Middleman
             - unless article.tags.include? 'Promoted'
               %article
                 %h1
-                  .date= article.date.strftime('%b %e %Y')
+                  .date= human_time article.date
                   = link_to article.title, article.url
                   %small
                     = article.data['intro']

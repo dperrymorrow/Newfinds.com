@@ -15,7 +15,8 @@ This works fine, but there is no particular reason to expose the callback method
   "use strict";
   window.myModule = {
     publicMethod: function () {
-      document.getElementById("myId").addEventListener('click', this.callbackMethod.bind(this));
+      document.getElementById("myId")
+        .addEventListener('click', this.callbackMethod.bind(this));
     },
 
     anotherPublicMethod: function () {
@@ -40,7 +41,8 @@ This protects the ``callbackMethod`` and also simplifies scope in the process.
   window.myModule = {
     publicMethod: function () {
       // can now call the method without binding scope.
-      document.getElementById("elId").addEventListener('click', callbackMethod);
+      document.getElementById("elId")
+        .addEventListener('click', callbackMethod);
     },
 
     anotherPublicMethod: function () {

@@ -24,6 +24,7 @@ module NewfindsHelpers
   end
 
   def human_time str
+    str = str.to_s if str.is_a? ActiveSupport::TimeWithZone
     DateTime.parse(str).strftime '%b ’%y'
   end
 

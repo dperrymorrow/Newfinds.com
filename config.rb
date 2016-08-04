@@ -1,4 +1,5 @@
 require "lib/newfinds_helpers"
+
 helpers NewfindsHelpers
 
 configure :development do

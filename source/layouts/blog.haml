@@ -3,7 +3,7 @@
   = stylesheet_link_tag '//fonts.googleapis.com/css?family=Merriweather:400,700'
   = stylesheet_link_tag 'app'
 
-%body
+%body.blog
   .container
     .content
       .main
@@ -16,13 +16,24 @@
 
         .blog-content
 
+          - if current_article.data['hero']
+            .gallery
+              .item.hero
+                = image_tag(current_article.data['hero'].img)
+
+                - if current_article.data['hero'].caption
+                  .caption= current_article.data['hero'].caption
+
           - if current_article.data['gallery']
             .gallery
               - current_article.data['gallery'].each do |item|
                 .item
-                  = image_tag(item.img)
+                  = link_to item.img, class: 'lightbox-link' do
+                    = image_tag(item.img)
+
                   - if item.caption
                     .caption= item.caption
+
 
           = yield
 
