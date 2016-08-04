@@ -12,7 +12,7 @@
 
     lookForKeys: function (el) {
       this.keys.forEach(function (key) {
-        if (el.classList.contains(key)) el.className = `language-${key}`;
+        if (el.classList.contains(key)) el.className = "language-" + key;
       });
     },
 
