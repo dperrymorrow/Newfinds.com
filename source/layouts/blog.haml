@@ -1,8 +1,13 @@
 = partial 'layouts/header'
 
 %body.blog
+
+
   .container
     .content
+      - if current_article.data['github']
+        %a.github-fork-ribbon.right-top{href: current_article.data['github'], target: '_blank', title: "Fork me on GitHub"} Fork me on GitHub
+
       .main
         .lead
           .date= current_article.date.strftime '%B %Y'

@@ -3,11 +3,11 @@ title: I-Chord
 date: 2009-04-04 00:00 UTC
 tags: Projects
 intro: A mobile site for quickly looking up guitar chords.
+github: https://github.com/dperrymorrow/I-Chord
 hero:
   img: /images/projects/ichord.jpg
   caption: Screenshot of the app
 ---
-
 
 A simple mobile web site that I created when I was learning guitar. As you type it shows you all the related chord fingering charts. It came in pretty handy on my I-Phone when I was learning new chords.
 

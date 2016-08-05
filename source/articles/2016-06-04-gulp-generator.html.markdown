@@ -5,10 +5,10 @@ tags: Projects, Promoted
 thumb: /images/projects/gulp_generator_thumb.png
 intro: A CLI generator for Gulp.js build files. Just answer the questions and away you go.
 published: false
+github: https://github.com/dperrymorrow/gulp-generator
 hero:
  img: /images/projects/gulp_generator_logo.png
 ---
-
 
 A command line tool that builds your gulpfile to your exact needs by asking you a series of questions. You can build a full static site generator with dev server, or a simple build tool for pre-processing assets and preparing them for deployment.
 
@@ -25,7 +25,7 @@ now change directories to your project and run the setup
 Gulp-Generator will now ask you a series of questions about your project and build your gulpfile.js accordingly.
 
 ```bash
-➜ generator-test node ../gulp-generator/bin/cli.js
+$ gulp-generator
 > Running Gulp-Generator in /Users/dperrymorrow/builds/generator-test
 ? You already have a Gulpfile.js. Overwrite? Yes
 ? Would you like to run CSS tasks? Yes
@@ -44,12 +44,16 @@ Gulp-Generator will now ask you a series of questions about your project and bui
 ? Name of your concatenated js file? main.js
 ? Where are your .coffee source files? source/coffee
 ? Where do you want your compiled Javascript (generated) files? build/js
-> Installing the NPM packages based on your choices.
-|/Users/dperrymorrow/builds/generator-test/source/coffee created.
+
+Gulpfile.js has been created
+
+/Users/dperrymorrow/builds/generator-test/source/coffee created.
 /Users/dperrymorrow/builds/generator-test/build/js created.
 /Users/dperrymorrow/builds/generator-test/source/less created.
 /Users/dperrymorrow/builds/generator-test/build/css created.
-Gulpfile.js has been created
+
+> Installing the NPM packages based on your choices.
+
 -generator-test@1.0.0 /Users/dperrymorrow/builds/generator-test
 ├─┬ gulp@3.9.1
 │ └─┬ liftoff@2.3.0
