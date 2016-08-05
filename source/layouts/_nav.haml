@@ -4,9 +4,9 @@
     %li{nav_active('index.html')}
       = link_to "Home", '/'
     %li{nav_active('about.html')}
-      = link_to "About Me", '/about.html'
+      = link_to "About Me", '/about'
     %li{nav_active('resume.html')}
-      = link_to "Work Experience", '/resume.html'
+      = link_to "Work Experience", '/resume'
 
 
     = partial 'layouts/tag_group', locals: {tag: 'Projects', articles: articles_for_tag('Projects')}
