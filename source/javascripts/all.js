@@ -1,6 +1,7 @@
 //= require_tree .
 //= require prismjs/prism
 //= require prismjs/components/prism-less
+//# require prismjs/components/prism-bash
 //= require luminous-lightbox/dist/Luminous
 
 "use strict";
