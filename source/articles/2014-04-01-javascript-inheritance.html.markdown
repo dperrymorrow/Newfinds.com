@@ -4,9 +4,9 @@ intro: So you have a class in Javascript and you want it to inherit from another
 tags: Javascript
 ---
 
-You want the following
+You want traditional characteristics from your Javascript classes. In Javascript, it can be quite elusive to create "classes" like you are accustomed to in other languages.
 
-- to be able to call the parent class constructor as well as the child
+- you want to be able to call the parent class constructor as well as the child
 - you want the child class to inherit all methods from the parent class
 - you want to be able to call super on individual methods in the child class
 

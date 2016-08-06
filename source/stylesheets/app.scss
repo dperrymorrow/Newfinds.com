@@ -246,12 +246,14 @@ h1 {
          >  p {
           &:first-child:first-letter {
             float: left;
-            font-size: 3.2em;
-            line-height: 1em;
-            padding-top: 4px;
-            padding-right: .2em;
-            padding-left: 3px;
+            font-size: 5.9em;
+            line-height: .78em;
             font-weight: 700;
+            margin-top: -.22em;
+            color: #ffae4d;
+            letter-spacing: 0.1em;
+            margin-left: -0.03em;
+            text-align: left;
           }
         }
       }
