@@ -9,11 +9,9 @@ hero:
  img: /images/projects/gulp_generator_logo.png
 ---
 
-![gulp-task-generator](https://raw.githubusercontent.com/dperrymorrow/gulp-task-generator/master/gulp_generator_logo.png)
+A command line tool that builds your gulpfile to your exact needs by asking you a series of questions. Based on what you need, it will add the dependencies, and create the gulpfile.js.
 
-A command line tool that builds your gulpfile to your exact needs by asking you a series of questions.
-
-## Supported Tasks
+### Supported Tasks
 
 - Jade
 - EJS
@@ -27,21 +25,21 @@ A command line tool that builds your gulpfile to your exact needs by asking you 
 - Uglify
 - Sourcemaps
 
-## Installing:
+### Installing:
 
- ```
+ ```bash
  $ npm install gulp-task-generator -g
  ```
 
 now change directories to your project and run the setup
 
-```
+```bash
  $ gulp-task-generator
 ```
 
 Gulp-Task-Generator will now ask you a series of questions about your project and build your gulpfile.js accordingly.
 
-```
+```bash
 $ gulp-task-generator
 ------------------------------- QUESTIONS -------------------------------
 ? You already have a Gulpfile.js. Overwrite? Yes
@@ -101,14 +99,14 @@ $ gulp
 
 The packages needed to run your gulpfile have been added to your npm package.json file as dependencies, and have been installed via ``npm install``
 
-## Usage
+### Usage
 
 ```bash
 $ npm install -g gulp
 $ gulp
 ```
 
-## gulpfile.js
+### gulpfile.js
 
 The above choices would have resulted in the following ``gulpfile.js``
 
@@ -208,7 +206,7 @@ You can then invoke the tasks with ``$ gulp`` or run individual gulp tasks.
 
 And, of course you can edit your gulpfile.js further for more customization, it is your gulpfile after all, Gulp-Generator just helps you build it.
 
-## Contributing
+### Contributing
 
 - fork the repo
 - npm install
