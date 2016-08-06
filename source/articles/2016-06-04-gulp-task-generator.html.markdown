@@ -1,32 +1,49 @@
 ---
-title: Gulp Generator
+title: Gulp Task Generator
 date: 2016-06-04 00:00 UTC
 tags: Projects, Promoted
 thumb: /images/projects/gulp_generator_thumb.png
 intro: A CLI generator for Gulp.js build files. Just answer the questions and away you go.
-published: false
-github: https://github.com/dperrymorrow/gulp-generator
+github: https://github.com/dperrymorrow/gulp-task-generator
 hero:
  img: /images/projects/gulp_generator_logo.png
 ---
 
-A command line tool that builds your gulpfile to your exact needs by asking you a series of questions. You can build a full static site generator with dev server, or a simple build tool for pre-processing assets and preparing them for deployment.
+![gulp-task-generator](https://raw.githubusercontent.com/dperrymorrow/gulp-task-generator/master/gulp_generator_logo.png)
+
+A command line tool that builds your gulpfile to your exact needs by asking you a series of questions.
+
+## Supported Tasks
+
+- Jade
+- EJS
+- Less
+- Sass
+- Stylus
+- Autoprefix
+- Coffescript
+- Babel
+- Concatenation
+- Uglify
+- Sourcemaps
+
+## Installing:
 
  ```
- $ npm install gulp-generator -g
+ $ npm install gulp-task-generator -g
  ```
 
 now change directories to your project and run the setup
 
 ```
- $ gulp-generator
+ $ gulp-task-generator
 ```
 
-Gulp-Generator will now ask you a series of questions about your project and build your gulpfile.js accordingly.
+Gulp-Task-Generator will now ask you a series of questions about your project and build your gulpfile.js accordingly.
 
-```bash
-$ gulp-generator
-> Running Gulp-Generator in /Users/dperrymorrow/builds/generator-test
+```
+$ gulp-task-generator
+------------------------------- QUESTIONS -------------------------------
 ? You already have a Gulpfile.js. Overwrite? Yes
 ? Would you like to run CSS tasks? Yes
 ? Which CSS pre-processor would you like to use? less
@@ -44,44 +61,32 @@ $ gulp-generator
 ? Name of your concatenated js file? main.js
 ? Where are your .coffee source files? source/coffee
 ? Where do you want your compiled Javascript (generated) files? build/js
-
-Gulpfile.js has been created
-
-/Users/dperrymorrow/builds/generator-test/source/coffee created.
-/Users/dperrymorrow/builds/generator-test/build/js created.
-/Users/dperrymorrow/builds/generator-test/source/less created.
-/Users/dperrymorrow/builds/generator-test/build/css created.
-
+? Would you like to use a template engine for HTML? Yes
+? Which HTML template engine would you like to use? jade
+? Where are your .jade source files? source/jade
+? Where do you want your compiled HTML (generated) files? build/
+------------------------- CREATING DIRS & FILES -------------------------
+/source/coffee => created
+/build/js => created
+/source/less => created
+/build/css => created
+/source/jade => created
+/build/ => created
+gulpfile.js => created
+------------------------ INSTALLING DEPENDENCIES ------------------------
 > Installing the NPM packages based on your choices.
 
--generator-test@1.0.0 /Users/dperrymorrow/builds/generator-test
-├─┬ gulp@3.9.1
-│ └─┬ liftoff@2.3.0
-│   ├─┬ findup-sync@0.4.2
-│   │ ├─┬ micromatch@2.3.11
-│   │ │ └─┬ kind-of@3.0.4
-│   │ │   └── is-buffer@1.1.4
-│   │ └── resolve-dir@0.1.1
-│   ├─┬ fined@1.0.1
-│   │ └── lodash.isempty@4.3.1
-│   └── lodash.mapvalues@4.5.1
-├─┬ gulp-autoprefixer@3.1.0
-│ └─┬ autoprefixer@6.4.0
-│   └── caniuse-db@1.0.30000517
+\generator-test@1.0.0 /Users/dperrymorrow/builds/generator-test
+├── gulp@3.9.1
+├── gulp-autoprefixer@3.1.0
 ├── gulp-babel@6.1.2
 ├── gulp-clean-css@2.0.12
 ├── gulp-coffee@2.3.2
 ├── gulp-concat@2.6.0
-├─┬ gulp-jshint@2.0.1
-│ ├── lodash@4.14.1
-│ └─┬ rcloader@0.1.2
-│   └─┬ rcfinder@0.1.9
-│     └── lodash.clonedeep@4.4.1
+├── gulp-jade@1.1.0
+├── gulp-jshint@2.0.1
 ├── gulp-less@3.1.0
-├─┬ gulp-notify@2.2.0
-│ └─┬ node-notifier@4.6.0
-│   └─┬ cli-usage@0.1.2
-│     └── marked@0.3.6
+├── gulp-notify@2.2.0
 ├── gulp-plumber@1.1.0
 ├── gulp-rename@1.2.2
 ├── gulp-sourcemaps@1.6.0
@@ -89,14 +94,39 @@ Gulpfile.js has been created
 └── jshint@2.9.2
 
 > All NPM packages have been installed.
+To use your new Gulp tasks:
+$ npm install -g gulp
+$ gulp
 ```
 
 The packages needed to run your gulpfile have been added to your npm package.json file as dependencies, and have been installed via ``npm install``
 
+## Usage
+
+```bash
+$ npm install -g gulp
+$ gulp
+```
+
+## gulpfile.js
+
 The above choices would have resulted in the following ``gulpfile.js``
 
 ```javascript
+/*
+=================================================
+gulpfile.js created with Gulp-Task-Generator
+https://www.npmjs.com/package/gulp-task-generator
+
+To regenerate this file:
+$ cd {this dir}
+$ npm install -g gulp-task-generator
+$ gulp-task-generator
+=================================================
+*/
+
 "use strict";
+
 const gulp = require('gulp');
 const plumber = require('gulp-plumber');
 const rename = require('gulp-rename');
@@ -112,6 +142,7 @@ const uglify = require('gulp-uglify');
 const coffee = require('gulp-coffee');
 const babel = require('gulp-babel');
 
+const jade = require('gulp-jade');
 
 gulp.task('css', () => {
   gulp.src(['source/less/**/*.less'])
@@ -133,6 +164,7 @@ gulp.task('css', () => {
     .pipe(notify('css task finished'))
 });
 
+
 gulp.task('js', () => {
   gulp.src(['source/coffee/**/*.coffee'])
     .pipe(plumber({
@@ -153,16 +185,39 @@ gulp.task('js', () => {
     .pipe(notify('js task finished'))
 });
 
-gulp.task('default', ["js","css"], () => {
+gulp.task('html', () => {
+  gulp.src(['source/jade/**/*.jade'])
+    .pipe(plumber({
+      handleError: err => {
+        console.log(err);
+        this.emit('end');
+      }
+    }))
+    .pipe(jade())
+    .pipe(gulp.dest('build/'))
+});
+
+gulp.task('default', ["js","css","html"], () => {
   gulp.watch('source/coffee/**/*.coffee', ['js']);
   gulp.watch('source/less/**/*.less', ['css']);
+  gulp.watch('source/jade/**/*.jade', ['html']);
 });
 ```
 
-You can then invoke the tasks with ``gulp`` or run individual gulp tasks.
+You can then invoke the tasks with ``$ gulp`` or run individual gulp tasks.
 
 And, of course you can edit your gulpfile.js further for more customization, it is your gulpfile after all, Gulp-Generator just helps you build it.
 
+## Contributing
+
+- fork the repo
+- npm install
+
+To test, from a test directory,
+
+```bash
+node ../gulp-task-generator/bin/cli.js
+```
 
 
 
