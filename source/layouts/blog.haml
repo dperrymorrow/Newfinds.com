@@ -19,7 +19,6 @@
             %h2
               =current_article.data['intro']
               - if current_article.data['github']
-                %br
                 %a.github{href: current_article.data['github'], target: '_blank', title: "GitHub"} View on GitHub
 
         - if current_article.data['hero']

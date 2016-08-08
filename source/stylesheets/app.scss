@@ -87,8 +87,22 @@ h1 {
   nav {
     transition: all 0.2s;
     box-sizing: border-box;
-    height: 100%;;
+      // border-left: 1px solid $grayLightest;
     // opacity: 0.5;
+
+    // .face {
+    //   display: block;
+    //   text-align: center;
+    //   margin-top: $padding;
+
+    //   img {
+    //     border-radius: 50%;
+    //     max-width: 150px;
+    //     height: auto;
+    //     border: 5px solid white;
+    //     box-shadow: 2px 2px 2px 0px #efefef;
+    //   }
+    // }
 
     &:hover {
       // opacity: 1;
@@ -101,8 +115,7 @@ h1 {
     }
 
     &>ul {
-      padding: $padding*2 $padding $padding $padding;
-      border-left: 1px solid $grayLightest;
+      padding: $padding $padding $padding $padding;
     }
 
     li.active {
@@ -183,6 +196,10 @@ h1 {
         font-weight: normal;
         margin-top: 0;
         letter-spacing: -0.02em;
+
+        a {
+          white-space: nowrap;
+        }
       }
     }
 

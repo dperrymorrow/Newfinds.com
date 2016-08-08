@@ -15,7 +15,7 @@ $fontSize: 16px;
 $displayFont: "HelveticaNeue-Regular", "Helvetica Neue Regular", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 $bodyFont: 'Merriweather', serif;
 $padding: 25px;
-$breakPoint: 930px;
+$breakPoint: 1000px;
 
 @mixin body {
   font-family: $bodyFont;
