@@ -78,3 +78,10 @@
     }
   }
 }
+
+
+@media (max-width: $breakPoint) {
+  .item {
+    margin: 0 !important;
+  }
+}

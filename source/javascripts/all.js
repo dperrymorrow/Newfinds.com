@@ -43,3 +43,8 @@ var options = {
 
 new LuminousGallery(document.querySelectorAll('.lightbox-link'), options);
 
+document.querySelector('.hamburger').addEventListener("click", function( event ) {
+  var nav = document.querySelector('#side-nav');
+  nav.className = nav.className === 'open' ? '' : 'open';
+});
+

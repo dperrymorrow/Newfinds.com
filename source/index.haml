@@ -1,40 +1,41 @@
 ---
 title: Welcome to Middleman
 ---
-.container
-  .content
-    .main
-      .lead
-        .date Blog of David Morrow
-        %h1 Recent Posts
-        %h2
-          Posts are mostly solving a problem I had, new interesting technologies, or something I have built.
-          I hope someone finds them helpful.
+
+.lead
+  .date
+    -# Blog of David Morrow
+    %a.hamburger(href="#")
+
+  %h1 Recent Posts
+  %h2
+    Posts are mostly solving a problem I had, new interesting technologies, or something I have built.
+    I hope someone finds them helpful.
 
 
-      .blog-content
+.blog-content
 
-        .index-articles
-          .group
-            - articles_for_tag('promoted').each do |article|
-              %article.promoted
+  .index-articles
+    .group
+      - articles_for_tag('promoted').each do |article|
+        %article.promoted
 
-                - if article.data['thumb']
-                  = link_to article.url do
-                    = image_tag(article.data['thumb'])
+          - if article.data['thumb']
+            = link_to article.url do
+              = image_tag(article.data['thumb'])
 
-                %h1
-                  -# .date= article.date.strftime('%b %e %Y')
-                  = link_to article.title, article.url
-                  %small
-                    = article.data['intro']
+          %h1
+            -# .date= article.date.strftime('%b %e %Y')
+            = link_to article.title, article.url
+            %small
+              = article.data['intro']
 
 
-          - blog.articles[0..5].each do |article|
-            - unless article.tags.include? 'Promoted'
-              %article
-                %h1
-                  .date= human_time article.date
-                  = link_to article.title, article.url
-                  %small
-                    = article.data['intro']
+    - blog.articles[0..5].each do |article|
+      - unless article.tags.include? 'Promoted'
+        %article
+          %h1
+            .date= human_time article.date
+            = link_to article.title, article.url
+            %small
+              = article.data['intro']

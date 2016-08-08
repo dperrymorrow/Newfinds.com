@@ -149,10 +149,21 @@ h1 {
         font-size: 90%;
         // margin-left: $padding*2;
         line-height: 2em;
+        border-bottom: 1px solid $grayLightest;
+
+        .hamburger {
+          display: none;
+          float: right;
+          color: $grayDark;
+
+          &:after {
+            content:  "☰ Menu";
+          }
+        }
       }
 
       h1 {
-        border-top: 1px solid $grayLightest;
+        // border-top: 1px solid $grayLightest;
         // border: 1px solid green;
         // margin: 0;
         // font-weight: normal;
@@ -186,6 +197,7 @@ h1 {
         flex-direction: row;
         flex-wrap: wrap;
         margin-top: -$padding;
+        margin-bottom: $padding*3;
 
         .item {
           flex: 1 0px;
@@ -250,7 +262,7 @@ h1 {
             line-height: .78em;
             font-weight: 700;
             margin-top: -.22em;
-            color: #ffae4d;
+            color: $orange;
             letter-spacing: 0.1em;
             margin-left: -0.03em;
             text-align: left;
@@ -280,40 +292,92 @@ table {
   display: none;
 }
 
+// MEDIA QUERIES
+
 @media print {
-  body {
-    font-size: 12px;
-  }
-
-  .no-print {
-    display: none;
-  }
+  body { font-size: 12px; }
+  .no-print { display: none; }
 }
 
-@media (min-width: $desktop) {
+@media (min-width: 1250px) {
+  #side-nav { width: 300px; }
+  .main { width: 850px; }
+}
 
-  .nav {
-    width: 300px;
+
+@media (max-width: 1250px) {
+  #side-nav {
+    width: 250px !important;
+    font-size: 89%;
   }
-
+  .content {
+    width: 100%;
+  }
   .main {
-    width: 850px;
+    width: 100%;
+    padding-left: $padding !important;
+    padding-right: $padding !important;
 
-    // pre {
-    //   margin-left: -$padding*2;
-    //   margin-right: -$padding*2;
-
-    //   code {
-    //     padding: $padding*2 !important;
-    //   }
-    // }
+    .blog-content {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
   }
 }
 
+@media (max-width: $breakPoint) {
 
-@media (min-width: 600px) {
-  .facet_sidebar {
+  .hamburger { display: inline-block !important; }
+
+  .lead .date {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 2;
+    padding: 0 $padding;
+  }
+
+  #side-nav {
+    padding-top: $padding;
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    font-size: 100%;
+    height: 100%;
+    overflow: auto;
     display: none;
+    border: none !important;
+
+    ul {
+      border: none;
+    }
+
+    &.open {
+      background-color: white;
+      display: inline-block;
+    }
+  }
+
+  .content {
+    margin-top: $padding;
+  }
+
+  .lead {
+    h1 {
+      padding-top: $padding !important;
+      font-size: 180% !important;
+    }
+    h2 {
+     font-size: 80% !important;
+     padding-top: $padding/2 !important;
+     padding-bottom: 0 !important;
+    }
+  }
+  .item.hero img {
+    max-height: 300px !important;
   }
 }
 

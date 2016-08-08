@@ -10,7 +10,10 @@
 
       .main
         .lead
-          .date= current_article.date.strftime '%B %Y'
+          .date
+            = current_article.date.strftime '%B %Y'
+            %a.hamburger(href="#")
+
           %h1= current_article.title
 
           - if current_article.data['intro']

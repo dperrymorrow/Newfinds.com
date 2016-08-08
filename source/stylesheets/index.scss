@@ -23,7 +23,7 @@
 
     img {
       margin-right: $padding;
-      border: 1px solid $grayMedium;
+      border: 1px solid $grayLightest;
     }
 
     p {
@@ -31,6 +31,10 @@
     }
 
     &.promoted {
+      &:first-child {
+        padding-top: 0;
+      }
+
       h1 {
         flex: 1 0px;
         font-size: 180%;
@@ -64,3 +68,21 @@
   }
 }
 
+
+@media (max-width: $breakPoint) {
+  .index-articles article.promoted {
+    display: block ;
+
+    h1 {
+      small {
+        display: block !important;
+      }
+    }
+
+    img {
+      flex: none;
+      margin-bottom: $padding;
+      height: auto;
+    }
+  }
+}
