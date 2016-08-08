@@ -20,7 +20,6 @@
   },
   "homepage": "https://github.com/dperrymorrow/Newfinds.com#readme",
   "dependencies": {
-    "github-fork-ribbon-css": "^0.2.1",
     "luminous-lightbox": "^0.3.2",
     "normalize.css": "^4.2.0",
     "prismjs": "^1.5.1",

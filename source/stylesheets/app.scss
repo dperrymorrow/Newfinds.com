@@ -6,7 +6,6 @@
 //= require github_theme
 //= require index
 //= require resume
-//= require github-fork-ribbon-css/gh-fork-ribbon
 
 @import 'vars';
 
@@ -239,7 +238,9 @@ h1 {
 
           &.hero {
             margin-top: -$padding;
+            margin-bottom: 0;
             text-align: center;
+            border-bottom: 1px solid $grayLightest;
 
             img {
               max-width: 100%;
@@ -326,7 +327,6 @@ table {
 }
 
 @media (max-width: $breakPoint) {
-
   .hamburger { display: inline-block !important; }
 
   .lead .date {

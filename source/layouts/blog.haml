@@ -5,8 +5,6 @@
 
   .container
     .content
-      - if current_article.data['github']
-        %a.github-fork-ribbon.right-top{href: current_article.data['github'], target: '_blank', title: "Fork me on GitHub"} Fork me on GitHub
 
       .main
         .lead
@@ -14,10 +12,15 @@
             = current_article.date.strftime '%B %Y'
             %a.hamburger(href="#")
 
+
           %h1= current_article.title
 
           - if current_article.data['intro']
-            %h2=current_article.data['intro']
+            %h2
+              =current_article.data['intro']
+              - if current_article.data['github']
+                %br
+                %a.github{href: current_article.data['github'], target: '_blank', title: "GitHub"} View on GitHub
 
         - if current_article.data['hero']
           .gallery
@@ -38,6 +41,7 @@
                   .caption= item.caption
 
         .blog-content
+
           = yield
 
     = partial 'layouts/nav'
