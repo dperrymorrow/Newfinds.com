@@ -274,6 +274,15 @@ h1 {
       .blog-content {
         padding: 0 $padding*2;
 
+        blockquote {
+          p {
+            font-style: italic;
+
+            &:before { content: "“";}
+            &:after { content: "”";}
+          }
+        }
+
          >  p {
           &:first-child:first-letter {
             float: left;

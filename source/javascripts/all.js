@@ -2,6 +2,7 @@
 //= require prismjs/prism
 //= require prismjs/components/prism-less
 //# require prismjs/components/prism-bash
+//= require prismjs/components/prism-ruby
 //= require luminous-lightbox/dist/Luminous
 
 "use strict";
