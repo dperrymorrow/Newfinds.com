@@ -1,9 +1,12 @@
 {
-  "about": {
-    "date": "David Morrow",
-    "title": "About Me",
-    "intro": "Hi I’m Dave, a full stack Ruby On Rails developer who lives in beautiful Portland Oregon with my wife and two children.",
-    "tags": []
+  "async-await": {
+    "title": "Async Await",
+    "date": "2017-10-31",
+    "tags": [
+      "Javascript",
+      "Promoted"
+    ],
+    "intro": "is an exciting feature in Javascript that allows you to avoid promise chain hell."
   },
   "javascript-factory-pattern": {
     "title": "Javascript Factory Pattern",
@@ -81,5 +84,11 @@
     "date": "2012-05-01",
     "tags": "Ruby",
     "intro": "An easy way to create a Javascript bookmarklet from a JS file with Ruby variables interpolated into the bookmarklet."
+  },
+  "about": {
+    "date": "David Morrow",
+    "title": "About Me",
+    "intro": "Hi I’m Dave, a full stack Ruby On Rails developer who lives in beautiful Portland Oregon with my wife and two children.",
+    "tags": []
   }
 }
