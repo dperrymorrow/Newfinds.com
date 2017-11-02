@@ -14,15 +14,6 @@
     ],
     "intro": "Need Objects that keep state? For a long time I thought the only option was classes."
   },
-  "protected-methods-in-javascript": {
-    "title": "Protected Methods In Javascript",
-    "date": "2016-07-18",
-    "tags": [
-      "Javascript",
-      "Promoted"
-    ],
-    "intro": "Easily add private methods to your Javascript Module or Class, while also avoiding scope issues on callbacks."
-  },
   "es6-in-the-browser": {
     "title": "ES6 in the Browser",
     "date": "2016-07-18",
@@ -31,6 +22,15 @@
       "Promoted"
     ],
     "intro": "You can currently use most ES6 in all evergreen browsers. Here are some core features of ES6."
+  },
+  "protected-methods-in-javascript": {
+    "title": "Protected Methods In Javascript",
+    "date": "2016-07-18",
+    "tags": [
+      "Javascript",
+      "Promoted"
+    ],
+    "intro": "Easily add private methods to your Javascript Module or Class, while also avoiding scope issues on callbacks."
   },
   "blissfull-javascript": {
     "title": "Bliss.js",
