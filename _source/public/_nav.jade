@@ -1,0 +1,21 @@
+
+
+nav#side-nav
+  ul
+    li
+      a(href="/") Root
+    li(class=current.source == 'about' ? 'active' : '')
+      a(href="/posts/about") About
+    
+    for tag in categories
+      li
+        h4= tag
+        ul
+          for article, slug in public.posts._data
+            if (article.tags.includes(tag))
+              li(class=current.source == slug ? 'active' : '')
+                a(href="/posts/#{ slug }")= article.title
+        
+
+
+  

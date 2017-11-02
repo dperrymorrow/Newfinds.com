@@ -2,9 +2,10 @@
   "name": "newfinds",
   "version": "1.0.0",
   "description": "newfinds website",
-  "main": "source/javascripts/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "npm run sort && harp server _source --port 3000",
+    "build": "npm run sort && harp compile _source docs",
+    "sort": "node _source/scripts/sort.js"
   },
   "repository": {
     "type": "git",
@@ -19,7 +20,9 @@
     "url": "https://github.com/dperrymorrow/Newfinds.com/issues"
   },
   "homepage": "https://github.com/dperrymorrow/Newfinds.com#readme",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
+    "harp": "^0.24.1",
     "luminous-lightbox": "^0.3.2",
     "normalize.css": "^4.2.0",
     "prismjs": "^1.5.1",

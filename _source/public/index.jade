@@ -1,0 +1,29 @@
+.lead
+  .date
+    | David Morrow
+    a.hamburger(href="#")
+
+  h1 Recent Posts
+  h2 Posts are mostly solving a problem I had, new interesting technologies, or something I have built. I hope someone finds them helpful.
+
+
+.blog-content
+  .index-articles
+    .group
+      for article, slug in public.posts._data
+        if (article.tags.includes('Promoted'))
+          article.promoted
+
+            //- if article.data['thumb']
+            //-   = link_to article.url do
+            //-     = image_tag(article.data['thumb'])
+
+            h1
+              //- .date= article.date
+              a(href="/posts/#{ slug }")
+                = article.title
+                | &nbsp;
+              small
+                = article.intro
+              
+      

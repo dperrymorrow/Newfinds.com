@@ -1,0 +1,110 @@
+<!DOCTYPE html><html lang="en"><head><title> Javascript Patterns</title><meta name="description" content="undefined"><meta name="viewport" content="width=device-width, user-scalable=no"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,700"><link rel="stylesheet" href="/styles/app.css"><script>//- (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+//- (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+//- m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+//- })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+//- ga('create', 'UA-12244949-1', 'auto');
+//- ga('send', 'pageview');
+</script></head><body><div class="container"><div class="content"><div class="main"><div class="lead"><div class="date">August&nbsp;2012<a href="#" class="hamburger"></a></div><h1> Javascript Patterns</h1><h2> Modules, “classes”, &amp; other helpful habits for more organized Javascript.&nbsp;</h2></div><div class="blog-content"><p>So you write JavaScript. That’s pretty much a given for today’s modern web apps. Unfortunately, JavaScript doesn’t always get the organization it deserves and ends up being a procedural mess of jQuery on ready statements.</p>
+<p>In this post, I’m going to show you two of my favorite patterns for keeping JavaScript well organized. But before I do, let’s go over a few prerequisites.</p>
+<h3>Namespace Your Code</h3><p>One of the worst and most common JavaScript mistakes is assigning variable onto the global namespace (aka ‘window’) if you’re running JavaScript in a browser. This can lead to conflicting functions between you and other developers. And is just, well, messy. The best way to avoid to do this is namespacing as shown in this example:</p>
+<pre><code class="language-javascript">window.NR = window.NR || {};
+window.NR.myFunction = function () {
+  // your code...
+};
+</code></pre>
+<p>And avoid this example:</p>
+<pre><code class="language-javascript">function myFunction () {   // your code... };
+</code></pre>
+<p>###Use Strict Mode
+Even inside a name spaced function, there can still be a problem. You can accidentally assign variables to the global namespace. To prevent this, prefix all variable declarations with var or this.</p>
+<p>Alternatively, you can use strict mode. As the name implies, strict mode parses your JavaScript in a much stricter format. For example, if you attempt to set a variable that is not yet defined, it will through an error instead of assigning to global / window.</p>
+<p>###Lint your JavaScript
+JSLint evaluates your JavaScript against Douglas Crockford’s coding suggestions. There are plug-ins for most of the popular editors to evaluate code including Sublime Text, Textmate and Vim.</p>
+<p>The main benefits of using JSLint are:</p>
+<ul>
+<li>Your code is checked for errors before running, saving you time and debugging effort.</li>
+<li>Sharing linted code in a team unifies coding styles, making code more readable and consistent.</li>
+</ul>
+<p>Even if you disagree with some of Douglas’s assertions about how your code should be formatted, you should still use JSLint. You can opt out of the rules with preference setting or comments on the top of your JavaScript file.</p>
+<h3>The Module</h3><p>The module pattern is great if you only need one, such as in a navigation system, and you want to be able to access the object from any scope. By convention, a module should be camelCased with a lower case first letterer.</p>
+<p>There are many benefits and drawbacks to using the module pattern:</p>
+<p><strong>Pros:</strong></p>
+<ul>
+<li>There’s no need to instantiate, just begin calling methods on it.</li>
+<li>It’s accessible from anywhere. There’s no need to retain a handle to your instance.</li>
+<li>It keeps state and variable values.</li>
+</ul>
+<p><strong>Cons:</strong></p>
+<ul>
+<li>You can only have one. Don’t make ten of these for each type of item on the DOM or a similar situation.</li>
+<li>You don’t have a constructor function, so it won’t be fired automatically like with an instance.</li>
+<li>If you need initialization on the module, you need to call it manually the first time it’s used.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="language-javascript">(function () {
+  &quot;use strict&quot;;
+  window.NR = window.NR || {};
+  window.NR.myModule = {
+    myVariable: &quot;foo&quot;,
+
+    initialize: function () {
+      // your initialization code here
+    },
+
+    anotherMethod: function () {
+      this.myVariable = &quot;foobar&quot;;
+    }
+  };
+}());
+</code></pre>
+<p><strong>Usage:</strong></p>
+<pre><code class="language-javascript">NR.myModule.initialize();
+NR.myModule.anotherMethod();
+console.log(NR.myModule.myVariable);
+// outputs
+// &quot;foobar&quot;
+</code></pre>
+<h3>Classes</h3><p>Some folks will argue that your should never use ‘new’ when working with JavaScript as there are no true classes in the language. However, I find this pattern extremely helpful for a number of reasons described below. Also, many popular frameworks such as Backbone use class instantiation / extension patterns. Naming conventions for classes is CamelCase with an upper case first letter.</p>
+<p><strong>Pros</strong></p>
+<ul>
+<li>It’s great for when you have many of an item and each needs its own state.</li>
+<li>It’s a familiar OOP pattern / work flow for many developers.</li>
+<li>It has a constructor function that’s immediately fired on instantiation.</li>
+</ul>
+<p><strong>Cons</strong></p>
+<ul>
+<li>You have to remember to instantiate before you can use it. If you don’t, it will cause errors.</li>
+<li>You have to keep a handle to the instance that’s returned from the constructor.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="language-javascript">window.NR = window.NR || {};
+window.NR.MyClass = (function () {
+  &quot;use strict&quot;;
+
+  function MyClass(val) {
+    this.instanceVar = MyClass.staticVar + val;
+  }
+
+  MyClass.staticVar = &quot;prefix-&quot;;
+  var instanceVar = &quot;&quot;;
+
+  MyClass.prototype.exampleFunction = function () {
+    alert(&#39;i am an additional function&#39;);
+  };
+
+  return MyClass;
+}());
+</code></pre>
+<p><strong>Usage:</strong></p>
+<pre><code class="language-javascript">var instance1 = new NR.MyClass(&#39;class 1&#39;);
+console.log(instance1.instanceVar);
+
+NR.MyClass.staticVar = &#39;PREFIX-&#39;;
+
+var instance2 = new NR.MyClass(&#39;class 2&#39;);
+console.log(instance2.instanceVar);
+
+// Outputs
+// &quot;prefix-class 1&quot;
+// &quot;PREFIX-class 2&quot;
+</code></pre></div></div></div><nav id="side-nav"><ul><li><a href="/">Root</a></li><li><a href="/posts/about">About</a></li><li><h4>Projects</h4><ul><li><a href="/posts/blissfull-javascript">Bliss.js</a></li></ul></li><li><h4>Javascript</h4><ul><li><a href="/posts/javascript-factory-pattern">Javascript Factory Pattern</a></li><li><a href="/posts/protected-methods-in-javascript">Protected Methods In Javascript</a></li><li><a href="/posts/es6-in-the-browser">ES6 in the Browser</a></li><li><a href="/posts/before-and-after-print-hooks">Before &amp; After Hooks for Printing</a></li><li><a href="/posts/javascript-inheritance">Javascript Inheritance</a></li><li><a href="/posts/backbone-singleton">Backbone.js Singleton</a></li><li class="active"><a href="/posts/javascript-patterns"> Javascript Patterns</a></li></ul></li><li><h4>Ruby</h4><ul><li><a href="/posts/dynamic-bookmarks-in-ruby">Create Dynamic Bookmarklets in Ruby</a></li></ul></li><li><h4>Other</h4><ul><li><a href="/posts/less-tips-and-tricks">Less Tips &amp; Tricks</a></li></ul></li></ul></nav></div><script src="/scripts/app.js"></script><script src="//cdn.jsdelivr.net/combine/npm/prismjs@1.8.3,npm/prismjs@1.8.3/components/prism-javascript.min.js,npm/prismjs@1.8.3/components/prism-less.min.js,npm/prismjs@1.8.3/components/prism-ruby.min.js"></script></body></html>

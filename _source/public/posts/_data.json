@@ -1,0 +1,85 @@
+{
+  "about": {
+    "date": "David Morrow",
+    "title": "About Me",
+    "intro": "Hi I’m Dave, a full stack Ruby On Rails developer who lives in beautiful Portland Oregon with my wife and two children.",
+    "tags": []
+  },
+  "javascript-factory-pattern": {
+    "title": "Javascript Factory Pattern",
+    "date": "2016-12-02",
+    "tags": [
+      "Javascript",
+      "Promoted"
+    ],
+    "intro": "Need Objects that keep state? For a long time I thought the only option was classes."
+  },
+  "protected-methods-in-javascript": {
+    "title": "Protected Methods In Javascript",
+    "date": "2016-07-18",
+    "tags": [
+      "Javascript",
+      "Promoted"
+    ],
+    "intro": "Easily add private methods to your Javascript Module or Class, while also avoiding scope issues on callbacks."
+  },
+  "es6-in-the-browser": {
+    "title": "ES6 in the Browser",
+    "date": "2016-07-18",
+    "tags": [
+      "Javascript",
+      "Promoted"
+    ],
+    "intro": "You can currently use most ES6 in all evergreen browsers. Here are some core features of ES6."
+  },
+  "blissfull-javascript": {
+    "title": "Bliss.js",
+    "date": "2015-12-02",
+    "tags": [
+      "Projects",
+      "Promoted"
+    ],
+    "thumb": " /images/projects/bliss_thumb.png",
+    "intro": " I’ve been contributing to, and recently been made a collaborator of Bliss.js, a modern approach to cross browser Javascript.",
+    "github": " https://github.com/LeaVerou/bliss",
+    "hero": {
+      "img": "/images/projects/blissjs.png"
+    }
+  },
+  "less-tips-and-tricks": {
+    "title": "Less Tips & Tricks",
+    "intro": "A few tips and tricks you may not know about with your favorite CSS pre-processor LESS.",
+    "tags": "Other",
+    "date": "2015-05-01"
+  },
+  "before-and-after-print-hooks": {
+    "title": "Before & After Hooks for Printing",
+    "date": "2014-05-01",
+    "intro": "Here is how to run Javascript hooks before and after your page is printed.",
+    "tags": "Javascript"
+  },
+  "javascript-inheritance": {
+    "date": "2013-02-01",
+    "title": "Javascript Inheritance",
+    "intro": "So you have a class in Javascript and you want it to inherit from another class right?",
+    "tags": "Javascript"
+  },
+  "backbone-singleton": {
+    "title": "Backbone.js Singleton",
+    "date": "2012-10-01",
+    "intro": "Convert any Backbone.js class into a singleton by adding to it’s inheritance.",
+    "tags": "Javascript"
+  },
+  "javascript-patterns": {
+    "title": " Javascript Patterns",
+    "date": "2012-09-01",
+    "tags": "Javascript",
+    "intro": " Modules, “classes”, & other helpful habits for more organized Javascript."
+  },
+  "dynamic-bookmarks-in-ruby": {
+    "title": "Create Dynamic Bookmarklets in Ruby",
+    "date": "2012-05-01",
+    "tags": "Ruby",
+    "intro": "An easy way to create a Javascript bookmarklet from a JS file with Ruby variables interpolated into the bookmarklet."
+  }
+}

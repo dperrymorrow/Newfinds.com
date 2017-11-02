@@ -1,0 +1,25 @@
+{
+  "globals": {
+    "title": "David Morrow",
+    "categories": [
+      "Projects",
+      "Javascript",
+      "Ruby",
+      "Other"
+    ],
+    "months": [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"
+    ]
+  }
+}
