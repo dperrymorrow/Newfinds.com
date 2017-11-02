@@ -1,10 +1,4 @@
 {
-  "about": {
-    "date": "David Morrow",
-    "title": "About Me",
-    "intro": "Hi I’m Dave, a full stack Ruby On Rails developer who lives in beautiful Portland Oregon with my wife and two children.",
-    "tags": []
-  },
   "javascript-factory-pattern": {
     "title": "Javascript Factory Pattern",
     "date": "2016-12-02",
@@ -14,15 +8,6 @@
     ],
     "intro": "Need Objects that keep state? For a long time I thought the only option was classes."
   },
-  "es6-in-the-browser": {
-    "title": "ES6 in the Browser",
-    "date": "2016-07-18",
-    "tags": [
-      "Javascript",
-      "Promoted"
-    ],
-    "intro": "You can currently use most ES6 in all evergreen browsers. Here are some core features of ES6."
-  },
   "protected-methods-in-javascript": {
     "title": "Protected Methods In Javascript",
     "date": "2016-07-18",
@@ -31,6 +16,15 @@
       "Promoted"
     ],
     "intro": "Easily add private methods to your Javascript Module or Class, while also avoiding scope issues on callbacks."
+  },
+  "es6-in-the-browser": {
+    "title": "ES6 in the Browser",
+    "date": "2016-07-18",
+    "tags": [
+      "Javascript",
+      "Promoted"
+    ],
+    "intro": "You can currently use most ES6 in all evergreen browsers. Here are some core features of ES6."
   },
   "blissfull-javascript": {
     "title": "Bliss.js",
@@ -81,5 +75,11 @@
     "date": "2012-05-01",
     "tags": "Ruby",
     "intro": "An easy way to create a Javascript bookmarklet from a JS file with Ruby variables interpolated into the bookmarklet."
+  },
+  "about": {
+    "date": "David Morrow",
+    "title": "About Me",
+    "intro": "Hi I’m Dave, a full stack Ruby On Rails developer who lives in beautiful Portland Oregon with my wife and two children.",
+    "tags": []
   }
 }
