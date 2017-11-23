@@ -9,7 +9,7 @@ Take for example a fetch request.
 
 ```javascript
 function getData() {
-  return fetch("http://newfinds.com", { method: "POST" })
+  return fetch("http://newfinds.com", { method: "POST" }) --
     .then(response => {
       return response.json();
     })
@@ -46,6 +46,13 @@ async function functionName() {
   return await something();
 }
 
+// function defined in an Object
+{
+  async doThing() {
+    return await soemthing();
+  }
+}
+
 // function as a parameter
 doThing(async () => {
   return await something();
@@ -55,6 +62,9 @@ doThing(async () => {
 const functionName = async () => {
   return await soemthing();
 };
+
+// or a one liner
+const functionName = async () => await soemthing();
 ```
 
 Async functions __ALWAYS__ return a Promise. Even if you are returning something that does not look like a promise it will be wrapped in a `Promise.resolve()`.

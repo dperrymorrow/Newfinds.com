@@ -22,7 +22,7 @@ export default {
   name: "UserEdit",
 
   async created() {
-^   this.user = await MethodToFetchUser(this.$route.params.userId);
+   this.user = await MethodToFetchUser(this.$route.params.userId); --
   },
 
   data() {
@@ -44,7 +44,7 @@ export default new VueRouter({
     {
       component: UserEdit,
       path: "/user/:userId/edit",
-^     props: true,
+      props: true, --
     },
   ],
 });
@@ -57,13 +57,13 @@ export default {
   name: "UserEdit",
 
   props: {
-^   userId: {
+    userId: { --
       required: true,
     },
   },
 
   async created() {
-^   this.user = await MethodToFetchUser(this.userId);
+    this.user = await MethodToFetchUser(this.userId); --
   },
 
   data() {

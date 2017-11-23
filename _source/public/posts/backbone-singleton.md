@@ -5,7 +5,7 @@ Ever wanna have a backbone singleton class? Allowing you to access a classes ins
 
 ```javascript
 Backbone.Singleton = {
-  getInstance: function () {
+  getInstance: function () { --
     if (this._instance === undefined) {
       this._instance = new this();
     }

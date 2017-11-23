@@ -17,7 +17,7 @@ This works fine, but there is no particular reason to expose the callback method
       // some public method
     },
 
-    callbackMethod() {
+    callbackMethod() { --
       console.log('callback');
     }
   };
@@ -36,7 +36,7 @@ This protects the `callbackMethod` and also simplifies scope in the process.
     publicMethod() {
       // can now call the method without binding scope.
       document.getElementById("elId")
-        .addEventListener('click', _protectedMethod);
+        .addEventListener('click', _protectedMethod); --
     },
 
     anotherPublicMethod() {
@@ -46,7 +46,7 @@ This protects the `callbackMethod` and also simplifies scope in the process.
 
   // this method can be called from within the anonymous function,
   // but not otherwise accessible.
-  function _protectedMethod() {
+  function _protectedMethod() { --
     console.log('privateMethod');
   }
 }());
@@ -58,8 +58,8 @@ So if you were to try to call the method from outside the anonymous function.
 myModule.publicMethod();
 myModule.anotherPublicMethod();
 
-myModule.callbackMethod() // undefined
-callbackMethod() // undefined
+myModule._protectedMethod() --
+// undefined
 ```
 
 ### How would this look in Node?

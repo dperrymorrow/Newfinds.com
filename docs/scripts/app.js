@@ -12,9 +12,9 @@ Array.from(document.querySelectorAll("pre")).forEach(function(block) {
   block.innerHTML = block.innerHTML
     .split("\n")
     .map(function(line, index) {
-      if (line.startsWith("^")) {
+      if (line.endsWith("--")) {
         lines.push(index + 1);
-        line = line.replace("^", "  ");
+        line = line.replace("--", "");
       }
       return line;
     })

@@ -8,7 +8,7 @@ In this post, I’m going to show you two of my favorite patterns for keeping Ja
 One of the worst and most common JavaScript mistakes is assigning variable onto the global namespace (aka ‘window’) if you’re running JavaScript in a browser. This can lead to conflicting functions between you and other developers. And is just, well, messy. The best way to avoid to do this is namespacing as shown in this example:
 
 ```javascript
-window.NR = window.NR || {};
+window.NR = window.NR || {}; --
 window.NR.myFunction = function () {
   // your code...
 };
@@ -20,12 +20,12 @@ And avoid this example:
 function myFunction () {   // your code... };
 ```
 
-###Use Strict Mode
+### Use Strict Mode
 Even inside a name spaced function, there can still be a problem. You can accidentally assign variables to the global namespace. To prevent this, prefix all variable declarations with var or this.
 
 Alternatively, you can use strict mode. As the name implies, strict mode parses your JavaScript in a much stricter format. For example, if you attempt to set a variable that is not yet defined, it will through an error instead of assigning to global / window.
 
-###Lint your JavaScript
+### Lint your JavaScript
 JSLint evaluates your JavaScript against Douglas Crockford’s coding suggestions. There are plug-ins for most of the popular editors to evaluate code including Sublime Text, Textmate and Vim.
 
 The main benefits of using JSLint are:

@@ -14,11 +14,11 @@ export default {
   },
 
   mutations: {
-    setUsers(state, users) {
+   setUsers(state, users) { --
       state.users = users;
     },
 
-    setIsLoading(state, loading) {
+   setIsLoading(state, loading) { --
       state.isLoading = loading;
     },
   },
@@ -60,7 +60,7 @@ const buildMutations = (state = {}, addOns = {}) => {
 };
 
 export default {
-  extend(base) {
+ extend(base) { --
     const module = Object.assign({}, base);
     module.namespaced = true;
     module.mutations = buildMutations(base.state, base.mutations);
@@ -76,7 +76,7 @@ __And then using the base module:__
 
 import Base from "./baseModule";
 
-export default Base.extend({
+export default Base.extend({ --
   state: {
     users: [],
     isLoading: false,

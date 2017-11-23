@@ -86,7 +86,6 @@ h1 {
   flex-wrap: wrap;
   align-items: stretch;
   height: 100%;
-  overflow: auto;
 
   nav {
     transition: all 0.2s;
@@ -122,6 +121,7 @@ h1 {
       list-style: none;
       padding: 0;
       margin: 0;
+      margin-bottom: 0.02em;
     }
 
     & > ul {
@@ -144,6 +144,7 @@ h1 {
       border-bottom: $grayDark;
       color: $grayMedium;
       padding: $padding/8 0;
+      line-height: 1.2em;
 
       &:hover {
         color: $red;
@@ -157,6 +158,8 @@ h1 {
     text-align: center;
     padding: 0 0 $padding*2 0;
     position: relative;
+    height: 100%;
+    overflow-y: auto;
 
     hr {
       border-bottom: none;

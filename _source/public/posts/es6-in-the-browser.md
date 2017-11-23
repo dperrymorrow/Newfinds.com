@@ -65,7 +65,7 @@ const PERSON = {
   name: 'Dave'
 };
 
-PERSON.name = "Mike";
+PERSON.name = "Mike"; --
 PERSON.hobby = 'bonsai';
 
 console.log(PERSON) // Object {name: "Mike", hobby: "bonsai"}
@@ -77,23 +77,19 @@ console.log(PERSON) // Object {name: "Mike", hobby: "bonsai"}
 
 ### Arrow Functions
 
-> !! As of writing this Safari does not support arrow functions
-
-[Browser Support](http://caniuse.com/#search=arrow%20functions)
-
 Allows you to use shorthand for anonymous functions while retaining the current scope. Extremely useful for callback functions.
 
 ```javascript
 // using arrow functions
-var lengths = ["Larry", "Moe", "Curly"].map( s => s.length );
+const lengths = ["Larry", "Moe", "Curly"].map(s => s.length);
 ```
 
-Notice that I did not have to ``return s.length`` if there are no brackets around the arrow function _its a one liner_ then it automatically returns the value.
+Notice that I did not have to `return s.length` if there are no brackets around the arrow function _its a one liner_ then it automatically returns the value.
 
 Also if there is more than one parameter, then the parens may not be omitted.
 
 ```javascript
-var sum = [1, 2, 3].reduce((a, b) => a + b);  // 6
+const sum = [1, 2, 3].reduce((a, b) => a + b);  // 6
 ```
 
 If there are no parameters, then empty ``()`` must be used.
@@ -119,15 +115,15 @@ var sum = [1, 2, 3].reduce((a, b) => {
 The scope of the arrow function is bound to the current scope. Prior to ES6 you would have to bind the function.
 
 ```javascript
-function Bank(){
+function Bank() {
   this.money = 0;
 
   setInterval(() => {
-    this.money++;
+    this.money ++;
   }, 1000);
 }
 
-var branch = new Bank();
+const branch = Bank();
 ```
 
 [➜ Read more on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)

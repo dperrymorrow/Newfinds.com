@@ -14,11 +14,11 @@ const dog = (name) => {
   };
 }
 
-let spot = dog('spot');
+let spot = dog('spot'); --
 spot.speak();
 // my name is spot i am a dog
 
-let rufus = dog('rufus');
+let rufus = dog('rufus'); --
 rufus.speak();
 // my name is rufus i am a dog
 ```
