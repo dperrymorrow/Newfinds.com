@@ -16,7 +16,7 @@ Backbone.Singleton = {
 
 ### Example with a Backbone.Router
 
-Underscore _(what Backbone is built on top of)_ allows you to ```_.extend``` multiple classes, so just add the singleton to your class's inheritance.
+Underscore _(what Backbone is built on top of)_ allows you to `_.extend` multiple classes, so just add the singleton to your class's inheritance.
 
 ```javascript
 TestRouter = function(){};

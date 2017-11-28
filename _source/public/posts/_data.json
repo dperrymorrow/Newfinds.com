@@ -1,7 +1,14 @@
 {
+  "about": {
+    "date": "David Morrow",
+    "title": "About Me",
+    "intro": "Hi I’m Dave, a full stack web developer who leans to the front-end. I live in beautiful Portland Oregon with my wife and two children.",
+    "tags": []
+  },
   "vuex-module-boilerplate": {
     "title": "Vuex Module Boilerplate",
     "date": "2017-11-11",
+    "thumb": "vue.svg",
     "tags": [
       "Promoted",
       "Vue"
@@ -11,8 +18,9 @@
   "async-await": {
     "title": "Async Await",
     "date": "2017-10-31",
+    "thumb": "es6.svg",
     "tags": [
-      "Javascript",
+      "ES6",
       "Promoted"
     ],
     "intro": "is an exciting feature in Javascript that allows you to avoid promise chain hell."
@@ -20,6 +28,7 @@
   "vue-route-params": {
     "title": "Vue Route Parameters",
     "date": "2017-10-11",
+    "thumb": "vue.svg",
     "tags": [
       "Promoted",
       "Vue"
@@ -29,6 +38,7 @@
   "javascript-factory-pattern": {
     "title": "Javascript Factory Pattern",
     "date": "2016-12-02",
+    "thumb": "js-logo.svg",
     "tags": [
       "Javascript",
       "Promoted"
@@ -38,8 +48,9 @@
   "es6-in-the-browser": {
     "title": "ES6 in the Browser",
     "date": "2016-07-18",
+    "thumb": "es6.svg",
     "tags": [
-      "Javascript",
+      "ES6",
       "Promoted"
     ],
     "intro": "You can currently use most ES6 in all evergreen browsers. Here are some core features of ES6."
@@ -47,6 +58,7 @@
   "protected-methods-in-javascript": {
     "title": "Protected Methods In Javascript",
     "date": "2016-07-18",
+    "thumb": "js-logo.svg",
     "tags": [
       "Javascript",
       "Promoted"
@@ -57,14 +69,13 @@
     "title": "Bliss.js",
     "date": "2015-12-02",
     "tags": [
-      "Projects",
-      "Promoted"
+      "Projects"
     ],
-    "thumb": " /images/projects/bliss_thumb.png",
-    "intro": " I’ve been contributing to, and recently been made a collaborator of Bliss.js, a modern approach to cross browser Javascript.",
+    "thumb": "bliss_thumb.png",
+    "intro": "I’ve been contributing to, and recently been made a collaborator of Bliss.js, a modern approach to cross browser Javascript.",
     "github": " https://github.com/LeaVerou/bliss",
     "hero": {
-      "img": "/images/projects/blissjs.png"
+      "img": "projects/blissjs.png"
     }
   },
   "less-tips-and-tricks": {
@@ -102,11 +113,5 @@
     "date": "2012-05-01",
     "tags": "Ruby",
     "intro": "An easy way to create a Javascript bookmarklet from a JS file with Ruby variables interpolated into the bookmarklet."
-  },
-  "about": {
-    "date": "David Morrow",
-    "title": "About Me",
-    "intro": "Hi I’m Dave, a full stack web developer who leans to the front-end. I live in beautiful Portland Oregon with my wife and two children.",
-    "tags": []
   }
 }

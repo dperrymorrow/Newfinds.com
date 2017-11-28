@@ -13,33 +13,31 @@ However, IE only has this feature after version 10. Unfortunately I needed to su
 | Basic support | 6.0               | 9      | 10                | 12.1  | 5.1    |
 
 
-IE has ``onbeforeprint`` and ``onafterprint`` callbacks, I was able to use these if the ``matchMedia`` method was unavailable.
+IE has `onbeforeprint` and `onafterprint` callbacks, I was able to use these if the `matchMedia` method was unavailable.
 
 Here was my final solution.
 
 ```javascript
-(function() {
-  var beforePrint = function () {
-    console.log('Functionality to run before printing.');
-  };
-  var afterPrint = function () {
-    console.log('Functionality to run after printing');
-  };
+var beforePrint = function () {
+  console.log('Functionality to run before printing.');
+};
+var afterPrint = function () {
+  console.log('Functionality to run after printing');
+};
 
-  // check and see if the method exists on window
-  if (window.matchMedia) {
-    var mediaQueryList = window.matchMedia('print');
-    mediaQueryList.addListener(function (mql) {
-      if (mql.matches) {
-        beforePrint();
-      } else {
-        afterPrint();
-      }
-    });
-  }
+// check and see if the method exists on window
+if (window.matchMedia) {
+  var mediaQueryList = window.matchMedia('print');
+  mediaQueryList.addListener(function (mql) {
+    if (mql.matches) {
+      beforePrint();
+    } else {
+      afterPrint();
+    }
+  });
+}
 
-  // for IE
-  window.onbeforeprint = beforePrint;
-  window.onafterprint = afterPrint;
-}());
+// for IE
+window.onbeforeprint = beforePrint;
+window.onafterprint = afterPrint;
 ```

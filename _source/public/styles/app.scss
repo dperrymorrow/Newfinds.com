@@ -1,6 +1,12 @@
 @import "../../../node_modules/normalize.css/normalize";
 @import "../../../node_modules/typebase.css/typebase";
 @import "../../../node_modules/luminous-lightbox/dist/luminous-basic";
+
+// @import "https://fonts.googleapis.com/css?family=Roboto+Slab:700";
+// @import "https://fonts.googleapis.com/css?family=Merriweather:400, 700";
+
+@import url("https://fonts.googleapis.com/css?family=Merriweather|Roboto+Slab:700");
+
 @import "syntax";
 @import "github_theme";
 @import "index";
@@ -121,7 +127,7 @@ h1 {
       list-style: none;
       padding: 0;
       margin: 0;
-      margin-bottom: 0.02em;
+      margin-bottom: 0.2em;
     }
 
     & > ul {
@@ -166,6 +172,10 @@ h1 {
       border-top: 1px solid $grayLightest;
     }
 
+    .btn {
+      margin-left: $padding;
+    }
+
     .lead {
       margin-bottom: $padding*2;
       border-bottom: 1px solid $grayLightest;
@@ -174,6 +184,9 @@ h1 {
       .date {
         font-size: 90%;
         // margin-left: $padding*2;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         line-height: 2em;
         border-bottom: 1px solid $grayLightest;
 
@@ -189,6 +202,18 @@ h1 {
 
           &:after {
             content: "☰";
+          }
+        }
+        .github-button {
+          // float: right;
+          font-size: 0.7em;
+          color: $grayDark;
+          display: flex;
+          align-items: center;
+
+          img {
+            margin-right: $padding/3;
+            height: 20px;
           }
         }
       }
@@ -309,6 +334,7 @@ h1 {
 
         > p {
           &:first-child:first-letter {
+            font-family: $displayFont;
             float: left;
             font-size: 4.9em;
             line-height: 0.78em;
@@ -387,6 +413,10 @@ table {
 @media (max-width: $breakPoint) {
   .hamburger {
     display: inline-block !important;
+  }
+
+  .github-button label {
+    display: none !important;
   }
 
   .lead .date {

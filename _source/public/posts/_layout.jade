@@ -5,9 +5,6 @@ html(lang="en")
     
     meta(name="description" content="#{ intro }")  
     meta(name="viewport" content="width=device-width, user-scalable=no")
-    
-    link(rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,700")
-    //- link(rel="stylesheet" href="/styles/prism.css") 
     link(rel="stylesheet" href="/styles/app.css")  
     
     script(async src="https://www.googletagmanager.com/gtag/js?id=UA-12244949-1")
@@ -22,29 +19,33 @@ html(lang="en")
     .container
       .content
         .main
-          
-          
+            
           .lead
             .date
-              if (isNaN(new Date(date)))
-                = date
-              else
+              if (date)
                 = months[new Date(date).getMonth()]
                 | &nbsp;
                 = new Date(date).getFullYear()
-                a.hamburger(href="#")
-
-            h1= title
-            h2
-              = intro
-              | &nbsp;
+                
+                  
               if github
-                a.github(href=github, target='_blank', title="GitHub") View on GitHub
+                a.github-button(
+                  target="_blank", 
+                  href=github,
+                  aria-label="Fork on GitHub") 
+                  img(src="/images/github.svg")
+                  label View On Github
+
+              a.hamburger(href="#")
+              
+            h1= title
+            h2= intro                
+            
               
           if hero
             .gallery
               .item.hero
-                img(src=hero.img)
+                img(src="/images/#{hero.img}")
                 if hero.caption
                   .caption= hero.caption
         
@@ -54,4 +55,4 @@ html(lang="en")
       != partial("../_nav")
     
     script(src="/scripts/app.js")
-    script(src="/scripts/prism.js")
+    script(src="/scripts/prism.js")  

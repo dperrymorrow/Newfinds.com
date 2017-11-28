@@ -4,9 +4,10 @@
       if (article.tags.includes('Promoted'))
         article.promoted
 
-          //- if article.data['thumb']
-          //-   = link_to article.url do
-          //-     = image_tag(article.data['thumb'])
+          if article.thumb
+            a(href="/posts/#{ slug }")
+              img(src="/images/#{ article.thumb }")
+          
 
           h1
             //- .date= article.date

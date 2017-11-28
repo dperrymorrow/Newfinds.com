@@ -18,6 +18,11 @@
 
 ### Markdown
 - Prism line highlight with github markdown
+- External links with markdown
+
+### Projects
+- Electron-Vue-Debugger
+- Git Gui
 
 ### Site work
 - ~~set the scrollbar inside the content area instead of whole page to avoid double scrollbar~~

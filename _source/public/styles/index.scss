@@ -1,5 +1,4 @@
-@import 'vars';
-
+@import "vars";
 
 .index-articles {
   // display: flex;
@@ -19,11 +18,15 @@
     flex-direction: row;
     flex-wrap: wrap;
     align-items: stretch;
-    align-items: center;
+    align-items: flex-start;
+    // border: 1px solid blue;
+    font-size: 0.85em;
 
     img {
       margin-right: $padding;
-      border: 1px solid $grayLightest;
+      width: 62px;
+      margin-top: 4px;
+      align-self: flex-start;
     }
 
     p {
@@ -47,10 +50,11 @@
 
     h1 {
       margin: 0;
-      font-size: 160%;
+      // font-size: 160%;
 
       small {
-        font-size: 80%;
+        display: block;
+        // font-size: 80%;
         font-weight: normal;
         font-family: $bodyFont;
         color: $grayMedium;
@@ -68,10 +72,9 @@
   }
 }
 
-
 @media (max-width: 700px) {
   .index-articles article.promoted {
-    display: block ;
+    display: block;
 
     h1 {
       small {
@@ -80,9 +83,7 @@
     }
 
     img {
-      flex: none;
-      margin-bottom: $padding;
-      height: auto;
+      display: none;
     }
   }
 }
