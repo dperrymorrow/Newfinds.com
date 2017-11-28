@@ -332,6 +332,10 @@ h1 {
           }
         }
 
+        video {
+          max-width: 100%;
+        }
+
         > p {
           &:first-child:first-letter {
             font-family: $displayFont;

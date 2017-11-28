@@ -34,20 +34,28 @@ html(lang="en")
                   href=github,
                   aria-label="Fork on GitHub") 
                   img(src="/images/github.svg")
-                  label View On Github
+                  span View On Github
 
               a.hamburger(href="#")
               
             h1= title
             h2= intro                
             
-              
+          
           if hero
-            .gallery
+            .gallery              
               .item.hero
                 img(src="/images/#{hero.img}")
                 if hero.caption
                   .caption= hero.caption
+          
+          else if video
+            .gallery
+              .item.hero
+                video(src="/images/projects/#{video}" autoplay loop width="100%" controls)
+                  | Sorry, your browser doesn't support embedded videos, but don't worry, you can 
+                  a(href="/images/projects/#{video}") download it
+
         
           .blog-content
             != yield

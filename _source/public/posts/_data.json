@@ -1,4 +1,16 @@
 {
+  "vue-debugger": {
+    "title": "Vue Debugger",
+    "date": "2017-11-28",
+    "thumb": "vue.svg",
+    "video": "debugger.mp4",
+    "github": "https://github.com/dperrymorrow/electron-vue-debugger",
+    "tags": [
+      "Promoted",
+      "Projects"
+    ],
+    "intro": "A custom Vue debugger tool, directly in your browser."
+  },
   "vuex-module-boilerplate": {
     "title": "Vuex Module Boilerplate",
     "date": "2017-11-11",
@@ -27,7 +39,7 @@
       "Promoted",
       "Vue"
     ],
-    "intro": "Tired of writing boiler plate for all your Vuex modules? This will help."
+    "intro": "Is your Vue component too tightly coupled to your router?"
   },
   "javascript-factory-pattern": {
     "title": "Javascript Factory Pattern",

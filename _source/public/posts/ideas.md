@@ -27,3 +27,7 @@
 ### Site work
 - ~~set the scrollbar inside the content area instead of whole page to avoid double scrollbar~~
 - ~~better 404 page~~
+
+### Cssizer
+- Vue and firebase
+- hosted on github pages
