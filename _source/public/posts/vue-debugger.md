@@ -42,6 +42,7 @@ I usually accomplish this like so.
 // how you determine environment in your app may vary
 if (process.NODE_ENV !== "production") {
   const Debugger = require("electron-vue-debugger");
+  Vue.use(Debugger);
 }
 ```
 
