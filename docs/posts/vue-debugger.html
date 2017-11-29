@@ -25,6 +25,7 @@ gtag('config', 'UA-12244949-1');
 <pre><code class="language-javascript">// how you determine environment in your app may vary
 if (process.NODE_ENV !== &quot;production&quot;) {
   const Debugger = require(&quot;electron-vue-debugger&quot;);
+  Vue.use(Debugger);
 }
 </code></pre>
 <pre><code class="language-html">&lt;debugger :components=&quot;$children&quot; v-if=&quot;debug&quot;&gt;&lt;/debugger&gt;
