@@ -55,6 +55,11 @@ html(lang="en")
                 video(src="/images/projects/#{video}" autoplay loop width="100%" controls)
                   | Sorry, your browser doesn't support embedded videos, but don't worry, you can 
                   a(href="/images/projects/#{video}") download it
+                  
+          else if embed
+            .gallery
+              .item.hero
+                != embed
 
         
           .blog-content
