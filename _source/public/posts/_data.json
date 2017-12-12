@@ -1,4 +1,10 @@
 {
+  "about": {
+    "date": "David Morrow",
+    "title": "About Me",
+    "intro": "Hi I’m Dave, a full stack web developer who leans to the front-end. I live in beautiful Portland Oregon with my wife and two children.",
+    "tags": []
+  },
   "no-compile-vue": {
     "title": "No Compile Vue App",
     "embed": "<p data-height='365' data-theme-id='light' data-slug-hash='NwEgrd' data-default-tab='result' data-user='dperrymorrow' data-embed-version='2' data-pen-title='no compile vue app' class='codepen'>See the Pen <a href='https://codepen.io/dperrymorrow/pen/NwEgrd/'>no compile vue app</a> by David Morrow (<a href='https://codepen.io/dperrymorrow'>@dperrymorrow</a>) on <a href='https://codepen.io'>CodePen</a>.</p>\n    <script async src='https://production-assets.codepen.io/assets/embed/ei.js'></script>",
@@ -130,11 +136,5 @@
     "date": "2012-05-01",
     "tags": "Ruby",
     "intro": "An easy way to create a Javascript bookmarklet from a JS file with Ruby variables interpolated into the bookmarklet."
-  },
-  "about": {
-    "date": "David Morrow",
-    "title": "About Me",
-    "intro": "Hi I’m Dave, a full stack web developer who leans to the front-end. I live in beautiful Portland Oregon with my wife and two children.",
-    "tags": []
   }
 }

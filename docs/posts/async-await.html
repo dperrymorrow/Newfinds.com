@@ -102,6 +102,19 @@ getData()
   .then(console.log)
   .catch(err =&gt; console.log(&quot;caught&quot;, err));
 </code></pre>
+<p>What if  you want your async functions to still be called in paralell? Yes you can still do that.
+Just simply wrap all your promises in a <code>Promise.all</code> and await that. Then all your methods will run at the same time instead of sequentially.</p>
+<pre><code class="language-javascript">async function doTheThing() {
+  await Promise.all([
+    asyncThing(),
+    asyncThing(),
+    asyncThing(),
+    asyncThing(),
+    asyncThing(),
+    asyncThing(),
+  ]);
+}
+</code></pre>
 <h3>Support</h3><p>It was introduced in <strong>Node 7.6</strong>. For browsers its been around even longer.</p>
 <pre><code class="language-javascript">{
   chrome: 59,
