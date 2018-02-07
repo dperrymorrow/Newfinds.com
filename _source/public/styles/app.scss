@@ -1,6 +1,6 @@
 @import "../../../node_modules/normalize.css/normalize";
 @import "../../../node_modules/typebase.css/typebase";
-@import "../../../node_modules/luminous-lightbox/dist/luminous-basic";
+// @import "../../../node_modules/luminous-lightbox/dist/luminous-basic";
 
 // @import "https://fonts.googleapis.com/css?family=Roboto+Slab:700";
 // @import "https://fonts.googleapis.com/css?family=Merriweather:400, 700";
@@ -10,7 +10,6 @@
 @import "syntax";
 @import "github_theme";
 @import "index";
-@import "resume";
 @import "vars";
 
 html,
@@ -310,6 +309,7 @@ h1 {
               margin-right: 0;
               height: auto;
               width: auto;
+              border: 2px solid red;
               cursor: default;
             }
           }
@@ -332,7 +332,7 @@ h1 {
           }
         }
 
-        video {
+        video, img {
           max-width: 100%;
         }
 

@@ -168,3 +168,13 @@ pre[data-line] {
   top: auto;
   bottom: 0.4em;
 }
+
+
+pre.language-shelldark {
+  background-color: lighten($black, 20%) !important;
+
+  .language-shelldark {
+    background: transparent;
+    color: $grayLightest;
+  }
+}
