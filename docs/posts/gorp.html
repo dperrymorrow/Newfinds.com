@@ -1,0 +1,153 @@
+<!DOCTYPE html><html lang="en"><head><title>Gorp, a Git CLI helper</title><meta name="description" content="A CLI helper to bridge the gap between using command line or a GUI for common Git tasks."><meta name="viewport" content="width=device-width, user-scalable=no"><link rel="stylesheet" href="/styles/app.css"><script async src="https://www.googletagmanager.com/gtag/js?id=UA-12244949-1"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-12244949-1');
+</script></head><body><div class="container"><div class="content"><div class="main"><div class="lead"><div class="date">February&nbsp;2018<a target="_blank" href="https://github.com/dperrymorrow/gorp" aria-label="Fork on GitHub" class="github-button"> <img src="/images/github.svg"><span>View On Github</span></a><a href="#" class="hamburger"></a></div><h1>Gorp, a Git CLI helper</h1><h2>A CLI helper to bridge the gap between using command line or a GUI for common Git tasks.</h2></div><div class="gallery"><div class="item hero"><video src="/images/projects/gorp.mp4" autoplay loop width="100%" controls>Sorry, your browser doesn't support embedded videos, but don't worry, you can <a href="/images/projects/gorp.mp4">download it</a></video></div></div><div class="blog-content"><p>I use Git on an hourly basis, and sometimes it feels a bit tedious to me using the command line. 9 times out of 10 I am using a handfull of common commands. Things like making a new branch, staging changes, ect.</p>
+<p>I&#39;ve tried using some Git GUI applications such as Github desktop and others. But I often find when using a GUI, I always end up using the terminal at some point, defeating the purpose of using the GUI.</p>
+<blockquote>
+<p>But I often find when using a GUI, I always end up using the terminal at some point, defeating the purpose of using the GUI.</p>
+</blockquote>
+<p>The main thing that I love about using a GUI is viewing the changes in a Github style diff. I had the idea for Gorp of bridging the gap between using the terminal, and a full on GUI. Gorp gives you all the common Git tasks with a couple of keystrokes, and also provides full Github style diffs shown in a launched browser.</p>
+<p><img src="/images/projects/gorp/diff.png" alt="Diff"></p>
+<h3>Install:</h3><pre><code class="language-shell">npm i gorp -g
+</code></pre>
+<h3>Usage:</h3><p>Simply type gorp from a repo on the command line</p>
+<pre><code class="language-shelldark">$ cd {your repo}
+$ gorp
+master Choose a command (Use arrow keys)
+❯ Branch List
+  Branch Create
+  Branch Delete
+  Branch Change
+  Branch Compare
+  ──────────────
+  - Push to remote (up to date)
+  - Pull from remote (up to date)
+  ──────────────
+  Github open repo
+  Github view issues
+  ──────────────
+  Diff View 8
+  View History
+  - Diff View Staged (No changes staged)
+  ──────────────
+  Stage changes 8
+  Discard Changes 8
+  - Commit changes (Nothing Staged)
+  ──────────────
+  List Commands
+  Quit
+  ──────────────
+</code></pre>
+<h3>Tasks Gorp currently supports</h3><p>Branch List: <em>fetches from remote, and lists all branches</em></p>
+<pre><code class="language-shelldark">$ gorp
+master Choose a command Branch List
+? Choose a command (Use arrow keys)
+❯ Local branches (on your machine)
+  Remote branches (on server)
+  ──────────────
+  Cancel
+  ──────────────
+</code></pre>
+<pre><code class="language-shelldark">? Choose a command Local branches (on your machine)
+  gh-pages
+  js-simple
+* master
+</code></pre>
+<p>Branch Create: <em>lets you create a new branch and puts you on it</em></p>
+<pre><code class="language-shelldark">$ gorp
+master Choose a command Branch Create
+? New branch name
+</code></pre>
+<p>Branch Delete: <em>lets you delete local or remote branches</em></p>
+<pre><code class="language-shelldark">$ gorp
+master Choose a command Branch Delete
+? Choose branch to delete (Use arrow keys)
+❯ gh-pages
+  js-simple
+  ──────────────
+  Cancel
+  ──────────────
+</code></pre>
+<p>Branch Change <em>lets you change which branch you are on</em></p>
+<pre><code class="language-shelldark">$ gorp
+master Choose a command Branch Change
+? Chooes a different branch (Use arrow keys)
+❯ gh-pages
+  js-simple
+  ──────────────
+  Cancel
+  ──────────────
+</code></pre>
+<p>Branch Compare <em>shows you a diff between your current branch and the one selected</em></p>
+<pre><code class="language-shelldark">$ gorp
+master Choose a command Branch Compare
+? Choose branch to compare master to (Use arrow keys)
+❯ gh-pages
+  js-simple
+  ──────────────
+  Cancel
+  ──────────────
+</code></pre>
+<ul>
+<li>Push to Remote <em>pushes your commits to remote</em></li>
+<li>Pull from Remote <em>pulls from remote</em></li>
+<li>Github open repo <em>if your repo is hosted on Github, it will open the url</em></li>
+<li>Github view issues <em>if your repo is hosted on Github, it will open the issues url</em></li>
+<li>Diff View <em>opens a Github style diff in your browser of your current changes</em></li>
+</ul>
+<p>View History <em>lists all commits on your current branch and lets you view a diff of selected one</em></p>
+<pre><code class="language-shelldark">$ gorp
+master Choose a command View History
+? Choose a commit to view (Use arrow keys)
+❯ 38e56004158ddc57f24e7 ignoring package.lock, whitespace change dperrymorrow 2 hours ago
+  ae7b14b2fa15e98eeef6e updating downloads dperrymorrow 2 hours ago
+  ac9b118d092ea990d6216 build dperrymorrow 8 weeks ago
+  3a22fc11bf49913efe54e updating async article dperrymorrow 8 weeks ago
+  77f0d6ab01ce27a1b4b67 no compile vue apps dperrymorrow 9 weeks ago
+  334b6cb160ecc68f665a8 build dperrymorrow 2 months ago
+  330bbca1b4f05ca700ccb fixing docs on debugger dperrymorrow 2 months ago
+  0ca7568ca5bd96d46a312 build dperrymorrow 2 months ago
+  d7c20d235c827d96a3700 thumb for debugger dperrymorrow 2 months ago
+  0806d92a05d3e17c552df couple posts dperrymorrow 2 months ago
+  4f7e0da51b53ef93d1321 build dperrymorrow 2 months ago
+  79e433eed867acacec071 thumbs, styles dperrymorrow 2 months ago
+  44c2557581aa202fe7ce8 builds and idea page dperrymorrow 3 months ago
+  9e2f9dcbbc28db6f48470 line highlighing dperrymorrow 3 months ago
+</code></pre>
+<p>Stage Changes: <em>select which files you would like to stage</em></p>
+<pre><code class="language-shelldark">$ gorp
+master Choose a command Stage changes 9
+? Choose files to stage (Press &lt;space&gt; to select, &lt;a&gt; to toggle all, &lt;i&gt; to invert selection)
+❯◯  M _source/public/posts/_data.json
+ ◯  M _source/public/styles/app.scss
+ ◯  M _source/public/styles/github_theme.scss
+ ◯  M _source/public/styles/index.scss
+ ◯  D _source/public/styles/resume.scss
+ ◯  ?? _source/public/images/projects/gorp.mp4
+ ◯  ?? _source/public/images/projects/gorp/
+ ◯  ?? _source/public/images/projects/gorp_thumb.png
+ ◯  ?? _source/public/posts/gorp.md
+</code></pre>
+<p>Discard Changes: <em>choose files to reset to head</em></p>
+<pre><code class="language-shelldark">gorp
+master Choose a command Discard Changes 9
+? Choose files to reset (Press &lt;space&gt; to select, &lt;a&gt; to toggle all, &lt;i&gt; to invert selection)
+❯◯  _source/public/posts/_data.json
+ ◯  _source/public/styles/app.scss
+ ◯  _source/public/styles/github_theme.scss
+ ◯  _source/public/styles/index.scss
+</code></pre>
+<p>Commit Changes: <em>make a commit of your staged files, lets you choose your default editor, or the terminal for your commit messsage</em></p>
+<pre><code class="language-shelldark">$ gorp
+master Choose a command Commit changes 18
+? How do you want to enter your commit message? (Use arrow keys)
+ Default Editor ($EDITOR)
+❯ Terminal Input
+ ──────────────
+ Cancel
+ ──────────────
+</code></pre>
+<pre><code class="language-shelldark">? How do you want to enter your commit message? Terminal Input
+? Commit title
+</code></pre></div></div></div><nav id="side-nav"><ul><li><a href="/">Root</a></li><li><a href="/posts/about">About</a></li><li><a href="/morrow_resume.pdf" download="Morrow-Resume.pdf">Resume</a></li><li><h4>Vue</h4><ul><li><a href="/posts/no-compile-vue">No Compile Vue App</a></li><li><a href="/posts/vuex-module-boilerplate">Vuex Module Boilerplate</a></li><li><a href="/posts/vue-route-params">Vue Route Parameters</a></li></ul></li><li><h4>Javascript</h4><ul><li><a href="/posts/javascript-factory-pattern">Javascript Factory Pattern</a></li><li><a href="/posts/protected-methods-in-javascript">Protected Methods In Javascript</a></li><li><a href="/posts/before-and-after-print-hooks">Before &amp; After Hooks for Printing</a></li><li><a href="/posts/javascript-inheritance">Javascript Inheritance</a></li><li><a href="/posts/backbone-singleton">Backbone.js Singleton</a></li><li><a href="/posts/javascript-patterns"> Javascript Patterns</a></li></ul></li><li><h4>ES6</h4><ul><li><a href="/posts/async-await">Async Await</a></li><li><a href="/posts/es6-in-the-browser">ES6 in the Browser</a></li></ul></li><li><h4>Projects</h4><ul><li class="active"><a href="/posts/gorp">Gorp, a Git CLI helper</a></li><li><a href="/posts/vue-debugger">Vue Debugger</a></li><li><a href="/posts/blissfull-javascript">Bliss.js</a></li></ul></li><li><h4>Ruby</h4><ul><li><a href="/posts/dynamic-bookmarks-in-ruby">Create Dynamic Bookmarklets in Ruby</a></li></ul></li><li><h4>Other</h4><ul><li><a href="/posts/less-tips-and-tricks">Less Tips &amp; Tricks</a></li></ul></li></ul></nav></div><script src="/scripts/app.js"></script><script src="/scripts/prism.js"> </script></body></html>

@@ -9,6 +9,45 @@ The main thing that I love about using a GUI is viewing the changes in a Github 
 
 ![Diff](/images/projects/gorp/diff.png)
 
+
+### Install:
+
+```shell
+npm i gorp -g
+```
+### Usage:
+
+Simply type gorp from a repo on the command line
+
+```shelldark
+$ cd {your repo}
+$ gorp
+master Choose a command (Use arrow keys)
+❯ Branch List
+  Branch Create
+  Branch Delete
+  Branch Change
+  Branch Compare
+  ──────────────
+  - Push to remote (up to date)
+  - Pull from remote (up to date)
+  ──────────────
+  Github open repo
+  Github view issues
+  ──────────────
+  Diff View 8
+  View History
+  - Diff View Staged (No changes staged)
+  ──────────────
+  Stage changes 8
+  Discard Changes 8
+  - Commit changes (Nothing Staged)
+  ──────────────
+  List Commands
+  Quit
+  ──────────────
+```
+
 ### Tasks Gorp currently supports
 
 Branch List: _fetches from remote, and lists all branches_
@@ -73,14 +112,32 @@ master Choose a command Branch Compare
   ──────────────
 ```
 
-Push to Remote _pushes your commits to remote_
-Pull from Remote _pulls from remote_
-Github open repo _if your repo is hosted on Github, it will open the url_
-Github view issues _if your repo is hosted on Github, it will open the issues url_
-Diff View _opens a Github style diff in your browser of your current changes_
-View History _lists all commits on your current branch and lets you view a diff of selected one_
-![History](/images/projects/gorp/history.png)
+- Push to Remote _pushes your commits to remote_
+- Pull from Remote _pulls from remote_
+- Github open repo _if your repo is hosted on Github, it will open the url_
+- Github view issues _if your repo is hosted on Github, it will open the issues url_
+- Diff View _opens a Github style diff in your browser of your current changes_
 
+View History _lists all commits on your current branch and lets you view a diff of selected one_
+```shelldark
+$ gorp
+master Choose a command View History
+? Choose a commit to view (Use arrow keys)
+❯ 38e56004158ddc57f24e7 ignoring package.lock, whitespace change dperrymorrow 2 hours ago
+  ae7b14b2fa15e98eeef6e updating downloads dperrymorrow 2 hours ago
+  ac9b118d092ea990d6216 build dperrymorrow 8 weeks ago
+  3a22fc11bf49913efe54e updating async article dperrymorrow 8 weeks ago
+  77f0d6ab01ce27a1b4b67 no compile vue apps dperrymorrow 9 weeks ago
+  334b6cb160ecc68f665a8 build dperrymorrow 2 months ago
+  330bbca1b4f05ca700ccb fixing docs on debugger dperrymorrow 2 months ago
+  0ca7568ca5bd96d46a312 build dperrymorrow 2 months ago
+  d7c20d235c827d96a3700 thumb for debugger dperrymorrow 2 months ago
+  0806d92a05d3e17c552df couple posts dperrymorrow 2 months ago
+  4f7e0da51b53ef93d1321 build dperrymorrow 2 months ago
+  79e433eed867acacec071 thumbs, styles dperrymorrow 2 months ago
+  44c2557581aa202fe7ce8 builds and idea page dperrymorrow 3 months ago
+  9e2f9dcbbc28db6f48470 line highlighing dperrymorrow 3 months ago
+```
 
 Stage Changes: _select which files you would like to stage_
 ```shelldark
@@ -98,40 +155,30 @@ master Choose a command Stage changes 9
  ◯  ?? _source/public/posts/gorp.md
 ```
 
-### Install:
-
-```shell
-npm i gorp -g
-```
-### Usage:
-
-Simply type gorp from a repo on the command line
-
-```shell
-cd {your repo}
+Discard Changes: _choose files to reset to head_
+```shelldark
 gorp
-master Choose a command (Use arrow keys)
-❯ Branch List
-  Branch Create
-  Branch Delete
-  Branch Change
-  Branch Compare
-  ──────────────
-  - Push to remote (up to date)
-  - Pull from remote (up to date)
-  ──────────────
-  Github open repo
-  Github view issues
-  ──────────────
-  Diff View 8
-  View History
-  - Diff View Staged (No changes staged)
-  ──────────────
-  Stage changes 8
-  Discard Changes 8
-  - Commit changes (Nothing Staged)
-  ──────────────
-  List Commands
-  Quit
-  ──────────────
+master Choose a command Discard Changes 9
+? Choose files to reset (Press <space> to select, <a> to toggle all, <i> to invert selection)
+❯◯  _source/public/posts/_data.json
+ ◯  _source/public/styles/app.scss
+ ◯  _source/public/styles/github_theme.scss
+ ◯  _source/public/styles/index.scss
+ ```
+
+Commit Changes: _make a commit of your staged files, lets you choose your default editor, or the terminal for your commit messsage_
+```shelldark
+$ gorp
+master Choose a command Commit changes 18
+? How do you want to enter your commit message? (Use arrow keys)
+ Default Editor ($EDITOR)
+❯ Terminal Input
+ ──────────────
+ Cancel
+ ──────────────
+```
+
+```shelldark
+? How do you want to enter your commit message? Terminal Input
+? Commit title
 ```

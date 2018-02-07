@@ -171,10 +171,10 @@ pre[data-line] {
 
 
 pre.language-shelldark {
-  background-color: lighten($black, 20%) !important;
+  background-color: #333 !important;
 
   .language-shelldark {
     background: transparent;
-    color: $grayLightest;
+    color: #ccc;
   }
 }
