@@ -1,4 +1,13 @@
 {
+  "get-computed-style": {
+    "title": "window.getComputedStyle",
+    "date": "2018-02-07",
+    "embed": "<p data-height='400' data-theme-id='dark' data-slug-hash='wyoXyP' data-default-tab='js,result' data-user='dperrymorrow' data-embed-version='2' data-pen-title='dump of elements style properties' class='codepen'></p><script async src='https://production-assets.codepen.io/assets/embed/ei.js'></script>",
+    "tags": [
+      "Javascript"
+    ],
+    "intro": "Get all of a DOM element's css properties from Javascript."
+  },
   "gorp": {
     "title": "Gorp, a Git CLI helper",
     "date": "2018-02-07",
