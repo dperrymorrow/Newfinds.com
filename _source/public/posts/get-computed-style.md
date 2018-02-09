@@ -20,5 +20,3 @@ Chrome ◒ 4+² ✔ 11+
 Safari ◒ 3.1+² ✔ 5+
 Opera ◒ 9+² ✔ 10.6+
 ```
-
-[Read More on MDN](https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle)

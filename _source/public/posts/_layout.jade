@@ -7,7 +7,11 @@ html(lang="en")
     meta(name="viewport" content="width=device-width, user-scalable=no")
     link(rel="stylesheet" href="/styles/app.css")  
     
+    if codepen
+      script(async src="https://production-assets.codepen.io/assets/embed/ei.js")
+        
     script(async src="https://www.googletagmanager.com/gtag/js?id=UA-12244949-1")
+      
     script.
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -58,14 +62,25 @@ html(lang="en")
                   | Sorry, your browser doesn't support embedded videos, but don't worry, you can 
                   a(href="/images/projects/#{video}") download it
                   
-          else if embed
+          else if codepen
             .gallery
               .item.hero
-                != embed
+                p.codepen(
+                  data-height=codepen.height, 
+                  data-theme-id='dark', 
+                  data-slug-hash=codepen.slug 
+                  data-default-tab=codepen.tabs.join(','), 
+                  data-user='dperrymorrow', 
+                  data-embed-version='2')
+                
 
         
           .blog-content
             != yield
+            if mdn
+              hr
+              a(href=mdn, target="_blank") ➜ Read more on MDN
+              
           
       != partial("../_nav")
     

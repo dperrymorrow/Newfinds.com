@@ -155,16 +155,11 @@ async function doTheThing() {
 
 It was introduced in __Node 7.6__. For browsers its been around even longer.
 
-```javascript
-{
-  chrome: 59,
-  edge: 15,
-  firefox: 54,
-  safari: 10.1,
-  node: 7.6,
-  ios: 10.3,
-  opera: 4,
-}
+```shell
+IE ✘
+Edge ✘ 12+ ✘ 14+¹ ✔ 15+
+Firefox ✘ 2+ ✔ 52+
+Chrome ✘ 4+ ✔ 55+
+Safari ✘ 3.1+ ✔ 10.1+
+Opera ✘ 9+ ✔ 42+
 ```
-
-[➜ Read more on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)

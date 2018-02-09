@@ -1,13 +1,4 @@
 {
-  "get-computed-style": {
-    "title": "window.getComputedStyle",
-    "date": "2018-02-07",
-    "embed": "<p data-height='400' data-theme-id='dark' data-slug-hash='wyoXyP' data-default-tab='js,result' data-user='dperrymorrow' data-embed-version='2' data-pen-title='dump of elements style properties' class='codepen'></p><script async src='https://production-assets.codepen.io/assets/embed/ei.js'></script>",
-    "tags": [
-      "Javascript"
-    ],
-    "intro": "Get all of a DOM element's css properties from Javascript."
-  },
   "gorp": {
     "title": "Gorp, a Git CLI helper",
     "date": "2018-02-07",
@@ -20,9 +11,50 @@
     ],
     "intro": "A CLI helper to bridge the gap between using command line or a GUI for common Git tasks."
   },
+  "get-computed-style": {
+    "title": "window.getComputedStyle",
+    "date": "2018-02-07",
+    "codepen": {
+      "height": 400,
+      "tabs": [
+        "js",
+        "result"
+      ],
+      "slug": "wyoXyP"
+    },
+    "mdn": "https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle",
+    "tags": [
+      "Javascript",
+      "CSS"
+    ],
+    "intro": "Get all of a DOM element's css properties from Javascript."
+  },
+  "focus-within": {
+    "title": "CSS sudo selector focus-within",
+    "date": "2018-01-01",
+    "intro": "Ever wanna style a parent when a child element receives focus?",
+    "mdn": "https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-within",
+    "tags": [
+      "CSS"
+    ],
+    "codepen": {
+      "slug": "aqpLWM",
+      "tabs": [
+        "css",
+        "result"
+      ],
+      "height": 294
+    }
+  },
   "no-compile-vue": {
     "title": "No Compile Vue App",
-    "embed": "<p data-height='365' data-theme-id='light' data-slug-hash='NwEgrd' data-default-tab='result' data-user='dperrymorrow' data-embed-version='2' data-pen-title='no compile vue app' class='codepen'>See the Pen <a href='https://codepen.io/dperrymorrow/pen/NwEgrd/'>no compile vue app</a> by David Morrow (<a href='https://codepen.io/dperrymorrow'>@dperrymorrow</a>) on <a href='https://codepen.io'>CodePen</a>.</p>\n    <script async src='https://production-assets.codepen.io/assets/embed/ei.js'></script>",
+    "codepen": {
+      "height": 365,
+      "slug": "NwEgrd",
+      "tabs": [
+        "result"
+      ]
+    },
     "thumb": "vue.svg",
     "date": "2017-12-02",
     "tags": [
@@ -61,6 +93,7 @@
       "ES6",
       "Promoted"
     ],
+    "mdn": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function",
     "intro": "is an exciting feature in Javascript that allows you to avoid promise chain hell."
   },
   "vue-route-params": {
@@ -126,7 +159,8 @@
     "title": "Before & After Hooks for Printing",
     "date": "2014-05-01",
     "intro": "Here is how to run Javascript hooks before and after your page is printed.",
-    "tags": "Javascript"
+    "tags": "Javascript",
+    "mdn": "https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia"
   },
   "javascript-inheritance": {
     "date": "2013-02-01",
@@ -141,7 +175,7 @@
     "tags": "Javascript"
   },
   "javascript-patterns": {
-    "title": " Javascript Patterns",
+    "title": "Javascript Patterns",
     "date": "2012-09-01",
     "tags": "Javascript",
     "intro": " Modules, “classes”, & other helpful habits for more organized Javascript."
