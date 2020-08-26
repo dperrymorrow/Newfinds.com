@@ -1,10 +1,4 @@
 {
-  "about": {
-    "date": "David Morrow",
-    "title": "About Me",
-    "intro": "Hi I’m Dave, a full stack web developer who leans to the front-end. I live in beautiful Portland Oregon with my wife and two children.",
-    "tags": []
-  },
   "rebars": {
     "title": "ReBars",
     "date": "2020-07-14",
@@ -134,16 +128,6 @@
     ],
     "intro": "Need Objects that keep state? For a long time I thought the only option was classes."
   },
-  "es6-in-the-browser": {
-    "title": "ES6 in the Browser",
-    "date": "2016-07-18",
-    "thumb": "es6.svg",
-    "tags": [
-      "ES6",
-      "Promoted"
-    ],
-    "intro": "You can currently use most ES6 in all evergreen browsers. Here are some core features of ES6."
-  },
   "protected-methods-in-javascript": {
     "title": "Protected Methods In Javascript",
     "date": "2016-07-18",
@@ -153,6 +137,16 @@
       "Promoted"
     ],
     "intro": "Easily add private methods to your Javascript Module or Class, while also avoiding scope issues on callbacks."
+  },
+  "es6-in-the-browser": {
+    "title": "ES6 in the Browser",
+    "date": "2016-07-18",
+    "thumb": "es6.svg",
+    "tags": [
+      "ES6",
+      "Promoted"
+    ],
+    "intro": "You can currently use most ES6 in all evergreen browsers. Here are some core features of ES6."
   },
   "blissfull-javascript": {
     "title": "Bliss.js",
@@ -203,5 +197,11 @@
     "date": "2012-05-01",
     "tags": "Ruby",
     "intro": "An easy way to create a Javascript bookmarklet from a JS file with Ruby variables interpolated into the bookmarklet."
+  },
+  "about": {
+    "date": "David Morrow",
+    "title": "About Me",
+    "intro": "Hi I’m Dave, a full stack web developer who leans to the front-end. I live in beautiful Portland Oregon with my wife and two children.",
+    "tags": []
   }
 }
