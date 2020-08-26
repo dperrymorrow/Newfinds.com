@@ -7,12 +7,10 @@ gtag('config', 'UA-12244949-1');
 // now you can use this var anywhere...
 .my-class {
   background-image: url(&quot;@{cdnPrefix}/images/bg-image.png&quot;);
-}
-</code></pre>
+}</code></pre>
 <h4>Resulting CSS</h4><pre><code class="language-css">.my-class {
   background-image: url(&quot;https://s3.amazonaws.com/some-bucket/images/bg-image.png&quot;);
-}
-</code></pre>
+}</code></pre>
 <h3>Loops in Less</h3><p>I wanted to make classes to make divs a percentage of their container in increments of 10. I could have written 10 classes, but this is much nicer and easier to maintain.</p>
 <h4>The LESS</h4><pre><code class="language-less">.mixin-loop (@index) when (@index &gt; 0) {
   .per-@{index}0 {
@@ -22,8 +20,7 @@ gtag('config', 'UA-12244949-1');
   .mixin-loop(@index - 1);
 }
 .mixin-loop (0) {}
-.mixin-loop(10);
-</code></pre>
+.mixin-loop(10);</code></pre>
 <h4>The resulting CSS</h4><pre><code class="language-css">.per-100 {
   display: inline-block;
   width: 100%;
@@ -63,5 +60,4 @@ gtag('config', 'UA-12244949-1');
 .per-10 {
   display: inline-block;
   width: 10%;
-}
-</code></pre></div></div></div><nav id="side-nav"><ul><li><a href="/">Root</a></li><li><a href="/posts/about">About</a></li><li><a href="/morrow_resume.pdf" download="Morrow-Resume.pdf">Resume</a></li><li><h4>Vue</h4><ul><li><a href="/posts/no-compile-vue">No Compile Vue App</a></li><li><a href="/posts/vuex-module-boilerplate">Vuex Module Boilerplate</a></li><li><a href="/posts/vue-route-params">Vue Route Parameters</a></li></ul></li><li><h4>Javascript</h4><ul><li><a href="/posts/get-computed-style">window.getComputedStyle</a></li><li><a href="/posts/javascript-factory-pattern">Javascript Factory Pattern</a></li><li><a href="/posts/protected-methods-in-javascript">Protected Methods In Javascript</a></li><li><a href="/posts/before-and-after-print-hooks">Before &amp; After Hooks for Printing</a></li><li><a href="/posts/javascript-inheritance">Javascript Inheritance</a></li><li><a href="/posts/backbone-singleton">Backbone.js Singleton</a></li><li><a href="/posts/javascript-patterns">Javascript Patterns</a></li></ul></li><li><h4>CSS</h4><ul><li><a href="/posts/get-computed-style">window.getComputedStyle</a></li><li><a href="/posts/focus-within">CSS sudo selector focus-within</a></li></ul></li><li><h4>ES6</h4><ul><li><a href="/posts/async-await">Async Await</a></li><li><a href="/posts/es6-in-the-browser">ES6 in the Browser</a></li></ul></li><li><h4>Projects</h4><ul><li><a href="/posts/gorp">Gorp, a Git CLI helper</a></li><li><a href="/posts/vue-debugger">Vue Debugger</a></li><li><a href="/posts/blissfull-javascript">Bliss.js</a></li></ul></li><li><h4>Ruby</h4><ul><li><a href="/posts/dynamic-bookmarks-in-ruby">Create Dynamic Bookmarklets in Ruby</a></li></ul></li><li><h4>Other</h4><ul><li class="active"><a href="/posts/less-tips-and-tricks">Less Tips &amp; Tricks</a></li></ul></li></ul></nav></div><script src="/scripts/app.js"></script><script src="/scripts/prism.js"> </script></body></html>
+}</code></pre></div></div></div><nav id="side-nav"><ul><li><a href="/">Root</a></li><li><a href="/posts/about">About</a></li><li><a href="/morrow_resume.pdf" download="Morrow-Resume.pdf">Resume</a></li><li><h4>Vue</h4><ul><li><a href="/posts/no-compile-vue">No Compile Vue App</a></li><li><a href="/posts/vuex-module-boilerplate">Vuex Module Boilerplate</a></li><li><a href="/posts/vue-route-params">Vue Route Parameters</a></li></ul></li><li><h4>Javascript</h4><ul><li><a href="/posts/rebars">ReBars</a></li><li><a href="/posts/get-computed-style">window.getComputedStyle</a></li><li><a href="/posts/javascript-factory-pattern">Javascript Factory Pattern</a></li><li><a href="/posts/protected-methods-in-javascript">Protected Methods In Javascript</a></li><li><a href="/posts/before-and-after-print-hooks">Before &amp; After Hooks for Printing</a></li><li><a href="/posts/javascript-inheritance">Javascript Inheritance</a></li><li><a href="/posts/backbone-singleton">Backbone.js Singleton</a></li><li><a href="/posts/javascript-patterns">Javascript Patterns</a></li></ul></li><li><h4>CSS</h4><ul><li><a href="/posts/get-computed-style">window.getComputedStyle</a></li><li><a href="/posts/focus-within">CSS sudo selector focus-within</a></li></ul></li><li><h4>ES6</h4><ul><li><a href="/posts/async-await">Async Await</a></li><li><a href="/posts/es6-in-the-browser">ES6 in the Browser</a></li></ul></li><li><h4>Projects</h4><ul><li><a href="/posts/rebars">ReBars</a></li><li><a href="/posts/gorp">Gorp, a Git CLI helper</a></li><li><a href="/posts/vue-debugger">Vue Debugger</a></li><li><a href="/posts/blissfull-javascript">Bliss.js</a></li></ul></li><li><h4>Ruby</h4><ul><li><a href="/posts/dynamic-bookmarks-in-ruby">Create Dynamic Bookmarklets in Ruby</a></li></ul></li><li><h4>Other</h4><ul><li class="active"><a href="/posts/less-tips-and-tricks">Less Tips &amp; Tricks</a></li></ul></li></ul></nav></div><script src="/scripts/app.js"></script><script src="/scripts/prism.js"> </script></body></html>

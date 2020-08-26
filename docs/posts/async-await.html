@@ -14,16 +14,14 @@ gtag('config', 'UA-12244949-1');
     });
 }
 // using the function
-getData().then(console.log);
-</code></pre>
+getData().then(console.log);</code></pre>
 <p>We have a function that returns a promise, which chains a <code>.then</code> off it to also load the <code>.json()</code> response from the result which is also a promise. This is a pretty simple example, but you can see how this would get more and more complex as we chain more and more actions off our promise.</p>
 <h3>Async functions to the rescue</h3><pre><code class="language-javascript">async function getData() {
   const response = await fetch(&quot;http://newfinds.com&quot;, { method: &quot;POST&quot; });
   return await response.json();
 }
 // using the function
-getData().then(console.log);
-</code></pre>
+getData().then(console.log);</code></pre>
 <p>You can see how much more terse this approach is. Also its much more familier to programmers coming from another language. You do a line of code, and then the next one executes.</p>
 <p>The <code>async</code> declaration on the function tells Javascript that you are enabling <code>await</code> inside of it.</p>
 <p><strong>Different syntaxes for defining an async function</strong></p>
@@ -50,8 +48,7 @@ const functionName = async () =&gt; {
 };
 
 // or a one liner
-const functionName = async () =&gt; await soemthing();
-</code></pre>
+const functionName = async () =&gt; await soemthing();</code></pre>
 <p>Async functions <strong>ALWAYS</strong> return a Promise. Even if you are returning something that does not look like a promise it will be wrapped in a <code>Promise.resolve()</code>.</p>
 <p><strong>For Example:</strong></p>
 <pre><code class="language-javascript">async function doThing() {
@@ -60,8 +57,7 @@ const functionName = async () =&gt; await soemthing();
 }
 
 doThing().then(console.log);
-// I did the thing
-</code></pre>
+// I did the thing</code></pre>
 <h3>Handling Errors</h3><p>You may be wondering,</p>
 <blockquote>
 <p>That&#39;s great, but how do I handle my errors? I don&#39;t see any <code>.catch()</code> inside those async functions..</p>
@@ -82,8 +78,7 @@ getData()
   .catch(err =&gt; {
     console.log(&quot;caught the error&quot;, err);
   });
-// caught the error getData caught it
-</code></pre>
+// caught the error getData caught it</code></pre>
 <p>As you can see, both <em>&quot;catches&quot;</em> were triggered.</p>
 <p>More commmonly, like in the case with our fetch example above, you dont want errors thrown, you want to simply reject them. It is much simpler than trying to catch every Promise in your async function.</p>
 <p>Say you were making many fetch calls, and you want to reject if any of them fail.</p>
@@ -100,8 +95,7 @@ getData()
 // using the function
 getData()
   .then(console.log)
-  .catch(err =&gt; console.log(&quot;caught&quot;, err));
-</code></pre>
+  .catch(err =&gt; console.log(&quot;caught&quot;, err));</code></pre>
 <p>What if  you want your async functions to still be called in paralell? Yes you can still do that.
 Just simply wrap all your promises in a <code>Promise.all</code> and await that. Then all your methods will run at the same time instead of sequentially.</p>
 <pre><code class="language-javascript">async function doTheThing() {
@@ -121,5 +115,4 @@ Edge ✘ 12+ ✘ 14+¹ ✔ 15+
 Firefox ✘ 2+ ✔ 52+
 Chrome ✘ 4+ ✔ 55+
 Safari ✘ 3.1+ ✔ 10.1+
-Opera ✘ 9+ ✔ 42+
-</code></pre><hr><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function" target="_blank">➜ Read more on MDN</a></div></div></div><nav id="side-nav"><ul><li><a href="/">Root</a></li><li><a href="/posts/about">About</a></li><li><a href="/morrow_resume.pdf" download="Morrow-Resume.pdf">Resume</a></li><li><h4>Vue</h4><ul><li><a href="/posts/no-compile-vue">No Compile Vue App</a></li><li><a href="/posts/vuex-module-boilerplate">Vuex Module Boilerplate</a></li><li><a href="/posts/vue-route-params">Vue Route Parameters</a></li></ul></li><li><h4>Javascript</h4><ul><li><a href="/posts/get-computed-style">window.getComputedStyle</a></li><li><a href="/posts/javascript-factory-pattern">Javascript Factory Pattern</a></li><li><a href="/posts/protected-methods-in-javascript">Protected Methods In Javascript</a></li><li><a href="/posts/before-and-after-print-hooks">Before &amp; After Hooks for Printing</a></li><li><a href="/posts/javascript-inheritance">Javascript Inheritance</a></li><li><a href="/posts/backbone-singleton">Backbone.js Singleton</a></li><li><a href="/posts/javascript-patterns">Javascript Patterns</a></li></ul></li><li><h4>CSS</h4><ul><li><a href="/posts/get-computed-style">window.getComputedStyle</a></li><li><a href="/posts/focus-within">CSS sudo selector focus-within</a></li></ul></li><li><h4>ES6</h4><ul><li class="active"><a href="/posts/async-await">Async Await</a></li><li><a href="/posts/es6-in-the-browser">ES6 in the Browser</a></li></ul></li><li><h4>Projects</h4><ul><li><a href="/posts/gorp">Gorp, a Git CLI helper</a></li><li><a href="/posts/vue-debugger">Vue Debugger</a></li><li><a href="/posts/blissfull-javascript">Bliss.js</a></li></ul></li><li><h4>Ruby</h4><ul><li><a href="/posts/dynamic-bookmarks-in-ruby">Create Dynamic Bookmarklets in Ruby</a></li></ul></li><li><h4>Other</h4><ul><li><a href="/posts/less-tips-and-tricks">Less Tips &amp; Tricks</a></li></ul></li></ul></nav></div><script src="/scripts/app.js"></script><script src="/scripts/prism.js"> </script></body></html>
+Opera ✘ 9+ ✔ 42+</code></pre><hr><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function" target="_blank">➜ Read more on MDN</a></div></div></div><nav id="side-nav"><ul><li><a href="/">Root</a></li><li><a href="/posts/about">About</a></li><li><a href="/morrow_resume.pdf" download="Morrow-Resume.pdf">Resume</a></li><li><h4>Vue</h4><ul><li><a href="/posts/no-compile-vue">No Compile Vue App</a></li><li><a href="/posts/vuex-module-boilerplate">Vuex Module Boilerplate</a></li><li><a href="/posts/vue-route-params">Vue Route Parameters</a></li></ul></li><li><h4>Javascript</h4><ul><li><a href="/posts/rebars">ReBars</a></li><li><a href="/posts/get-computed-style">window.getComputedStyle</a></li><li><a href="/posts/javascript-factory-pattern">Javascript Factory Pattern</a></li><li><a href="/posts/protected-methods-in-javascript">Protected Methods In Javascript</a></li><li><a href="/posts/before-and-after-print-hooks">Before &amp; After Hooks for Printing</a></li><li><a href="/posts/javascript-inheritance">Javascript Inheritance</a></li><li><a href="/posts/backbone-singleton">Backbone.js Singleton</a></li><li><a href="/posts/javascript-patterns">Javascript Patterns</a></li></ul></li><li><h4>CSS</h4><ul><li><a href="/posts/get-computed-style">window.getComputedStyle</a></li><li><a href="/posts/focus-within">CSS sudo selector focus-within</a></li></ul></li><li><h4>ES6</h4><ul><li class="active"><a href="/posts/async-await">Async Await</a></li><li><a href="/posts/es6-in-the-browser">ES6 in the Browser</a></li></ul></li><li><h4>Projects</h4><ul><li><a href="/posts/rebars">ReBars</a></li><li><a href="/posts/gorp">Gorp, a Git CLI helper</a></li><li><a href="/posts/vue-debugger">Vue Debugger</a></li><li><a href="/posts/blissfull-javascript">Bliss.js</a></li></ul></li><li><h4>Ruby</h4><ul><li><a href="/posts/dynamic-bookmarks-in-ruby">Create Dynamic Bookmarklets in Ruby</a></li></ul></li><li><h4>Other</h4><ul><li><a href="/posts/less-tips-and-tricks">Less Tips &amp; Tricks</a></li></ul></li></ul></nav></div><script src="/scripts/app.js"></script><script src="/scripts/prism.js"> </script></body></html>

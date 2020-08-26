@@ -20,8 +20,7 @@ gtag('config', 'UA-12244949-1');
       console.log(&#39;callback&#39;);
     }
   };
-}());
-</code></pre>
+}());</code></pre>
 <h3>Cleaned up with a protected method</h3><p>This protects the <code>callbackMethod</code> and also simplifies scope in the process.</p>
 <pre><code class="language-javascript">(function () {
   &quot;use strict&quot;;
@@ -43,15 +42,13 @@ gtag('config', 'UA-12244949-1');
   function _protectedMethod() { --
     console.log(&#39;privateMethod&#39;);
   }
-}());
-</code></pre>
+}());</code></pre>
 <p>So if you were to try to call the method from outside the anonymous function.</p>
 <pre><code class="language-javascript">myModule.publicMethod();
 myModule.anotherPublicMethod();
 
 myModule._protectedMethod() --
-// undefined
-</code></pre>
+// undefined</code></pre>
 <h3>How would this look in Node?</h3><p>It would be pretty similar in Node.</p>
 <pre><code class="language-javascript">module.exports = {
   publicMethod() {
@@ -66,6 +63,5 @@ myModule._protectedMethod() --
 // simply leave this outside of your export.
 function _protectedMethod() {
   console.log(&#39;privateMethod&#39;);
-}
-</code></pre>
-<p>I generally like to name methods in a node module that will not be exported with an underscore prefix. It&#39;s a handy indicator to show that this method will not be exposed.</p></div></div></div><nav id="side-nav"><ul><li><a href="/">Root</a></li><li><a href="/posts/about">About</a></li><li><a href="/morrow_resume.pdf" download="Morrow-Resume.pdf">Resume</a></li><li><h4>Vue</h4><ul><li><a href="/posts/no-compile-vue">No Compile Vue App</a></li><li><a href="/posts/vuex-module-boilerplate">Vuex Module Boilerplate</a></li><li><a href="/posts/vue-route-params">Vue Route Parameters</a></li></ul></li><li><h4>Javascript</h4><ul><li><a href="/posts/get-computed-style">window.getComputedStyle</a></li><li><a href="/posts/javascript-factory-pattern">Javascript Factory Pattern</a></li><li class="active"><a href="/posts/protected-methods-in-javascript">Protected Methods In Javascript</a></li><li><a href="/posts/before-and-after-print-hooks">Before &amp; After Hooks for Printing</a></li><li><a href="/posts/javascript-inheritance">Javascript Inheritance</a></li><li><a href="/posts/backbone-singleton">Backbone.js Singleton</a></li><li><a href="/posts/javascript-patterns">Javascript Patterns</a></li></ul></li><li><h4>CSS</h4><ul><li><a href="/posts/get-computed-style">window.getComputedStyle</a></li><li><a href="/posts/focus-within">CSS sudo selector focus-within</a></li></ul></li><li><h4>ES6</h4><ul><li><a href="/posts/async-await">Async Await</a></li><li><a href="/posts/es6-in-the-browser">ES6 in the Browser</a></li></ul></li><li><h4>Projects</h4><ul><li><a href="/posts/gorp">Gorp, a Git CLI helper</a></li><li><a href="/posts/vue-debugger">Vue Debugger</a></li><li><a href="/posts/blissfull-javascript">Bliss.js</a></li></ul></li><li><h4>Ruby</h4><ul><li><a href="/posts/dynamic-bookmarks-in-ruby">Create Dynamic Bookmarklets in Ruby</a></li></ul></li><li><h4>Other</h4><ul><li><a href="/posts/less-tips-and-tricks">Less Tips &amp; Tricks</a></li></ul></li></ul></nav></div><script src="/scripts/app.js"></script><script src="/scripts/prism.js"> </script></body></html>
+}</code></pre>
+<p>I generally like to name methods in a node module that will not be exported with an underscore prefix. It&#39;s a handy indicator to show that this method will not be exposed.</p></div></div></div><nav id="side-nav"><ul><li><a href="/">Root</a></li><li><a href="/posts/about">About</a></li><li><a href="/morrow_resume.pdf" download="Morrow-Resume.pdf">Resume</a></li><li><h4>Vue</h4><ul><li><a href="/posts/no-compile-vue">No Compile Vue App</a></li><li><a href="/posts/vuex-module-boilerplate">Vuex Module Boilerplate</a></li><li><a href="/posts/vue-route-params">Vue Route Parameters</a></li></ul></li><li><h4>Javascript</h4><ul><li><a href="/posts/rebars">ReBars</a></li><li><a href="/posts/get-computed-style">window.getComputedStyle</a></li><li><a href="/posts/javascript-factory-pattern">Javascript Factory Pattern</a></li><li class="active"><a href="/posts/protected-methods-in-javascript">Protected Methods In Javascript</a></li><li><a href="/posts/before-and-after-print-hooks">Before &amp; After Hooks for Printing</a></li><li><a href="/posts/javascript-inheritance">Javascript Inheritance</a></li><li><a href="/posts/backbone-singleton">Backbone.js Singleton</a></li><li><a href="/posts/javascript-patterns">Javascript Patterns</a></li></ul></li><li><h4>CSS</h4><ul><li><a href="/posts/get-computed-style">window.getComputedStyle</a></li><li><a href="/posts/focus-within">CSS sudo selector focus-within</a></li></ul></li><li><h4>ES6</h4><ul><li><a href="/posts/async-await">Async Await</a></li><li><a href="/posts/es6-in-the-browser">ES6 in the Browser</a></li></ul></li><li><h4>Projects</h4><ul><li><a href="/posts/rebars">ReBars</a></li><li><a href="/posts/gorp">Gorp, a Git CLI helper</a></li><li><a href="/posts/vue-debugger">Vue Debugger</a></li><li><a href="/posts/blissfull-javascript">Bliss.js</a></li></ul></li><li><h4>Ruby</h4><ul><li><a href="/posts/dynamic-bookmarks-in-ruby">Create Dynamic Bookmarklets in Ruby</a></li></ul></li><li><h4>Other</h4><ul><li><a href="/posts/less-tips-and-tricks">Less Tips &amp; Tricks</a></li></ul></li></ul></nav></div><script src="/scripts/app.js"></script><script src="/scripts/prism.js"> </script></body></html>

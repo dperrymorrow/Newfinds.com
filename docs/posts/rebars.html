@@ -1,0 +1,47 @@
+<!DOCTYPE html><html lang="en"><head><title>ReBars</title><meta name="description" content="A simple JS library, with no VDOM, pre-compliing or Babeling"><meta name="viewport" content="width=device-width, user-scalable=no"><link rel="stylesheet" href="/styles/app.css"><script async src="https://www.googletagmanager.com/gtag/js?id=UA-12244949-1"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-12244949-1');
+</script></head><body><div class="container"><div class="content"><div class="main"><div class="lead"><div class="date">July&nbsp;2020<a target="_blank" href="https://github.com/dperrymorrow/re-bars" aria-label="Fork on GitHub" class="github-button"> <img src="/images/github.svg"><span>View On Github</span></a><a href="#" class="hamburger"></a></div><h1>ReBars</h1><h2>A simple JS library, with no VDOM, pre-compliing or Babeling</h2></div><div class="blog-content"><p>Recently I have been working on a small JS library for building quick applications. It was inspired by the frustration of build tools and the sheer amount of them needed for most JS frameworks.</p>
+<p><a href="https://dperrymorrow.github.io/re-bars/">Read more about it here</a></p>
+<p>Writing Javascript for the browser used to be simple. You wrote your code, and that same code ran in the browser. <strong>Your</strong> code is what was running in your application. You spent your time writing Javascript, not configuring tools.</p>
+<p>Things have changed. <em>Modern</em> Javascript development requires rediculous amounts of tooling and setup. Webpack, JSX, Virtual DOM, Babel, CLI bolierplates, component loaders, Style extractors, concatenators and on and on. Have you looked in your <code>node_modules</code> directory recently? Have you ever seen the filesize of your <em>built</em> app and wondered WTF is all that?</p>
+<p>The thing is, <strong>WE DON&#39;T NEED THIS ANYMORE</strong>. Evergreen browsers support the features we want that we have been Babeling and polyfilling in order to use. <a href="https://caniuse.com/#feat=es6">ES6</a> brought us Promises, Modules, Classes, Template Literals, Arrow Functions, Let and Const, Default Parameters, Generators, Destructuring Assignment, Rest &amp; Spread, Map/Set &amp; WeakMap/WeakSet and many more. All the things we have been waiting for It&#39;s all there!</p>
+<p>So why are we still using build steps and mangling <strong>our</strong> beautiful code back to the stone age?</p>
+<blockquote>
+<p>ReBars is around 2.8k gzipped and has no dependancies other than Handlebars!</p>
+</blockquote>
+<p>ReBars started with the idea of so what do I <em>actually</em> need from a Javascript framework?</p>
+<ul>
+<li>a templating language <em>(Handlebars)</em></li>
+<li>re-render DOM elements on data change</li>
+<li>manage your event handling and scope</li>
+</ul>
+<p>ReBars re-renders tiny pieces of your application on change. You are in control of what re-renders and when. There is no Virtual DOM, no JSX, no pre-compiling. <strong>Your</strong> code runs on <strong>your</strong> app.</p>
+<p>ReBars keeps your DOM in sync with your data using <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy">Proxy</a>, and gets out of your way. You can get back to just writing Javascript.</p>
+<p>ReBars is just a Handlebars instance with helpers added. The main one being a <a href="#the-watch-helper">watch</a> block helper that lets you tell ReBars what and when to re-render.</p>
+<blockquote>
+<p>If you have used Handlebars, you already know ReBars</p>
+</blockquote>
+<pre><code class="language-javascript">export default {
+  template: /*html*/ `
+    &lt;strong&gt;
+      Button have been clicked
+      {{#watch}}
+        {{ clicked }}
+      {{/watch}}
+      times
+    &lt;/strong&gt;
+
+    &lt;button {{ on click=&quot;step&quot; }}&gt;Click Me&lt;/button&gt;
+  `,
+
+  data: { clicked: 0 },
+
+  methods: {
+    step() {
+      this.clicked++;
+    },
+  },
+};
+</code></pre></div></div></div><nav id="side-nav"><ul><li><a href="/">Root</a></li><li><a href="/posts/about">About</a></li><li><a href="/morrow_resume.pdf" download="Morrow-Resume.pdf">Resume</a></li><li><h4>Vue</h4><ul><li><a href="/posts/no-compile-vue">No Compile Vue App</a></li><li><a href="/posts/vuex-module-boilerplate">Vuex Module Boilerplate</a></li><li><a href="/posts/vue-route-params">Vue Route Parameters</a></li></ul></li><li><h4>Javascript</h4><ul><li class="active"><a href="/posts/rebars">ReBars</a></li><li><a href="/posts/get-computed-style">window.getComputedStyle</a></li><li><a href="/posts/javascript-factory-pattern">Javascript Factory Pattern</a></li><li><a href="/posts/protected-methods-in-javascript">Protected Methods In Javascript</a></li><li><a href="/posts/before-and-after-print-hooks">Before &amp; After Hooks for Printing</a></li><li><a href="/posts/javascript-inheritance">Javascript Inheritance</a></li><li><a href="/posts/backbone-singleton">Backbone.js Singleton</a></li><li><a href="/posts/javascript-patterns">Javascript Patterns</a></li></ul></li><li><h4>CSS</h4><ul><li><a href="/posts/get-computed-style">window.getComputedStyle</a></li><li><a href="/posts/focus-within">CSS sudo selector focus-within</a></li></ul></li><li><h4>ES6</h4><ul><li><a href="/posts/async-await">Async Await</a></li><li><a href="/posts/es6-in-the-browser">ES6 in the Browser</a></li></ul></li><li><h4>Projects</h4><ul><li class="active"><a href="/posts/rebars">ReBars</a></li><li><a href="/posts/gorp">Gorp, a Git CLI helper</a></li><li><a href="/posts/vue-debugger">Vue Debugger</a></li><li><a href="/posts/blissfull-javascript">Bliss.js</a></li></ul></li><li><h4>Ruby</h4><ul><li><a href="/posts/dynamic-bookmarks-in-ruby">Create Dynamic Bookmarklets in Ruby</a></li></ul></li><li><h4>Other</h4><ul><li><a href="/posts/less-tips-and-tricks">Less Tips &amp; Tricks</a></li></ul></li></ul></nav></div><script src="/scripts/app.js"></script><script src="/scripts/prism.js"> </script></body></html>

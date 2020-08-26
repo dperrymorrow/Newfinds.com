@@ -8,11 +8,9 @@ gtag('config', 'UA-12244949-1');
 <pre><code class="language-javascript">window.NR = window.NR || {}; --
 window.NR.myFunction = function () {
   // your code...
-};
-</code></pre>
+};</code></pre>
 <p>And avoid this example:</p>
-<pre><code class="language-javascript">function myFunction () {   // your code... };
-</code></pre>
+<pre><code class="language-javascript">function myFunction () {   // your code... };</code></pre>
 <h3>Use Strict Mode</h3><p>Even inside a name spaced function, there can still be a problem. You can accidentally assign variables to the global namespace. To prevent this, prefix all variable declarations with var or this.</p>
 <p>Alternatively, you can use strict mode. As the name implies, strict mode parses your JavaScript in a much stricter format. For example, if you attempt to set a variable that is not yet defined, it will through an error instead of assigning to global / window.</p>
 <h3>Lint your JavaScript</h3><p>JSLint evaluates your JavaScript against Douglas Crockford’s coding suggestions. There are plug-ins for most of the popular editors to evaluate code including Sublime Text, Textmate and Vim.</p>
@@ -51,15 +49,13 @@ window.NR.myFunction = function () {
       this.myVariable = &quot;foobar&quot;;
     }
   };
-}());
-</code></pre>
+}());</code></pre>
 <p><strong>Usage:</strong></p>
 <pre><code class="language-javascript">NR.myModule.initialize();
 NR.myModule.anotherMethod();
 console.log(NR.myModule.myVariable);
 // outputs
-// &quot;foobar&quot;
-</code></pre>
+// &quot;foobar&quot;</code></pre>
 <h3>Classes</h3><p>Some folks will argue that your should never use ‘new’ when working with JavaScript as there are no true classes in the language. However, I find this pattern extremely helpful for a number of reasons described below. Also, many popular frameworks such as Backbone use class instantiation / extension patterns. Naming conventions for classes is CamelCase with an upper case first letter.</p>
 <p><strong>Pros</strong></p>
 <ul>
@@ -89,8 +85,7 @@ window.NR.MyClass = (function () {
   };
 
   return MyClass;
-}());
-</code></pre>
+}());</code></pre>
 <p><strong>Usage:</strong></p>
 <pre><code class="language-javascript">var instance1 = new NR.MyClass(&#39;class 1&#39;);
 console.log(instance1.instanceVar);
@@ -102,5 +97,4 @@ console.log(instance2.instanceVar);
 
 // Outputs
 // &quot;prefix-class 1&quot;
-// &quot;PREFIX-class 2&quot;
-</code></pre></div></div></div><nav id="side-nav"><ul><li><a href="/">Root</a></li><li><a href="/posts/about">About</a></li><li><a href="/morrow_resume.pdf" download="Morrow-Resume.pdf">Resume</a></li><li><h4>Vue</h4><ul><li><a href="/posts/no-compile-vue">No Compile Vue App</a></li><li><a href="/posts/vuex-module-boilerplate">Vuex Module Boilerplate</a></li><li><a href="/posts/vue-route-params">Vue Route Parameters</a></li></ul></li><li><h4>Javascript</h4><ul><li><a href="/posts/get-computed-style">window.getComputedStyle</a></li><li><a href="/posts/javascript-factory-pattern">Javascript Factory Pattern</a></li><li><a href="/posts/protected-methods-in-javascript">Protected Methods In Javascript</a></li><li><a href="/posts/before-and-after-print-hooks">Before &amp; After Hooks for Printing</a></li><li><a href="/posts/javascript-inheritance">Javascript Inheritance</a></li><li><a href="/posts/backbone-singleton">Backbone.js Singleton</a></li><li class="active"><a href="/posts/javascript-patterns">Javascript Patterns</a></li></ul></li><li><h4>CSS</h4><ul><li><a href="/posts/get-computed-style">window.getComputedStyle</a></li><li><a href="/posts/focus-within">CSS sudo selector focus-within</a></li></ul></li><li><h4>ES6</h4><ul><li><a href="/posts/async-await">Async Await</a></li><li><a href="/posts/es6-in-the-browser">ES6 in the Browser</a></li></ul></li><li><h4>Projects</h4><ul><li><a href="/posts/gorp">Gorp, a Git CLI helper</a></li><li><a href="/posts/vue-debugger">Vue Debugger</a></li><li><a href="/posts/blissfull-javascript">Bliss.js</a></li></ul></li><li><h4>Ruby</h4><ul><li><a href="/posts/dynamic-bookmarks-in-ruby">Create Dynamic Bookmarklets in Ruby</a></li></ul></li><li><h4>Other</h4><ul><li><a href="/posts/less-tips-and-tricks">Less Tips &amp; Tricks</a></li></ul></li></ul></nav></div><script src="/scripts/app.js"></script><script src="/scripts/prism.js"> </script></body></html>
+// &quot;PREFIX-class 2&quot;</code></pre></div></div></div><nav id="side-nav"><ul><li><a href="/">Root</a></li><li><a href="/posts/about">About</a></li><li><a href="/morrow_resume.pdf" download="Morrow-Resume.pdf">Resume</a></li><li><h4>Vue</h4><ul><li><a href="/posts/no-compile-vue">No Compile Vue App</a></li><li><a href="/posts/vuex-module-boilerplate">Vuex Module Boilerplate</a></li><li><a href="/posts/vue-route-params">Vue Route Parameters</a></li></ul></li><li><h4>Javascript</h4><ul><li><a href="/posts/rebars">ReBars</a></li><li><a href="/posts/get-computed-style">window.getComputedStyle</a></li><li><a href="/posts/javascript-factory-pattern">Javascript Factory Pattern</a></li><li><a href="/posts/protected-methods-in-javascript">Protected Methods In Javascript</a></li><li><a href="/posts/before-and-after-print-hooks">Before &amp; After Hooks for Printing</a></li><li><a href="/posts/javascript-inheritance">Javascript Inheritance</a></li><li><a href="/posts/backbone-singleton">Backbone.js Singleton</a></li><li class="active"><a href="/posts/javascript-patterns">Javascript Patterns</a></li></ul></li><li><h4>CSS</h4><ul><li><a href="/posts/get-computed-style">window.getComputedStyle</a></li><li><a href="/posts/focus-within">CSS sudo selector focus-within</a></li></ul></li><li><h4>ES6</h4><ul><li><a href="/posts/async-await">Async Await</a></li><li><a href="/posts/es6-in-the-browser">ES6 in the Browser</a></li></ul></li><li><h4>Projects</h4><ul><li><a href="/posts/rebars">ReBars</a></li><li><a href="/posts/gorp">Gorp, a Git CLI helper</a></li><li><a href="/posts/vue-debugger">Vue Debugger</a></li><li><a href="/posts/blissfull-javascript">Bliss.js</a></li></ul></li><li><h4>Ruby</h4><ul><li><a href="/posts/dynamic-bookmarks-in-ruby">Create Dynamic Bookmarklets in Ruby</a></li></ul></li><li><h4>Other</h4><ul><li><a href="/posts/less-tips-and-tricks">Less Tips &amp; Tricks</a></li></ul></li></ul></nav></div><script src="/scripts/app.js"></script><script src="/scripts/prism.js"> </script></body></html>

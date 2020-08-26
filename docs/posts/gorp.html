@@ -9,8 +9,7 @@ gtag('config', 'UA-12244949-1');
 </blockquote>
 <p>The main thing that I love about using a GUI is viewing the changes in a Github style diff. I had the idea for Gorp of bridging the gap between using the terminal, and a full on GUI. Gorp gives you all the common Git tasks with a couple of keystrokes, and also provides full Github style diffs shown in a launched browser.</p>
 <p><img src="/images/projects/gorp/diff.png" alt="Diff"></p>
-<h3>Install:</h3><pre><code class="language-shell">npm i gorp -g
-</code></pre>
+<h3>Install:</h3><pre><code class="language-shell">npm i gorp -g</code></pre>
 <h3>Usage:</h3><p>Simply type gorp from a repo on the command line</p>
 <pre><code class="language-shelldark">$ cd {your repo}
 $ gorp
@@ -37,8 +36,7 @@ master Choose a command (Use arrow keys)
   ──────────────
   List Commands
   Quit
-  ──────────────
-</code></pre>
+  ──────────────</code></pre>
 <h3>Tasks Gorp currently supports</h3><p>Branch List: <em>fetches from remote, and lists all branches</em></p>
 <pre><code class="language-shelldark">$ gorp
 master Choose a command Branch List
@@ -47,18 +45,15 @@ master Choose a command Branch List
   Remote branches (on server)
   ──────────────
   Cancel
-  ──────────────
-</code></pre>
+  ──────────────</code></pre>
 <pre><code class="language-shelldark">? Choose a command Local branches (on your machine)
   gh-pages
   js-simple
-* master
-</code></pre>
+* master</code></pre>
 <p>Branch Create: <em>lets you create a new branch and puts you on it</em></p>
 <pre><code class="language-shelldark">$ gorp
 master Choose a command Branch Create
-? New branch name
-</code></pre>
+? New branch name</code></pre>
 <p>Branch Delete: <em>lets you delete local or remote branches</em></p>
 <pre><code class="language-shelldark">$ gorp
 master Choose a command Branch Delete
@@ -67,8 +62,7 @@ master Choose a command Branch Delete
   js-simple
   ──────────────
   Cancel
-  ──────────────
-</code></pre>
+  ──────────────</code></pre>
 <p>Branch Change <em>lets you change which branch you are on</em></p>
 <pre><code class="language-shelldark">$ gorp
 master Choose a command Branch Change
@@ -77,8 +71,7 @@ master Choose a command Branch Change
   js-simple
   ──────────────
   Cancel
-  ──────────────
-</code></pre>
+  ──────────────</code></pre>
 <p>Branch Compare <em>shows you a diff between your current branch and the one selected</em></p>
 <pre><code class="language-shelldark">$ gorp
 master Choose a command Branch Compare
@@ -87,8 +80,7 @@ master Choose a command Branch Compare
   js-simple
   ──────────────
   Cancel
-  ──────────────
-</code></pre>
+  ──────────────</code></pre>
 <ul>
 <li>Push to Remote <em>pushes your commits to remote</em></li>
 <li>Pull from Remote <em>pulls from remote</em></li>
@@ -113,8 +105,7 @@ master Choose a command View History
   4f7e0da51b53ef93d1321 build dperrymorrow 2 months ago
   79e433eed867acacec071 thumbs, styles dperrymorrow 2 months ago
   44c2557581aa202fe7ce8 builds and idea page dperrymorrow 3 months ago
-  9e2f9dcbbc28db6f48470 line highlighing dperrymorrow 3 months ago
-</code></pre>
+  9e2f9dcbbc28db6f48470 line highlighing dperrymorrow 3 months ago</code></pre>
 <p>Stage Changes: <em>select which files you would like to stage</em></p>
 <pre><code class="language-shelldark">$ gorp
 master Choose a command Stage changes 9
@@ -127,8 +118,7 @@ master Choose a command Stage changes 9
  ◯  ?? _source/public/images/projects/gorp.mp4
  ◯  ?? _source/public/images/projects/gorp/
  ◯  ?? _source/public/images/projects/gorp_thumb.png
- ◯  ?? _source/public/posts/gorp.md
-</code></pre>
+ ◯  ?? _source/public/posts/gorp.md</code></pre>
 <p>Discard Changes: <em>choose files to reset to head</em></p>
 <pre><code class="language-shelldark">gorp
 master Choose a command Discard Changes 9
@@ -136,8 +126,7 @@ master Choose a command Discard Changes 9
 ❯◯  _source/public/posts/_data.json
  ◯  _source/public/styles/app.scss
  ◯  _source/public/styles/github_theme.scss
- ◯  _source/public/styles/index.scss
-</code></pre>
+ ◯  _source/public/styles/index.scss</code></pre>
 <p>Commit Changes: <em>make a commit of your staged files, lets you choose your default editor, or the terminal for your commit messsage</em></p>
 <pre><code class="language-shelldark">$ gorp
 master Choose a command Commit changes 18
@@ -146,8 +135,6 @@ master Choose a command Commit changes 18
 ❯ Terminal Input
  ──────────────
  Cancel
- ──────────────
-</code></pre>
+ ──────────────</code></pre>
 <pre><code class="language-shelldark">? How do you want to enter your commit message? Terminal Input
-? Commit title
-</code></pre></div></div></div><nav id="side-nav"><ul><li><a href="/">Root</a></li><li><a href="/posts/about">About</a></li><li><a href="/morrow_resume.pdf" download="Morrow-Resume.pdf">Resume</a></li><li><h4>Vue</h4><ul><li><a href="/posts/no-compile-vue">No Compile Vue App</a></li><li><a href="/posts/vuex-module-boilerplate">Vuex Module Boilerplate</a></li><li><a href="/posts/vue-route-params">Vue Route Parameters</a></li></ul></li><li><h4>Javascript</h4><ul><li><a href="/posts/get-computed-style">window.getComputedStyle</a></li><li><a href="/posts/javascript-factory-pattern">Javascript Factory Pattern</a></li><li><a href="/posts/protected-methods-in-javascript">Protected Methods In Javascript</a></li><li><a href="/posts/before-and-after-print-hooks">Before &amp; After Hooks for Printing</a></li><li><a href="/posts/javascript-inheritance">Javascript Inheritance</a></li><li><a href="/posts/backbone-singleton">Backbone.js Singleton</a></li><li><a href="/posts/javascript-patterns">Javascript Patterns</a></li></ul></li><li><h4>CSS</h4><ul><li><a href="/posts/get-computed-style">window.getComputedStyle</a></li><li><a href="/posts/focus-within">CSS sudo selector focus-within</a></li></ul></li><li><h4>ES6</h4><ul><li><a href="/posts/async-await">Async Await</a></li><li><a href="/posts/es6-in-the-browser">ES6 in the Browser</a></li></ul></li><li><h4>Projects</h4><ul><li class="active"><a href="/posts/gorp">Gorp, a Git CLI helper</a></li><li><a href="/posts/vue-debugger">Vue Debugger</a></li><li><a href="/posts/blissfull-javascript">Bliss.js</a></li></ul></li><li><h4>Ruby</h4><ul><li><a href="/posts/dynamic-bookmarks-in-ruby">Create Dynamic Bookmarklets in Ruby</a></li></ul></li><li><h4>Other</h4><ul><li><a href="/posts/less-tips-and-tricks">Less Tips &amp; Tricks</a></li></ul></li></ul></nav></div><script src="/scripts/app.js"></script><script src="/scripts/prism.js"> </script></body></html>
+? Commit title</code></pre></div></div></div><nav id="side-nav"><ul><li><a href="/">Root</a></li><li><a href="/posts/about">About</a></li><li><a href="/morrow_resume.pdf" download="Morrow-Resume.pdf">Resume</a></li><li><h4>Vue</h4><ul><li><a href="/posts/no-compile-vue">No Compile Vue App</a></li><li><a href="/posts/vuex-module-boilerplate">Vuex Module Boilerplate</a></li><li><a href="/posts/vue-route-params">Vue Route Parameters</a></li></ul></li><li><h4>Javascript</h4><ul><li><a href="/posts/rebars">ReBars</a></li><li><a href="/posts/get-computed-style">window.getComputedStyle</a></li><li><a href="/posts/javascript-factory-pattern">Javascript Factory Pattern</a></li><li><a href="/posts/protected-methods-in-javascript">Protected Methods In Javascript</a></li><li><a href="/posts/before-and-after-print-hooks">Before &amp; After Hooks for Printing</a></li><li><a href="/posts/javascript-inheritance">Javascript Inheritance</a></li><li><a href="/posts/backbone-singleton">Backbone.js Singleton</a></li><li><a href="/posts/javascript-patterns">Javascript Patterns</a></li></ul></li><li><h4>CSS</h4><ul><li><a href="/posts/get-computed-style">window.getComputedStyle</a></li><li><a href="/posts/focus-within">CSS sudo selector focus-within</a></li></ul></li><li><h4>ES6</h4><ul><li><a href="/posts/async-await">Async Await</a></li><li><a href="/posts/es6-in-the-browser">ES6 in the Browser</a></li></ul></li><li><h4>Projects</h4><ul><li><a href="/posts/rebars">ReBars</a></li><li class="active"><a href="/posts/gorp">Gorp, a Git CLI helper</a></li><li><a href="/posts/vue-debugger">Vue Debugger</a></li><li><a href="/posts/blissfull-javascript">Bliss.js</a></li></ul></li><li><h4>Ruby</h4><ul><li><a href="/posts/dynamic-bookmarks-in-ruby">Create Dynamic Bookmarklets in Ruby</a></li></ul></li><li><h4>Other</h4><ul><li><a href="/posts/less-tips-and-tricks">Less Tips &amp; Tricks</a></li></ul></li></ul></nav></div><script src="/scripts/app.js"></script><script src="/scripts/prism.js"> </script></body></html>

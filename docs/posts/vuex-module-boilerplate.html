@@ -20,8 +20,7 @@ export default {
       state.isLoading = loading;
     },
   },
-}
-</code></pre>
+}</code></pre>
 <p>This is a minimal example, but you can easily imagine this growing and being a pain to write mutations for every key in your state.</p>
 <p>So 9 times out of 10 your mutations will set an item in your store, to the payload you are passing in. I get annoyed defining all these mutations that are all are essentially the same.</p>
 <h3>Solution:</h3><pre><code class="language-javascript">// store/modules/base.js
@@ -57,8 +56,7 @@ export default {
     module.mutations = buildMutations(base.state, base.mutations);
     return module;
   },
-};
-</code></pre>
+};</code></pre>
 <p><strong>And then using the base module:</strong></p>
 <pre><code class="language-javascript">// store/modules/users.js
 
@@ -75,8 +73,7 @@ export default Base.extend({ --
       // custom mutation you need for your module
     },
   },
-});
-</code></pre>
+});</code></pre>
 <p>Now when we trace out our module, we see that we have mutations added for everything in our store. And any extra mutations we need <em>custom</em> that we passed in are there as well.</p>
 <pre><code class="language-javascript">{ state: { users: [], isLoading: false },
   mutations:
@@ -85,12 +82,10 @@ export default Base.extend({ --
      removeUsers: [Function],
      someCustomMutation: [Function],
      setIsLoading: [Function: setIsLoading] },
-  namespaced: true }
-</code></pre>
+  namespaced: true }</code></pre>
 <p>It even added <code>pushUsers</code> and <code>removeUsers</code> since that item was an Array. This allows us to have a mutation to push into the arrray, or remove an item from the array based on the id we pass.</p>
 <pre><code class="language-javascript">// for example from an action in users
 context.commit(&#39;pushUsers&#39;, {id: 3, name: &#39;David&#39;});
 // or remove by id
-context.commit(&#39;removeUsers&#39;, 3);
-</code></pre>
-<p>I find this pattern useful, I hope you do as well.</p></div></div></div><nav id="side-nav"><ul><li><a href="/">Root</a></li><li><a href="/posts/about">About</a></li><li><a href="/morrow_resume.pdf" download="Morrow-Resume.pdf">Resume</a></li><li><h4>Vue</h4><ul><li><a href="/posts/no-compile-vue">No Compile Vue App</a></li><li class="active"><a href="/posts/vuex-module-boilerplate">Vuex Module Boilerplate</a></li><li><a href="/posts/vue-route-params">Vue Route Parameters</a></li></ul></li><li><h4>Javascript</h4><ul><li><a href="/posts/get-computed-style">window.getComputedStyle</a></li><li><a href="/posts/javascript-factory-pattern">Javascript Factory Pattern</a></li><li><a href="/posts/protected-methods-in-javascript">Protected Methods In Javascript</a></li><li><a href="/posts/before-and-after-print-hooks">Before &amp; After Hooks for Printing</a></li><li><a href="/posts/javascript-inheritance">Javascript Inheritance</a></li><li><a href="/posts/backbone-singleton">Backbone.js Singleton</a></li><li><a href="/posts/javascript-patterns">Javascript Patterns</a></li></ul></li><li><h4>CSS</h4><ul><li><a href="/posts/get-computed-style">window.getComputedStyle</a></li><li><a href="/posts/focus-within">CSS sudo selector focus-within</a></li></ul></li><li><h4>ES6</h4><ul><li><a href="/posts/async-await">Async Await</a></li><li><a href="/posts/es6-in-the-browser">ES6 in the Browser</a></li></ul></li><li><h4>Projects</h4><ul><li><a href="/posts/gorp">Gorp, a Git CLI helper</a></li><li><a href="/posts/vue-debugger">Vue Debugger</a></li><li><a href="/posts/blissfull-javascript">Bliss.js</a></li></ul></li><li><h4>Ruby</h4><ul><li><a href="/posts/dynamic-bookmarks-in-ruby">Create Dynamic Bookmarklets in Ruby</a></li></ul></li><li><h4>Other</h4><ul><li><a href="/posts/less-tips-and-tricks">Less Tips &amp; Tricks</a></li></ul></li></ul></nav></div><script src="/scripts/app.js"></script><script src="/scripts/prism.js"> </script></body></html>
+context.commit(&#39;removeUsers&#39;, 3);</code></pre>
+<p>I find this pattern useful, I hope you do as well.</p></div></div></div><nav id="side-nav"><ul><li><a href="/">Root</a></li><li><a href="/posts/about">About</a></li><li><a href="/morrow_resume.pdf" download="Morrow-Resume.pdf">Resume</a></li><li><h4>Vue</h4><ul><li><a href="/posts/no-compile-vue">No Compile Vue App</a></li><li class="active"><a href="/posts/vuex-module-boilerplate">Vuex Module Boilerplate</a></li><li><a href="/posts/vue-route-params">Vue Route Parameters</a></li></ul></li><li><h4>Javascript</h4><ul><li><a href="/posts/rebars">ReBars</a></li><li><a href="/posts/get-computed-style">window.getComputedStyle</a></li><li><a href="/posts/javascript-factory-pattern">Javascript Factory Pattern</a></li><li><a href="/posts/protected-methods-in-javascript">Protected Methods In Javascript</a></li><li><a href="/posts/before-and-after-print-hooks">Before &amp; After Hooks for Printing</a></li><li><a href="/posts/javascript-inheritance">Javascript Inheritance</a></li><li><a href="/posts/backbone-singleton">Backbone.js Singleton</a></li><li><a href="/posts/javascript-patterns">Javascript Patterns</a></li></ul></li><li><h4>CSS</h4><ul><li><a href="/posts/get-computed-style">window.getComputedStyle</a></li><li><a href="/posts/focus-within">CSS sudo selector focus-within</a></li></ul></li><li><h4>ES6</h4><ul><li><a href="/posts/async-await">Async Await</a></li><li><a href="/posts/es6-in-the-browser">ES6 in the Browser</a></li></ul></li><li><h4>Projects</h4><ul><li><a href="/posts/rebars">ReBars</a></li><li><a href="/posts/gorp">Gorp, a Git CLI helper</a></li><li><a href="/posts/vue-debugger">Vue Debugger</a></li><li><a href="/posts/blissfull-javascript">Bliss.js</a></li></ul></li><li><h4>Ruby</h4><ul><li><a href="/posts/dynamic-bookmarks-in-ruby">Create Dynamic Bookmarklets in Ruby</a></li></ul></li><li><h4>Other</h4><ul><li><a href="/posts/less-tips-and-tricks">Less Tips &amp; Tricks</a></li></ul></li></ul></nav></div><script src="/scripts/app.js"></script><script src="/scripts/prism.js"> </script></body></html>
