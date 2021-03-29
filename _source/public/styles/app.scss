@@ -1,16 +1,8 @@
-@import "../../../node_modules/normalize.css/normalize";
-@import "../../../node_modules/typebase.css/typebase";
-// @import "../../../node_modules/luminous-lightbox/dist/luminous-basic";
-
-// @import "https://fonts.googleapis.com/css?family=Roboto+Slab:700";
-// @import "https://fonts.googleapis.com/css?family=Merriweather:400, 700";
-
 @import url("https://fonts.googleapis.com/css?family=Merriweather|Roboto+Slab:700");
 
-@import "syntax";
-@import "github_theme";
-@import "index";
 @import "vars";
+@import "syntax";
+@import "index";
 
 html,
 body {

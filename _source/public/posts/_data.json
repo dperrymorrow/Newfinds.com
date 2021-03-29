@@ -1,4 +1,27 @@
 {
+  "about": {
+    "date": "David Morrow",
+    "title": "About Me",
+    "intro": "Hi I’m Dave, a full stack web developer who leans to the front-end. I live in beautiful Portland Oregon with my wife and two children.",
+    "tags": []
+  },
+  "mirror": {
+    "title": "Code editor in 15 lines ",
+    "date": "2020-10-01",
+    "thumb": "js-logo.svg",
+    "tags": [
+      "Promoted",
+      "Javascript"
+    ],
+    "codepen": {
+      "height": 600,
+      "tabs": [
+        "result"
+      ],
+      "slug": "VwagYGV"
+    },
+    "intro": "Ever struggle with writing a WYSIWYG? Below I describe how to write a code editor in 15 lines of Javascript."
+  },
   "rebars": {
     "title": "ReBars",
     "date": "2020-07-14",
@@ -10,18 +33,6 @@
       "Projects"
     ],
     "intro": "A simple JS library, with no VDOM, pre-compliing or Babeling"
-  },
-  "gorp": {
-    "title": "Gorp, a Git CLI helper",
-    "date": "2018-02-07",
-    "thumb": "projects/gorp_thumb.png",
-    "video": "gorp.mp4",
-    "github": "https://github.com/dperrymorrow/gorp",
-    "tags": [
-      "Promoted",
-      "Projects"
-    ],
-    "intro": "A CLI helper to bridge the gap between using command line or a GUI for common Git tasks."
   },
   "get-computed-style": {
     "title": "window.getComputedStyle",
@@ -40,6 +51,18 @@
       "CSS"
     ],
     "intro": "Get all of a DOM element's css properties from Javascript."
+  },
+  "gorp": {
+    "title": "Gorp, a Git CLI helper",
+    "date": "2018-02-07",
+    "thumb": "projects/gorp_thumb.png",
+    "video": "gorp.mp4",
+    "github": "https://github.com/dperrymorrow/gorp",
+    "tags": [
+      "Promoted",
+      "Projects"
+    ],
+    "intro": "A CLI helper to bridge the gap between using command line or a GUI for common Git tasks."
   },
   "focus-within": {
     "title": "CSS sudo selector focus-within",
@@ -128,16 +151,6 @@
     ],
     "intro": "Need Objects that keep state? For a long time I thought the only option was classes."
   },
-  "protected-methods-in-javascript": {
-    "title": "Protected Methods In Javascript",
-    "date": "2016-07-18",
-    "thumb": "js-logo.svg",
-    "tags": [
-      "Javascript",
-      "Promoted"
-    ],
-    "intro": "Easily add private methods to your Javascript Module or Class, while also avoiding scope issues on callbacks."
-  },
   "es6-in-the-browser": {
     "title": "ES6 in the Browser",
     "date": "2016-07-18",
@@ -147,6 +160,16 @@
       "Promoted"
     ],
     "intro": "You can currently use most ES6 in all evergreen browsers. Here are some core features of ES6."
+  },
+  "protected-methods-in-javascript": {
+    "title": "Protected Methods In Javascript",
+    "date": "2016-07-18",
+    "thumb": "js-logo.svg",
+    "tags": [
+      "Javascript",
+      "Promoted"
+    ],
+    "intro": "Easily add private methods to your Javascript Module or Class, while also avoiding scope issues on callbacks."
   },
   "blissfull-javascript": {
     "title": "Bliss.js",
@@ -197,11 +220,5 @@
     "date": "2012-05-01",
     "tags": "Ruby",
     "intro": "An easy way to create a Javascript bookmarklet from a JS file with Ruby variables interpolated into the bookmarklet."
-  },
-  "about": {
-    "date": "David Morrow",
-    "title": "About Me",
-    "intro": "Hi I’m Dave, a full stack web developer who leans to the front-end. I live in beautiful Portland Oregon with my wife and two children.",
-    "tags": []
   }
 }
