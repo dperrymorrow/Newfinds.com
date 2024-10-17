@@ -1,28 +1,7 @@
 {
   "globals": {
     "title": "David Morrow",
-    "categories": [
-      "Vue",
-      "Javascript",
-      "CSS",
-      "ES6",
-      "Projects",
-      "Ruby",
-      "Other"
-    ],
-    "months": [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December"
-    ]
+    "categories": ["Vue", "Javascript", "CSS", "ES6", "Projects", "Ruby", "Other"],
+    "months": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
   }
 }

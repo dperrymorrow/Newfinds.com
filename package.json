@@ -2,10 +2,11 @@
   "name": "newfinds",
   "version": "1.0.0",
   "description": "newfinds website",
+  "type": "module",
   "scripts": {
-    "scratch": "babel _source/_playground --out-dir _source/_playground_compiled && node _source/_playground_compiled",
-    "dev": "npm run sort && harp server _source --port 3000",
-    "build": "npm run sort && harp compile _source docs",
+    "scrape": "node ./source/scripts/scrape-dev-to.js",
+    "dev": "npx harp _source",
+    "build": "npx harp compile _source docs",
     "sort": "node _source/scripts/sort.js"
   },
   "repository": {
@@ -25,7 +26,7 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-node8": "^1.2.0",
-    "harp": "^0.32.0",
+    "harp": "^0.40.3",
     "lodash": "^4.17.4",
     "luminous-lightbox": "^0.3.2"
   }
