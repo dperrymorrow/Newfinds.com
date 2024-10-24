@@ -1,0 +1,17 @@
+{
+  "index": {
+    "title": "Hi, I'm David Morrow.",
+    "coverImage": "images/cover-img.jpg",
+    "caption": "Mt Hood above Cloud Cap"
+  },
+  "about": {
+    "title": "About me.",
+    "coverImage": "images/mountains-2.jpg",
+    "caption": "Eagle Cap wilderness in the Wallowas"
+  },
+  "404": {
+    "title": "Whoops, 404!",
+    "coverImage": "images/mountains.jpg",
+    "caption": "The Wallowas mountain range"
+  }
+}

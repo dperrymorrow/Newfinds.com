@@ -1,224 +1,573 @@
 {
-  "mirror": {
-    "title": "Code editor in 15 lines ",
-    "date": "2020-10-01",
-    "thumb": "js-logo.svg",
-    "tags": [
-      "Promoted",
-      "Javascript"
+  "you-no-longer-need-vuex-pinia-for-shared-state-in-vue": {
+    "type_of": "article",
+    "id": 1864318,
+    "title": "You don't need Vuex / Pinia for shared state in Vue.",
+    "description": "Since Vue.js 3.x, you no longer need to use Vuex to share a centralized state with all your...",
+    "readable_publish_date": "May 24",
+    "slug": "you-no-longer-need-vuex-pinia-for-shared-state-in-vue",
+    "path": "/dperrymorrow/you-no-longer-need-vuex-pinia-for-shared-state-in-vue-4ikp",
+    "url": "https://dev.to/dperrymorrow/you-no-longer-need-vuex-pinia-for-shared-state-in-vue-4ikp",
+    "comments_count": 4,
+    "public_reactions_count": 4,
+    "collection_id": null,
+    "published_timestamp": "2024-05-24T20:48:58Z",
+    "positive_reactions_count": 4,
+    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Faq3xf8d1tja1mzp9e26b.png",
+    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Faq3xf8d1tja1mzp9e26b.png",
+    "canonical_url": "https://dev.to/dperrymorrow/you-no-longer-need-vuex-pinia-for-shared-state-in-vue-4ikp",
+    "created_at": "2024-05-24T20:48:59Z",
+    "edited_at": "2024-05-25T04:19:18Z",
+    "crossposted_at": null,
+    "published_at": "2024-05-24T20:48:58Z",
+    "last_comment_at": "2024-05-29T18:50:09Z",
+    "reading_time_minutes": 2,
+    "tag_list": [
+      "vue",
+      "flux",
+      "javascript",
+      "webdev"
     ],
-    "codepen": {
-      "height": 600,
-      "tabs": [
-        "result"
-      ],
-      "slug": "VwagYGV"
+    "tags": "vue, flux, javascript, webdev",
+    "user": {
+      "name": "David Morrow",
+      "username": "dperrymorrow",
+      "twitter_username": "dperrymorrow",
+      "github_username": "dperrymorrow",
+      "user_id": 477467,
+      "website_url": "https://newfinds.com",
+      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg",
+      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg"
     },
-    "intro": "Ever struggle with writing a WYSIWYG? Below I describe how to write a code editor in 15 lines of Javascript."
+    "comments": [
+      {
+        "type_of": "comment",
+        "id_code": "2fdb2",
+        "created_at": "2024-05-28T12:56:15Z",
+        "body_html": "<p>This is interesting. Does this work in larger projects like for example an admin based project ie role based access control kind of project, crud applications </p>\n\n",
+        "user": {
+          "name": "Sam⚡🌍📌",
+          "username": "samthatcode",
+          "twitter_username": "samthatcode",
+          "github_username": "samthatcode",
+          "user_id": 588971,
+          "website_url": null,
+          "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F588971%2Fc89e4260-0c12-4323-9650-91dc7fdbd3a8.jpg",
+          "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F588971%2Fc89e4260-0c12-4323-9650-91dc7fdbd3a8.jpg"
+        },
+        "children": [
+          {
+            "type_of": "comment",
+            "id_code": "2fdh0",
+            "created_at": "2024-05-28T17:41:12Z",
+            "body_html": "<p>It would scale as well as reactive data in a component does, as its the same logic being used in both places. The main advantage of a flux lib like Vuex IMO is that you can organize logic in different <a href=\"https://vuex.vuejs.org/guide/modules.html\" rel=\"nofollow\">modules</a>. I suppose you could do something similar with this pattern, but it could get messy if you were not careful. </p>\n\n",
+            "user": {
+              "name": "David Morrow",
+              "username": "dperrymorrow",
+              "twitter_username": "dperrymorrow",
+              "github_username": "dperrymorrow",
+              "user_id": 477467,
+              "website_url": "https://newfinds.com",
+              "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg",
+              "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg"
+            },
+            "children": [
+              {
+                "type_of": "comment",
+                "id_code": "2fdhj",
+                "created_at": "2024-05-28T18:28:10Z",
+                "body_html": "<p>Oh thanks. The link was helpful. I will be working on an admin based crud application with Casl package for ability -based among other things. Appreciate your feedback and response 🙏</p>\n\n",
+                "user": {
+                  "name": "Sam⚡🌍📌",
+                  "username": "samthatcode",
+                  "twitter_username": "samthatcode",
+                  "github_username": "samthatcode",
+                  "user_id": 588971,
+                  "website_url": null,
+                  "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F588971%2Fc89e4260-0c12-4323-9650-91dc7fdbd3a8.jpg",
+                  "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F588971%2Fc89e4260-0c12-4323-9650-91dc7fdbd3a8.jpg"
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type_of": "comment",
+        "id_code": "2fe3l",
+        "created_at": "2024-05-29T12:50:37Z",
+        "body_html": "<p>Very good, since the release of vue 3 I have never needed vuex/pinia in my projects.</p>\n\n",
+        "user": {
+          "name": "Patrick Monteiro",
+          "username": "patrickmonteiro",
+          "twitter_username": null,
+          "github_username": "patrickmonteiro",
+          "user_id": 250408,
+          "website_url": "https://abaetetech.com.br/",
+          "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F250408%2Fb53bf74c-89e0-4613-8606-122cb8996179.png",
+          "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F250408%2Fb53bf74c-89e0-4613-8606-122cb8996179.png"
+        },
+        "children": []
+      }
+    ]
   },
-  "rebars": {
-    "title": "ReBars",
-    "date": "2020-07-14",
-    "thumb": "rb.png",
-    "github": "https://github.com/dperrymorrow/re-bars",
-    "tags": [
-      "Promoted",
-      "Javascript",
-      "Projects"
+  "using-react-without-jsx-no-build": {
+    "type_of": "article",
+    "id": 1317688,
+    "title": "Using React without JSX == no build",
+    "description": "Removing the build step unleashes React to situations where it would ordinarily be too...",
+    "readable_publish_date": "Jan 4 '23",
+    "slug": "using-react-without-jsx-no-build",
+    "path": "/dperrymorrow/using-react-without-jsx-no-build-14gg",
+    "url": "https://dev.to/dperrymorrow/using-react-without-jsx-no-build-14gg",
+    "comments_count": 2,
+    "public_reactions_count": 9,
+    "collection_id": null,
+    "published_timestamp": "2023-01-04T23:09:27Z",
+    "positive_reactions_count": 9,
+    "cover_image": null,
+    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fzg9jix25q6ac5pw238uc.png",
+    "canonical_url": "https://dev.to/dperrymorrow/using-react-without-jsx-no-build-14gg",
+    "created_at": "2023-01-04T23:09:27Z",
+    "edited_at": null,
+    "crossposted_at": null,
+    "published_at": "2023-01-04T23:09:27Z",
+    "last_comment_at": "2024-02-20T03:20:16Z",
+    "reading_time_minutes": 8,
+    "tag_list": [
+      "jsx",
+      "react",
+      "webdev",
+      "javascript"
     ],
-    "intro": "A simple JS library, with no VDOM, pre-compliing or Babeling"
-  },
-  "gorp": {
-    "title": "Gorp, a Git CLI helper",
-    "date": "2018-02-07",
-    "thumb": "projects/gorp_thumb.png",
-    "video": "gorp.mp4",
-    "github": "https://github.com/dperrymorrow/gorp",
-    "tags": [
-      "Promoted",
-      "Projects"
-    ],
-    "intro": "A CLI helper to bridge the gap between using command line or a GUI for common Git tasks."
-  },
-  "get-computed-style": {
-    "title": "window.getComputedStyle",
-    "date": "2018-02-07",
-    "codepen": {
-      "height": 400,
-      "tabs": [
-        "js",
-        "result"
-      ],
-      "slug": "wyoXyP"
+    "tags": "jsx, react, webdev, javascript",
+    "user": {
+      "name": "David Morrow",
+      "username": "dperrymorrow",
+      "twitter_username": "dperrymorrow",
+      "github_username": "dperrymorrow",
+      "user_id": 477467,
+      "website_url": "https://newfinds.com",
+      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg",
+      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg"
     },
-    "mdn": "https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle",
-    "tags": [
-      "Javascript",
-      "CSS"
-    ],
-    "intro": "Get all of a DOM element's css properties from Javascript."
+    "comments": [
+      {
+        "type_of": "comment",
+        "id_code": "240pc",
+        "created_at": "2023-01-05T20:21:33Z",
+        "body_html": "<p>I know this is wildly off-topic (and the topic is super interesting!), but this highlights one of my pet-peeves about JS:</p>\n\n<blockquote>\n<p>You must Invoke the HTML method when returning HTML</p>\n</blockquote>\n\n<p>And then you go on to show <code>html</code> as a template-string function! JavaScript's use of functions for template strings is a very funny construct - more than interpolation, less than operator overloading. It's the kind of thing PHP would come up with!</p>\n\n<p>Sorry, just wanted to drop those thoughts somewhere and this seemed as good a place as any.</p>\n\n",
+        "user": {
+          "name": "FJones",
+          "username": "fjones",
+          "twitter_username": null,
+          "github_username": "vad-systems",
+          "user_id": 242489,
+          "website_url": null,
+          "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F242489%2F7590ae2e-dd94-4d70-8bd3-d392b76a1133.png",
+          "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F242489%2F7590ae2e-dd94-4d70-8bd3-d392b76a1133.png"
+        },
+        "children": [
+          {
+            "type_of": "comment",
+            "id_code": "240pp",
+            "created_at": "2023-01-05T20:59:17Z",
+            "body_html": "<p>indeed, it took me a bit to wrap my head around what was going on there when i first started using tagged template literals. Very powerful, but quite heady</p>\n\n",
+            "user": {
+              "name": "David Morrow",
+              "username": "dperrymorrow",
+              "twitter_username": "dperrymorrow",
+              "github_username": "dperrymorrow",
+              "user_id": 477467,
+              "website_url": "https://newfinds.com",
+              "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg",
+              "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg"
+            },
+            "children": []
+          }
+        ]
+      }
+    ]
   },
-  "focus-within": {
-    "title": "CSS sudo selector focus-within",
-    "date": "2018-01-01",
-    "intro": "Ever wanna style a parent when a child element receives focus?",
-    "mdn": "https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-within",
-    "tags": [
-      "CSS"
+  "build-a-js-framework-with-80-lines-of-javascript": {
+    "type_of": "article",
+    "id": 1289325,
+    "title": "Build an 80 line JS Framework",
+    "description": "Before I get started, I want to share where the final code is, as well as a working example.   source...",
+    "readable_publish_date": "Dec 22 '22",
+    "slug": "build-a-js-framework-with-80-lines-of-javascript",
+    "path": "/dperrymorrow/build-a-js-framework-with-80-lines-of-javascript-1bne",
+    "url": "https://dev.to/dperrymorrow/build-a-js-framework-with-80-lines-of-javascript-1bne",
+    "comments_count": 4,
+    "public_reactions_count": 19,
+    "collection_id": 20851,
+    "published_timestamp": "2022-12-22T04:15:45Z",
+    "positive_reactions_count": 19,
+    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ffdudad1sq5x9r7nhp98t.png",
+    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ffdudad1sq5x9r7nhp98t.png",
+    "canonical_url": "https://dev.to/dperrymorrow/build-a-js-framework-with-80-lines-of-javascript-1bne",
+    "created_at": "2022-12-08T18:30:46Z",
+    "edited_at": "2023-01-04T18:01:40Z",
+    "crossposted_at": null,
+    "published_at": "2022-12-22T04:15:45Z",
+    "last_comment_at": "2024-09-04T17:04:31Z",
+    "reading_time_minutes": 7,
+    "tag_list": [
+      "javascript",
+      "webdev",
+      "tutorial",
+      "programming"
     ],
-    "codepen": {
-      "slug": "aqpLWM",
-      "tabs": [
-        "css",
-        "result"
-      ],
-      "height": 294
-    }
-  },
-  "no-compile-vue": {
-    "title": "No Compile Vue App",
-    "codepen": {
-      "height": 365,
-      "slug": "NwEgrd",
-      "tabs": [
-        "result"
-      ]
+    "tags": "javascript, webdev, tutorial, programming",
+    "user": {
+      "name": "David Morrow",
+      "username": "dperrymorrow",
+      "twitter_username": "dperrymorrow",
+      "github_username": "dperrymorrow",
+      "user_id": 477467,
+      "website_url": "https://newfinds.com",
+      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg",
+      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg"
     },
-    "thumb": "vue.svg",
-    "date": "2017-12-02",
-    "tags": [
-      "Vue",
-      "Promoted"
+    "comments": [
+      {
+        "type_of": "comment",
+        "id_code": "23ndm",
+        "created_at": "2022-12-31T11:08:02Z",
+        "body_html": "<p>Hi David,<br>\nIt looks like you have made the same mistake I make all to often with the markdown around your link to <code>(Create an Observable Object using Proxy)[https://dev.to/dperrymorrow/create-an-observable-object-using-proxy-3h62]</code>.</p>\n\n<p>Swap the parentheses and square brackets around to  <code>[Create an Observable Object using Proxy](https://dev.to/dperrymorrow/create-an-observable-object-using-proxy-3h62)</code>.</p>\n\n<p>Kind regard</p>\n\n",
+        "user": {
+          "name": "Tracy Gilmore",
+          "username": "tracygjg",
+          "twitter_username": null,
+          "github_username": "TracyGJG",
+          "user_id": 26068,
+          "website_url": null,
+          "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F26068%2Fba1ab730-b1da-4996-b928-91757835587c.jpeg",
+          "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F26068%2Fba1ab730-b1da-4996-b928-91757835587c.jpeg"
+        },
+        "children": []
+      },
+      {
+        "type_of": "comment",
+        "id_code": "2gn83",
+        "created_at": "2024-07-24T18:59:14Z",
+        "body_html": "<p>Hello Mr. David Morrow, thank you for your wonderful article and project. I tried to build the framework you have created in this article, from start to finish, but, I get 404 error no matter Nodejs or Light-Server. How can I solve this problem, can you help me please?</p>\n\n",
+        "user": {
+          "name": "Yakup Cemil KAYABAŞ",
+          "username": "yakupcemilk",
+          "twitter_username": null,
+          "github_username": "yakupcemilk",
+          "user_id": 1640217,
+          "website_url": null,
+          "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F1640217%2F0c1d6bed-ee20-4323-8075-d106c11f5f17.jpeg",
+          "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F1640217%2F0c1d6bed-ee20-4323-8075-d106c11f5f17.jpeg"
+        },
+        "children": [
+          {
+            "type_of": "comment",
+            "id_code": "2ho0i",
+            "created_at": "2024-09-04T16:59:35Z",
+            "body_html": "<p>I have added instructions to the readme on how to run the repo. </p>\n\n<ol>\n<li>clone this repo</li>\n<li>cd into directory</li>\n<li><code>npm install</code></li>\n<li><code>npm run dev</code></li>\n<li>go to localhost:8000 in your browser</li>\n</ol>\n\n",
+            "user": {
+              "name": "David Morrow",
+              "username": "dperrymorrow",
+              "twitter_username": "dperrymorrow",
+              "github_username": "dperrymorrow",
+              "user_id": 477467,
+              "website_url": "https://newfinds.com",
+              "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg",
+              "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg"
+            },
+            "children": [
+              {
+                "type_of": "comment",
+                "id_code": "2ho0o",
+                "created_at": "2024-09-04T17:04:30Z",
+                "body_html": "<p>Thank you sir.</p>\n\n",
+                "user": {
+                  "name": "Yakup Cemil KAYABAŞ",
+                  "username": "yakupcemilk",
+                  "twitter_username": null,
+                  "github_username": "yakupcemilk",
+                  "user_id": 1640217,
+                  "website_url": null,
+                  "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F1640217%2F0c1d6bed-ee20-4323-8075-d106c11f5f17.jpeg",
+                  "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F1640217%2F0c1d6bed-ee20-4323-8075-d106c11f5f17.jpeg"
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "create-an-observable-object-using-proxy": {
+    "type_of": "article",
+    "id": 1271543,
+    "title": "Create an Observable Object using Proxy",
+    "description": "Have you ever needed to \"observe\" an object for changes? If you have ever used Vuejs or React, this...",
+    "readable_publish_date": "Nov 25 '22",
+    "slug": "create-an-observable-object-using-proxy",
+    "path": "/dperrymorrow/create-an-observable-object-using-proxy-3h62",
+    "url": "https://dev.to/dperrymorrow/create-an-observable-object-using-proxy-3h62",
+    "comments_count": 2,
+    "public_reactions_count": 22,
+    "collection_id": 20851,
+    "published_timestamp": "2022-11-25T02:53:46Z",
+    "positive_reactions_count": 22,
+    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fpa9stzltpvimmx8bsmm3.png",
+    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fpa9stzltpvimmx8bsmm3.png",
+    "canonical_url": "https://dev.to/dperrymorrow/create-an-observable-object-using-proxy-3h62",
+    "created_at": "2022-11-25T02:53:46Z",
+    "edited_at": "2022-12-08T18:32:24Z",
+    "crossposted_at": null,
+    "published_at": "2022-11-25T02:53:46Z",
+    "last_comment_at": "2024-02-20T03:20:15Z",
+    "reading_time_minutes": 6,
+    "tag_list": [
+      "javascript",
+      "webdev",
+      "tutorial"
     ],
-    "intro": "Interested in Vue.js but the build setup is too much to deal with?"
+    "tags": "javascript, webdev, tutorial",
+    "user": {
+      "name": "David Morrow",
+      "username": "dperrymorrow",
+      "twitter_username": "dperrymorrow",
+      "github_username": "dperrymorrow",
+      "user_id": 477467,
+      "website_url": "https://newfinds.com",
+      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg",
+      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg"
+    },
+    "comments": [
+      {
+        "type_of": "comment",
+        "id_code": "23im2",
+        "created_at": "2022-12-22T07:51:38Z",
+        "body_html": "<p>Thank you!</p>\n\n",
+        "user": {
+          "name": "Benjamin Grand",
+          "username": "bgrand_ch",
+          "twitter_username": "bgrand_ch",
+          "github_username": "bgrand-ch",
+          "user_id": 385334,
+          "website_url": "https://bgrand.ch",
+          "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F385334%2F164c527e-ee85-419f-87b6-a39a9985669a.jpg",
+          "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F385334%2F164c527e-ee85-419f-87b6-a39a9985669a.jpg"
+        },
+        "children": [
+          {
+            "type_of": "comment",
+            "id_code": "23j42",
+            "created_at": "2022-12-22T17:43:41Z",
+            "body_html": "<p>For sure thanks for reading</p>\n\n",
+            "user": {
+              "name": "David Morrow",
+              "username": "dperrymorrow",
+              "twitter_username": "dperrymorrow",
+              "github_username": "dperrymorrow",
+              "user_id": 477467,
+              "website_url": "https://newfinds.com",
+              "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg",
+              "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg"
+            },
+            "children": []
+          }
+        ]
+      }
+    ]
   },
-  "vue-debugger": {
-    "title": "Vue Debugger",
-    "date": "2017-11-28",
-    "thumb": "debugger.png",
-    "video": "debugger.mp4",
-    "github": "https://github.com/dperrymorrow/electron-vue-debugger",
-    "tags": [
-      "Promoted",
-      "Projects"
+  "speed-up-your-code-with-promiseall": {
+    "type_of": "article",
+    "id": 1269502,
+    "title": "Speed up your code with Promise.all",
+    "description": "So one of the things I see commented on all the time in Javascript code reviews.   Say you have some...",
+    "readable_publish_date": "Nov 23 '22",
+    "slug": "speed-up-your-code-with-promiseall",
+    "path": "/dperrymorrow/speed-up-your-code-with-promiseall-3d4i",
+    "url": "https://dev.to/dperrymorrow/speed-up-your-code-with-promiseall-3d4i",
+    "comments_count": 5,
+    "public_reactions_count": 54,
+    "collection_id": null,
+    "published_timestamp": "2022-11-23T21:15:15Z",
+    "positive_reactions_count": 54,
+    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fvjtqs0o7c4bjh56h7mgh.png",
+    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fvjtqs0o7c4bjh56h7mgh.png",
+    "canonical_url": "https://dev.to/dperrymorrow/speed-up-your-code-with-promiseall-3d4i",
+    "created_at": "2022-11-23T21:15:16Z",
+    "edited_at": "2022-11-25T02:55:49Z",
+    "crossposted_at": null,
+    "published_at": "2022-11-23T21:15:15Z",
+    "last_comment_at": "2024-02-20T03:20:15Z",
+    "reading_time_minutes": 4,
+    "tag_list": [
+      "javascript",
+      "performance",
+      "webdev"
     ],
-    "intro": "A custom Vue debugger tool, directly in your browser."
+    "tags": "javascript, performance, webdev",
+    "user": {
+      "name": "David Morrow",
+      "username": "dperrymorrow",
+      "twitter_username": "dperrymorrow",
+      "github_username": "dperrymorrow",
+      "user_id": 477467,
+      "website_url": "https://newfinds.com",
+      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg",
+      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg"
+    },
+    "comments": [
+      {
+        "type_of": "comment",
+        "id_code": "235cb",
+        "created_at": "2022-11-26T21:13:12Z",
+        "body_html": "<p>But the whole point about:<br>\n</p>\n\n<div class=\"highlight js-code-highlight\">\n<pre class=\"highlight plaintext\"><code>async/await\n</code></pre>\n<div class=\"highlight__panel js-actions-panel\">\n<div class=\"highlight__panel-action js-fullscreen-code-action\">\n    <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20px\" height=\"20px\" viewbox=\"0 0 24 24\" class=\"highlight-action crayons-icon highlight-action--fullscreen-on\"><title>Enter fullscreen mode</title>\n    <path d=\"M16 3h6v6h-2V5h-4V3zM2 3h6v2H4v4H2V3zm18 16v-4h2v6h-6v-2h4zM4 19h4v2H2v-6h2v4z\"></path>\n</svg>\n\n    <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20px\" height=\"20px\" viewbox=\"0 0 24 24\" class=\"highlight-action crayons-icon highlight-action--fullscreen-off\"><title>Exit fullscreen mode</title>\n    <path d=\"M18 7h4v2h-6V3h2v4zM8 9H2V7h4V3h2v6zm10 8v4h-2v-6h6v2h-4zM8 15v6H6v-4H2v-2h6z\"></path>\n</svg>\n\n</div>\n</div>\n</div>\n\n\n\n<p>Is that we create an order of execution. The call runs asynchronously but, the next call has to wait until it finishes. <br>\nIn a way, you get the best of both worlds. </p>\n\n<p>If I want pure asynchronicity, I would choose your approach. </p>\n\n<p>But sometimes, it is good to be able to guarantee order, in an asynchronous world. 🙂</p>\n\n",
+        "user": {
+          "name": "Charles Robertson",
+          "username": "charlesr1971",
+          "twitter_username": null,
+          "github_username": "charlesr1971",
+          "user_id": 286705,
+          "website_url": null,
+          "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F286705%2F2cc41a53-8e9f-4591-b9d2-ec4a620b9950.jpeg",
+          "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F286705%2F2cc41a53-8e9f-4591-b9d2-ec4a620b9950.jpeg"
+        },
+        "children": [
+          {
+            "type_of": "comment",
+            "id_code": "235d9",
+            "created_at": "2022-11-27T01:37:53Z",
+            "body_html": "<blockquote>\n<p>But the whole point about: <code>async/await</code> Is that we create an order of execution.</p>\n</blockquote>\n\n<p>Agreed, and that is the case in the example I use <a href=\"https://dev.to/dperrymorrow/speed-up-your-code-with-promiseall-3d4i#real-world-example\" rel=\"nofollow\">the example</a> where you need your data from the API before your client side application can run. </p>\n\n<p>I'm just pointing out if you <em>don't</em> need to wait for each Promise to resolve prior to the next one, don't do that. It's an unnecessary performance killer.</p>\n\n<p>This may seem obvious, but I wrote this post because I've see this performance pitfall often in PR reviews.</p>\n\n",
+            "user": {
+              "name": "David Morrow",
+              "username": "dperrymorrow",
+              "twitter_username": "dperrymorrow",
+              "github_username": "dperrymorrow",
+              "user_id": 477467,
+              "website_url": "https://newfinds.com",
+              "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg",
+              "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg"
+            },
+            "children": [
+              {
+                "type_of": "comment",
+                "id_code": "235f3",
+                "created_at": "2022-11-27T07:11:03Z",
+                "body_html": "<p>Yes. Absolutely agreed. <br>\nI would never use:<br>\n</p>\n\n<div class=\"highlight js-code-highlight\">\n<pre class=\"highlight plaintext\"><code>async/await \n</code></pre>\n<div class=\"highlight__panel js-actions-panel\">\n<div class=\"highlight__panel-action js-fullscreen-code-action\">\n    <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20px\" height=\"20px\" viewbox=\"0 0 24 24\" class=\"highlight-action crayons-icon highlight-action--fullscreen-on\"><title>Enter fullscreen mode</title>\n    <path d=\"M16 3h6v6h-2V5h-4V3zM2 3h6v2H4v4H2V3zm18 16v-4h2v6h-6v-2h4zM4 19h4v2H2v-6h2v4z\"></path>\n</svg>\n\n    <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20px\" height=\"20px\" viewbox=\"0 0 24 24\" class=\"highlight-action crayons-icon highlight-action--fullscreen-off\"><title>Exit fullscreen mode</title>\n    <path d=\"M18 7h4v2h-6V3h2v4zM8 9H2V7h4V3h2v6zm10 8v4h-2v-6h6v2h-4zM8 15v6H6v-4H2v-2h6z\"></path>\n</svg>\n\n</div>\n</div>\n</div>\n\n\n\n<p>If I didn’t need to rely on the order of execution. 🙂</p>\n\n",
+                "user": {
+                  "name": "Charles Robertson",
+                  "username": "charlesr1971",
+                  "twitter_username": null,
+                  "github_username": "charlesr1971",
+                  "user_id": 286705,
+                  "website_url": null,
+                  "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F286705%2F2cc41a53-8e9f-4591-b9d2-ec4a620b9950.jpeg",
+                  "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F286705%2F2cc41a53-8e9f-4591-b9d2-ec4a620b9950.jpeg"
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type_of": "comment",
+        "id_code": "235fj",
+        "created_at": "2022-11-27T09:19:14Z",
+        "body_html": "<p>Hey ! Great article. <br>\nI was wondering what's your theme on the screenshot ?<br>\nThanks.</p>\n\n",
+        "user": {
+          "name": "Enzo",
+          "username": "bacqueyrisses",
+          "twitter_username": null,
+          "github_username": "bacqueyrisses",
+          "user_id": 854410,
+          "website_url": "https://www.bacqueyrisses.dev",
+          "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F854410%2F3f8c50e8-083c-418b-809c-0ff7d3e65b99.png",
+          "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F854410%2F3f8c50e8-083c-418b-809c-0ff7d3e65b99.png"
+        },
+        "children": [
+          {
+            "type_of": "comment",
+            "id_code": "235l2",
+            "created_at": "2022-11-27T18:45:47Z",
+            "body_html": "<p><a href=\"https://marketplace.visualstudio.com/items?itemName=Equinusocio.vsc-community-material-theme\" rel=\"nofollow\">community material theme</a> and I'm using the <em>\"ocean\"</em> variant. Ive been stuck on that one for a while, really like it.</p>\n\n",
+            "user": {
+              "name": "David Morrow",
+              "username": "dperrymorrow",
+              "twitter_username": "dperrymorrow",
+              "github_username": "dperrymorrow",
+              "user_id": 477467,
+              "website_url": "https://newfinds.com",
+              "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg",
+              "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg"
+            },
+            "children": []
+          }
+        ]
+      }
+    ]
   },
-  "vuex-module-boilerplate": {
-    "title": "Vuex Module Boilerplate",
-    "date": "2017-11-11",
-    "thumb": "vue.svg",
-    "tags": [
-      "Promoted",
-      "Vue"
+  "using-hotwiredturbo-but-patch-the-dom-vs-replacing": {
+    "type_of": "article",
+    "id": 1269440,
+    "title": "Make hotwired/turbo patch vs replace",
+    "description": "So if you have used hotwired/turbo you will get a pretty SPA like experience with very little work....",
+    "readable_publish_date": "Nov 23 '22",
+    "slug": "using-hotwiredturbo-but-patch-the-dom-vs-replacing",
+    "path": "/dperrymorrow/using-hotwiredturbo-but-patch-the-dom-vs-replacing-5176",
+    "url": "https://dev.to/dperrymorrow/using-hotwiredturbo-but-patch-the-dom-vs-replacing-5176",
+    "comments_count": 1,
+    "public_reactions_count": 7,
+    "collection_id": null,
+    "published_timestamp": "2022-11-23T19:15:30Z",
+    "positive_reactions_count": 7,
+    "cover_image": null,
+    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fyigs9luitk7ycmfb8mc0.png",
+    "canonical_url": "https://dev.to/dperrymorrow/using-hotwiredturbo-but-patch-the-dom-vs-replacing-5176",
+    "created_at": "2022-11-23T19:15:31Z",
+    "edited_at": "2022-11-25T21:53:40Z",
+    "crossposted_at": null,
+    "published_at": "2022-11-23T19:15:30Z",
+    "last_comment_at": "2023-06-16T18:02:08Z",
+    "reading_time_minutes": 3,
+    "tag_list": [
+      "javascript",
+      "hotwire",
+      "tutorial",
+      "webdev"
     ],
-    "intro": "Tired of writing boiler plate for all your Vuex modules? This will help."
-  },
-  "async-await": {
-    "title": "Async Await",
-    "date": "2017-10-31",
-    "thumb": "es6.svg",
-    "tags": [
-      "ES6",
-      "Promoted"
-    ],
-    "mdn": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function",
-    "intro": "is an exciting feature in Javascript that allows you to avoid promise chain hell."
-  },
-  "vue-route-params": {
-    "title": "Vue Route Parameters",
-    "date": "2017-10-11",
-    "thumb": "vue.svg",
-    "tags": [
-      "Promoted",
-      "Vue"
-    ],
-    "intro": "Is your Vue component too tightly coupled to your router?"
-  },
-  "javascript-factory-pattern": {
-    "title": "Javascript Factory Pattern",
-    "date": "2016-12-02",
-    "thumb": "js-logo.svg",
-    "tags": [
-      "Javascript",
-      "Promoted"
-    ],
-    "intro": "Need Objects that keep state? For a long time I thought the only option was classes."
-  },
-  "protected-methods-in-javascript": {
-    "title": "Protected Methods In Javascript",
-    "date": "2016-07-18",
-    "thumb": "js-logo.svg",
-    "tags": [
-      "Javascript",
-      "Promoted"
-    ],
-    "intro": "Easily add private methods to your Javascript Module or Class, while also avoiding scope issues on callbacks."
-  },
-  "es6-in-the-browser": {
-    "title": "ES6 in the Browser",
-    "date": "2016-07-18",
-    "thumb": "es6.svg",
-    "tags": [
-      "ES6",
-      "Promoted"
-    ],
-    "intro": "You can currently use most ES6 in all evergreen browsers. Here are some core features of ES6."
-  },
-  "blissfull-javascript": {
-    "title": "Bliss.js",
-    "date": "2015-12-02",
-    "tags": [
-      "Projects"
-    ],
-    "thumb": "bliss_thumb.png",
-    "intro": "I’ve been contributing to, and recently been made a collaborator of Bliss.js, a modern approach to cross browser Javascript.",
-    "github": " https://github.com/LeaVerou/bliss",
-    "hero": {
-      "img": "projects/blissjs.png"
-    }
-  },
-  "less-tips-and-tricks": {
-    "title": "Less Tips & Tricks",
-    "intro": "A few tips and tricks you may not know about with your favorite CSS pre-processor LESS.",
-    "tags": "Other",
-    "date": "2015-05-01"
-  },
-  "before-and-after-print-hooks": {
-    "title": "Before & After Hooks for Printing",
-    "date": "2014-05-01",
-    "intro": "Here is how to run Javascript hooks before and after your page is printed.",
-    "tags": "Javascript",
-    "mdn": "https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia"
-  },
-  "javascript-inheritance": {
-    "date": "2013-02-01",
-    "title": "Javascript Inheritance",
-    "intro": "So you have a class in Javascript and you want it to inherit from another class right?",
-    "tags": "Javascript"
-  },
-  "backbone-singleton": {
-    "title": "Backbone.js Singleton",
-    "date": "2012-10-01",
-    "intro": "Convert any Backbone.js class into a singleton by adding to it’s inheritance.",
-    "tags": "Javascript"
-  },
-  "javascript-patterns": {
-    "title": "Javascript Patterns",
-    "date": "2012-09-01",
-    "tags": "Javascript",
-    "intro": " Modules, “classes”, & other helpful habits for more organized Javascript."
-  },
-  "dynamic-bookmarks-in-ruby": {
-    "title": "Create Dynamic Bookmarklets in Ruby",
-    "date": "2012-05-01",
-    "tags": "Ruby",
-    "intro": "An easy way to create a Javascript bookmarklet from a JS file with Ruby variables interpolated into the bookmarklet."
-  },
-  "about": {
-    "date": "David Morrow",
-    "title": "About Me",
-    "intro": "Hi I’m Dave, a full stack web developer who leans to the front-end. I live in beautiful Portland Oregon with my wife and two children.",
-    "tags": []
+    "tags": "javascript, hotwire, tutorial, webdev",
+    "user": {
+      "name": "David Morrow",
+      "username": "dperrymorrow",
+      "twitter_username": "dperrymorrow",
+      "github_username": "dperrymorrow",
+      "user_id": 477467,
+      "website_url": "https://newfinds.com",
+      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg",
+      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg"
+    },
+    "comments": [
+      {
+        "type_of": "comment",
+        "id_code": "276i7",
+        "created_at": "2023-06-07T16:00:32Z",
+        "body_html": "<p>This is awesome! Turbo scrolls to the top when next page is visited. </p>\n\n<p>I fixed it with this: <a href=\"https://github.com/hotwired/turbo/issues/37#issuecomment-1422200868\" rel=\"nofollow\">github.com/hotwired/turbo/issues/3...</a></p>\n\n",
+        "user": {
+          "name": "Klemen Nagode",
+          "username": "knagode",
+          "twitter_username": null,
+          "github_username": "knagode",
+          "user_id": 874805,
+          "website_url": null,
+          "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F874805%2F2f983b9e-3cd2-4b3e-9661-cfafc390f181.jpeg",
+          "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F874805%2F2f983b9e-3cd2-4b3e-9661-cfafc390f181.jpeg"
+        },
+        "children": []
+      }
+    ]
   }
 }

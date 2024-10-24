@@ -10,12 +10,6 @@ Having started my career as a Graphic Designer, I feel I have a knack for buildi
 
 I strive for clean, tested client side Javascript, and love working full stack in Node on occasion. I get the most satisfaction from solving complex problems with simple solutions.
 
-When I am not working on projects or tinkering with open source. I like to backpack in the cascades, work on my bonsai collection, shop for vinyl, and play electric guitar. Oh, and of course my other full time job, being a dad to two teenagers :)
+When I am not working on projects or tinkering with open source. I like to backpack in the cascades, work on my bonsai collection, shop for vinyl, and play electric guitar.
 
----
-
-[Resume](/morrow_resume.pdf) |
-[Github](https://github.com/dperrymorrow) |
-[Email](mailto:dperrymorrow@gmail.com) |
-[LinkedIn](https://www.linkedin.com/in/davidmorrow) |
-<!-- [Coderwall](http://coderwall.com/dperrymorrow) -->
+You can read more about my experience and skills on my [resume](/morrow_resume.pdf).

@@ -1,0 +1,77 @@
+.comments {
+  /* padding-bottom: var(--padding-lg); */
+  /* padding-right: var(--padding-sm); */
+
+  h2 {
+    margin: 0 !important;
+  }
+
+  > ul {
+    padding: 0 !important;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: var(--padding-sm);
+
+    img {
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      margin-right: var(--padding-xs);
+    }
+
+    svg {
+      display: none;
+    }
+
+    .user {
+      border-radius: 2em;
+      display: flex;
+      align-items: center;
+      margin-top: var(--padding-md);
+      margin-bottom: var(--padding-xs);
+    }
+
+    .username {
+      font-size: 1.2em;
+      font-family: var(--font-header);
+      font-weight: 400;
+      color: var(--txt-dark);
+    }
+
+    .message {
+      background-color: var(--bg-2);
+      border-radius: 1em;
+      border-top-left-radius: 0px;
+      padding: var(--padding-xs) var(--padding-md);
+    }
+
+    ul {
+      list-style: none;
+    }
+  }
+
+  footer {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: var(--padding-md);
+    border-top: 2px solid var(--bg-2);
+    padding-top: var(--padding-md);
+
+    a {
+      text-decoration: none;
+      font-size: 1em;
+      background-color: var(--link-txt);
+      color: var(--foreground);
+      font-family: var(--font-header);
+      padding: var(--padding-sm) var(--padding-md);
+      text-align: center;
+      border-radius: 2em;
+
+      &:hover {
+        color: var(--link-txt);
+      }
+    }
+  }
+}

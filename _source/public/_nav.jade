@@ -1,23 +1,23 @@
 
 
-nav#side-nav
-  ul
-    li
-      a(href="/") Root
-    li(class=current.source == 'about' ? 'active' : '')
-      a(href="/posts/about") About
-    li
-      a(href="/morrow_resume.pdf", download="Morrow-Resume.pdf") Resume
-    
-    for tag in categories
+section.nav
+
+  a#nav-toggle(href="#")
+    img(src="/images/hamburger.svg")
+
+  nav
+    ul
       li
-        h4= tag
-        ul
-          for article, slug in public.posts._data
-            if (article.tags.includes(tag))
-              li(class=current.source == slug ? 'active' : '')
-                a(href="/posts/#{ slug }")= article.title
-        
+        a(href="/") Root
+      li(class=current.source == 'about' ? 'active' : '')
+        a(href="/about") About
+      li
+        a(href="/morrow_resume.pdf", download="Morrow-Resume.pdf") Resume
 
 
-  
+    ul
+      for article in public.posts._data
+        li
+          a(href="/posts/#{ article.slug }" class=current.source === article.slug ? 'active' : '')
+            = article.title
+
