@@ -1,88 +1,38 @@
 doctype
 html(lang="en")
-  head
-    title= title
-    
-    meta(name="description" content="#{ intro }")  
-    meta(name="viewport" content="width=device-width, user-scalable=no")
-    link(rel="stylesheet" href="/styles/app.css")  
-    
-    if codepen
-      script(async src="https://production-assets.codepen.io/assets/embed/ei.js")
-        
-    script(async src="https://www.googletagmanager.com/gtag/js?id=UA-12244949-1")
-      
-    script.
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-12244949-1');
+  != partial("../_header")
 
   body
-    
-    .container
-      .content
-        .main
-            
-          .lead
-            .date
-              
-              if (!isNaN(new Date(date)))
-                = months[new Date(date).getMonth()]
-                | &nbsp;
-                = new Date(date).getFullYear()
-              else
-                = date
-                    
-              if github
-                a.github-button(
-                  target="_blank", 
-                  href=github,
-                  aria-label="Fork on GitHub") 
-                  img(src="/images/github.svg")
-                  span View On Github
-
-              a.hamburger(href="#")
-              
-            h1= title
-            h2= intro                
-            
-          
-          if hero
-            .gallery              
-              .item.hero
-                img(src="/images/#{hero.img}")
-                if hero.caption
-                  .caption= hero.caption
-          
-          else if video
-            .gallery
-              .item.hero
-                video(src="/images/projects/#{video}" autoplay loop width="100%" controls)
-                  | Sorry, your browser doesn't support embedded videos, but don't worry, you can 
-                  a(href="/images/projects/#{video}") download it
-                  
-          else if codepen
-            .gallery
-              .item.hero
-                p.codepen(
-                  data-height=codepen.height, 
-                  data-theme-id='dark', 
-                  data-slug-hash=codepen.slug 
-                  data-default-tab=codepen.tabs.join(','), 
-                  data-user='dperrymorrow', 
-                  data-embed-version='2')
-                
-
-        
-          .blog-content
-            != yield
-            if mdn
-              hr
-              a(href=mdn, target="_blank") ➜ Read more on MDN
-              
-          
+    main
       != partial("../_nav")
-    
-    script(src="/scripts/app.js")
-    script(src="/scripts/prism.js")  
+
+      header
+        h1
+          small
+            span= readable_publish_date
+            span.likes= `♥ ${public_reactions_count}`
+
+          = title
+
+        if cover_image
+          img(src=cover_image alt=title loading="lazy")
+
+      article.md
+        != yield
+
+        .comments
+          h3 Comments
+
+          if comments.length
+            ul
+              each comment in comments
+                != partial("./_comment", { comment })
+
+          footer
+            a(href=url target="_blank") Leave a comment
+
+      != partial("../_promoted")
+
+
+
+

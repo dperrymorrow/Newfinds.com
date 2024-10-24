@@ -1,0 +1,50 @@
+@media (max-width: 950px) {
+  html,
+  body {
+    display: block !important;
+  }
+
+  article.md {
+    padding: var(--padding-sm);
+
+    p {
+      padding: 0;
+    }
+
+    > p:first-child {
+      font-size: 1.3rem;
+    }
+  }
+
+  section.nav {
+    padding: var(--padding-xs);
+    min-height: 3em;
+
+    #nav-toggle {
+      right: var(--padding-xs);
+    }
+  }
+
+  header {
+    padding-top: 0px !important;
+  }
+
+  section.promoted {
+    padding: var(--padding-md) var(--padding-xs) !important;
+    font-size: 1.1em !important;
+  }
+
+  .caption {
+    padding-left: var(--padding-sm) !important;
+  }
+
+  main header h1 {
+    margin: var(--padding-sm) !important;
+    font-size: 2.7em !important;
+  }
+
+  main header img {
+    margin-top: var(--padding-sm) !important;
+    margin-bottom: 0;
+  }
+}

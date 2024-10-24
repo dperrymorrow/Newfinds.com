@@ -1,18 +1,7 @@
-.index-articles
-  .group
-    for article, slug in public.posts._data
-      if (article.tags.includes('Promoted'))
-        article.promoted
-
-          if article.thumb
-            a(href="/posts/#{ slug }")
-              img(src="/images/#{ article.thumb }")
-          
-
-          h1
-            //- .date= article.date
-            a(href="/posts/#{ slug }")
-              = article.title
-              | &nbsp;
-            small
-              = article.intro
+section.promoted
+  nav
+    ul
+      for article in public.posts._data
+        li
+          a(href="/posts/#{ article.slug }" class=current.source === article.slug ? 'active' : '')
+            = article.title

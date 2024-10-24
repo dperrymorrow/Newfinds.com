@@ -1,0 +1,10 @@
+li
+  .user
+    img(src=comment.user.profile_image_90)
+    .username= comment.user.username
+  .message!= comment.body_html
+
+  ul
+    each child in comment.children
+      != partial("./_comment", { comment: child })
+
