@@ -1,0 +1,256 @@
+<!DOCTYPE html><html lang="en"><head><title>Using React without JSX == no build</title><meta name="description" content="Removing the build step unleashes React to situations where it would ordinarily be too..."/><meta name="viewport" content="width=device-width, user-scalable=no"/><link rel="stylesheet" href="/styles/app.css"/><script defer="defer" src="https://cloud.umami.is/script.js" data-website-id="9a998f6c-3cf0-4c00-adaf-bae775f82fe5"></script><script src="/scripts/prism.js" defer="defer"></script><script src="/scripts/app.js" defer="defer"></script></head><body><main><section class="nav"><a id="nav-toggle" href="#"><img src="/images/hamburger.svg"/></a><nav><ul><li><a href="/">Root</a></li><li><a href="/about">About</a></li><li><a href="/morrow_resume.pdf" download="Morrow-Resume.pdf">Resume</a></li></ul><ul><li><a href="/posts/you-no-longer-need-vuex-pinia-for-shared-state-in-vue">You don't need Vuex / Pinia for shared state in Vue.</a></li><li><a href="/posts/using-react-without-jsx-no-build" class="active">Using React without JSX == no build</a></li><li><a href="/posts/build-a-js-framework-with-80-lines-of-javascript">Build an 80 line JS Framework</a></li><li><a href="/posts/create-an-observable-object-using-proxy">Create an Observable Object using Proxy</a></li><li><a href="/posts/speed-up-your-code-with-promiseall">Speed up your code with Promise.all</a></li><li><a href="/posts/using-hotwiredturbo-but-patch-the-dom-vs-replacing">Make hotwired/turbo patch vs replace</a></li></ul></nav></section><header><h1><small><span>Jan 4 '23</span><span class="likes">♥ 9</span></small>Using React without JSX == no build</h1></header><article class="md"><h2>Removing the build step unleashes React to situations where it would ordinarily be too heavy-handed.</h2><p>Have you ever wanted to use React without a build step? Ever find yourself in a situation where you would love to use React, but you are not building a single-page application with routes and so forth? Do you just need a component/widget on a page with a high level of interactivity?</p>
+<p>So why does React need a build step/transpiler in the first place? Can&#39;t you just load React off a CDN and be up and running? Well, yes but you are usually going to use templates, and that is where JSX comes in which <em>does</em> need a compiler.</p>
+<h2>React without JSX</h2><p><a href="https://reactjs.org/docs/react-without-jsx.html">As it states on the React docs site</a>,</p>
+<blockquote>
+<p>JSX is not a requirement for using React. Using React without JSX is especially convenient when you don’t want to set up compilation in your build environment.</p>
+</blockquote>
+<p>The linked page above goes on to show the following examples of JSX,</p>
+<pre><code class="language-jsx">class Hello extends React.Component {
+  render() {
+    return &lt;div&gt;Hello {this.props.toWhat}&lt;/div&gt;;
+  }
+}
+
+const root = ReactDOM.createRoot(document.getElementById(&quot;root&quot;));
+root.render(&lt;Hello toWhat=&quot;World&quot; /&gt;);
+</code></pre>
+<p>and what the compiled output would look like</p>
+<pre><code class="language-javascript">class Hello extends React.Component {
+  render() {
+    return React.createElement(&quot;div&quot;, null, `Hello ${this.props.toWhat}`);
+  }
+}
+
+const root = ReactDOM.createRoot(document.getElementById(&quot;root&quot;));
+root.render(React.createElement(Hello, { toWhat: &quot;World&quot; }, null));
+</code></pre>
+<p>It even <a href="https://babeljs.io/repl/#?browsers=defaults%2C%20not%20ie%2011%2C%20not%20ie_mob%2011&amp;build=&amp;builtIns=false&amp;corejs=3.21&amp;spec=false&amp;loose=false&amp;code_lz=GYVwdgxgLglg9mABACwKYBt1wBQEpEDeAUIogE6pQhlIA8AJjAG4B8AEhlogO5xnr0AhLQD0jVgG4iAXyJA&amp;debug=false&amp;forceAllTransforms=false&amp;shippedProposals=false&amp;circleciRepo=&amp;evaluate=false&amp;fileSize=false&amp;timeTravel=false&amp;sourceType=module&amp;lineWrap=true&amp;presets=react&amp;prettier=false&amp;targets=&amp;version=7.20.11&amp;externalPlugins=&amp;assumptions=%7B%7D">provides a playground</a> for writing JSX and seeing what the resulting Javascript output would be. Pretty neat.</p>
+<p>That&#39;s great, we don&#39;t need a build step. But for me, that&#39;s not going to be super practical to work with. The great thing about modern Javascript frameworks is that they let you dynamically work with HTML. Going bare metal on <code>React.createElement</code> does not feel like a great developer experience for me.</p>
+<p>There are a few choices of libraries that ease the use of <code>React.createElement</code> such as <a href="https://github.com/mlmorg/react-hyperscript">react-hyperscript</a>. It provides some shorthands for creating elements, but for me it just feels a little too abstracted from the HTML your will be outputting.</p>
+<pre><code class="language-javascript">var h = require(&quot;react-hyperscript&quot;);
+var React = require(&quot;react&quot;);
+
+var AnotherComponent = require(&quot;./another-component&quot;);
+
+module.exports = React.createClass({
+  render: function render() {
+    return h(&quot;div.example&quot;, [
+      h(&quot;h1#heading&quot;, &quot;This is hyperscript&quot;),
+      h(&quot;h2&quot;, &quot;creating React.js markup&quot;),
+      h(AnotherComponent, { foo: &quot;bar&quot; }, [
+        h(&quot;li&quot;, [h(&quot;a&quot;, { href: &quot;http://whatever.com&quot; }, &quot;One list item&quot;)]),
+        h(&quot;li&quot;, &quot;Another list item&quot;),
+      ]),
+    ]);
+  },
+});
+</code></pre>
+<p>But for me, <em>(and I think many React developers)</em>, writing HTML feels most natural. Your component ultimately renders HTML, so it just makes sense that your template is written in an HTML-like structure, thus the popularity of JSX.</p>
+<h2>HTM Templates</h2><p>There is however a library that is closer to JSX <em>(HTML-like feel)</em> but yet does not require a build step. <a href="https://github.com/developit/htm">htm</a>. HTM uses tagged templates to leverage template literal as native Javascript template strings. If you have not played with <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#tagged_templates">tagged templates</a>, I encourage you to check this out, it&#39;s a quite powerful feature, that has recently become a part of Javascript.</p>
+<blockquote>
+<p>If you are planning on using HTM for any length of time, I highly encourage the <a href="https://marketplace.visualstudio.com/items?itemName=bierner.lit-html">VSCode extension</a> to highlight your HTML strings as HTML. Not only does it give you syntax highlighting for HTML inside your javascript, but it also formats it on save just as you would expect.</p>
+</blockquote>
+<p>Tagged templates allow you to send a template literal string to a function to run additional processing/actions on the string. You can read more about <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#tagged_templates">tagged templates here</a>. But the important thing to know is that they are supported in <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#browser_compatibility">all major browsers</a>.</p>
+<h2>Let&#39;s see some examples</h2><p>Ok, let&#39;s take a look at what a super simple app would look like using HTM instead of JSX. In this example component, we are simply going to have a header with a name and hobbies, and then the ability to update those values.</p>
+<p>To get started let&#39;s first load what Javascript we need off CDN into our HTML file, and then start our application.</p>
+<pre><code class="language-html">&lt;head&gt;
+  &lt;body&gt;
+    &lt;div id=&quot;app&quot;&gt;
+      &lt;!-- the application will be rendered here --&gt;
+    &lt;/div&gt;
+
+    &lt;script
+      crossorigin
+      src=&quot;https://unpkg.com/react@18/umd/react.production.min.js&quot;
+    &gt;&lt;/script&gt;
+    &lt;script
+      crossorigin
+      src=&quot;https://unpkg.com/react-dom@18/umd/react-dom.production.min.js&quot;
+    &gt;&lt;/script&gt;
+
+    &lt;script type=&quot;module&quot;&gt;
+      import htm from &quot;https://unpkg.com/htm?module&quot;;
+      const html = htm.bind(React.createElement);
+
+      import App from &quot;./App.js&quot;;
+      ReactDOM.render(html`&lt;${App} /&gt;`, document.getElementById(&quot;app&quot;));
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/head&gt;
+</code></pre>
+<p>So we have loaded React and ReactDOM into our HTML file, and then loaded HTM and our <code>&lt;App/&gt;</code> component as modules.
+<em>(React unfortunately does not have esm versions available to load from CDNs)</em> so we will just load them in separate script tags on the page and reference them off the window object where they assign themselves.</p>
+<h3>Binding html to <code>React.createElement</code></h3><p>HTM is a generic library, so to get it working with React, we have to bind it to React.createElement. This essentially sets createElement as the tagged template function for our HTML string.</p>
+<pre><code class="language-javascript">import htm from &quot;https://unpkg.com/htm?module&quot;;
+const html = htm.bind(React.createElement);
+</code></pre>
+<p>We then render our App component</p>
+<pre><code class="language-javascript">ReactDOM.render(html`&lt;${App} /&gt;`, document.getElementById(&quot;app&quot;));
+</code></pre>
+<p>Let&#39;s look at our App component. You will notice how similar this is to what you would have written using JSX.</p>
+<pre><code class="language-javascript">import { useState, createElement } from &quot;react&quot;;
+import htm from &quot;htm&quot;;
+import Hobbies from &quot;./Hobbies.js&quot;;
+import &quot;../index.css&quot;;
+
+const html = htm.bind(createElement);
+
+function App() {
+  const [name, setName] = useState(&quot;Dave&quot;);
+  const [hobbies, setHobbies] = useState(&quot;bonsai, sewing, running&quot;);
+
+  return html`&lt;div class=&quot;container&quot;&gt;
+    &lt;article&gt;
+      &lt;header&gt;
+        &lt;hgroup&gt;
+          &lt;h1&gt;Hello there!&lt;/h1&gt;
+          &lt;h2&gt;
+            My name is &lt;mark&gt;${name}&lt;/mark&gt;, and my hobbies include
+            &lt;hr /&gt;
+            ${hobbies
+              .split(&quot;,&quot;)
+              .map((hobby) =&gt; html`&lt;kbd&gt;${hobby.trim()}&lt;/kbd&gt;`)}
+          &lt;/h2&gt;
+        &lt;/hgroup&gt;
+      &lt;/header&gt;
+      &lt;label&gt;
+        Name
+        &lt;input value=${name} onChange=${(ev) =&gt; setName(ev.target.value)} /&gt;
+      &lt;/label&gt;
+      &lt;label&gt;
+        Hobbies
+        &lt;${Hobbies} hobbies=${hobbies} setHobbies=${setHobbies} /&gt;
+      &lt;/label&gt;
+    &lt;/article&gt;
+  &lt;/div&gt;`;
+}
+
+export default App;
+</code></pre>
+<p>The app component in turn renders the Hobbies component which looks like this. I could have combined them together into just one component, but I wanted to give an example of loading a child component as we see with <code>&lt;${Hobbies}&gt;</code></p>
+<pre><code class="language-javascript">import { createElement } from &quot;react&quot;;
+import htm from &quot;htm&quot;;
+
+const html = htm.bind(createElement);
+
+function Hobbies({ hobbies, setHobbies }) {
+  return html`&lt;textarea
+    value=${hobbies}
+    onChange=${(ev) =&gt; setHobbies(ev.target.value)}
+  &gt;&lt;/textarea&gt;`;
+}
+
+export default Hobbies;
+</code></pre>
+<h2>Differences between HTM and JSX</h2><p>Although as we have discussed, it looks very similar to JSX, and in turn HTML. There are a few key differences that I would like to point out.</p>
+<h3>Interpolate Component Names</h3><p>As you may have already seen, you have to <em>&quot;interpolate&quot;</em> component names when rendering them rather than just using them like a custom DOM element as in JSX.</p>
+<p>In JSX</p>
+<pre><code class="language-jsx">&lt;label&gt;
+  Hobbies
+  &lt;Hobbies hobbies={hobbies} setHobbies={setHobbies}&gt;&lt;/Hobbies&gt;
+&lt;/label&gt;
+</code></pre>
+<p>HTM equivalent</p>
+<pre><code class="language-javascript"> &lt;label&gt;
+  Hobbies
+  &lt;${Hobbies} hobbies=${hobbies} setHobbies=${setHobbies} /&gt;
+&lt;/label&gt;
+</code></pre>
+<h3>You can use class instead of className for your classes!</h3><p>This one is huge for me. It has always bothered me that you have to use <code>className</code> for the class attribute in JSX. I&#39;m not sure why that bothers me as much as it does, but I think about it every time I add a class to an element in JSX.</p>
+<pre><code class="language-html">&lt;div className=&quot;my-class&quot;&gt;&lt;/div&gt;
+</code></pre>
+<p>vs</p>
+<pre><code class="language-html">&lt;div class=&quot;my-class&quot;&gt;&lt;/div&gt;
+</code></pre>
+<h3>You must Invoke the HTML method when returning HTML</h3><p>For example, when we list our hobbies in a loop, we are returning HTML so we have to call the HTML method.</p>
+<pre><code class="language-javascript">${hobbies.split(&quot;,&quot;)
+  .map((hobby) =&gt; html`&lt;kbd&gt;${hobby.trim()}&lt;/kbd&gt;`)}
+</code></pre>
+<h3>Quotes are optional</h3><p>Quotes around element attributes <em>dynamic or static</em> are entirely optional</p>
+<pre><code class="language-html">&lt;div class=&quot;foo&quot;&gt;&lt;/div&gt;
+</code></pre>
+<h3>Self-Closing Tags</h3><p>HTM will let you use self-closing tags on anything.</p>
+<pre><code class="language-html">&lt;div /&gt;
+</code></pre>
+<h2>Closing Component tags</h2><p>As HTM requires you to interpolate your component name when rendering, it has a handy feature that lets you close a component with <code>&lt;//&gt;</code> instead of having to redo the name again.</p>
+<pre><code class="language-javascript">&lt;${Footer}&gt;footer content&lt;//&gt;
+</code></pre>
+<h3>Spread Props</h3><p>If you would like to assign a component&#39;s props as attributes to an element, <em>usually the root</em>, in JSX you would do so as such.</p>
+<pre><code class="language-jsx">&lt;div {...props}&gt;
+</code></pre>
+<p>In HTM you would do the same, just the spread operator on the outside of the string interpolation.</p>
+<pre><code class="language-javascript">&lt;div ...${props}&gt;
+</code></pre>
+<h3>Boolean Attributes</h3><p>I love this feature actually if you have ever struggled with boolean attributes such as <code>checked</code> or <code>selected</code> and so forth you might as well.</p>
+<pre><code class="language-javascript">const checked = true;
+return html`&lt;input type=&quot;checkbox&quot; checked=${checked} /&gt; `;
+</code></pre>
+<h3>Multiple Root elements</h3><p>JSX does not allow you to have multiple root elements. HTM does! If you are ever found yourself wrapping your component in <code>React.Fragment</code> just so you can structure your DOM the way you want, you will love this.</p>
+<p>In JSX</p>
+<pre><code class="language-JSX">return &lt;React.Fragment&gt;
+  &lt;div&gt;root item one&lt;/div&gt;
+  &lt;div&gt;root item two&lt;/div&gt;
+&lt;/React.Fragment&gt;
+</code></pre>
+<p>In HTM</p>
+<pre><code class="language-javascript">return html`&lt;div&gt;root item one&lt;/div&gt;
+  &lt;div&gt;root item two&lt;/div&gt;`;
+</code></pre>
+<h3>HTML Comments</h3><p>You can leverage normal HTML comments in your templates. This is not possible in JSX</p>
+<h3>Pre-compiling setup</h3><p>I know the huge reason you would choose HTM over JSX is to leave the build step behind. Having said that, I recently used HTM on a project that required a build step for other reasons. Having gotten comfortable with HTM on several small Preact <em>(no build)</em> projects, I wanted to keep using it.</p>
+<p>One of the main things that I miss with a no-compile setup is the hot module reload. Once you have worked with HMR, it is quite addictive, and it&#39;s hard to go back to hitting reload 400 times an hour :)</p>
+<p>I&#39;ll give a quick example of how to integrate HTM into a boilerplate <code>create-react-app</code> application.</p>
+<pre><code>npm i create-react-app react-htm
+npm i htm --save-dev
+npm serve
+</code></pre>
+<p>In your entry file <code>index.js</code> change the file to the following.</p>
+<pre><code class="language-javascript">import { createRoot } from &quot;react-dom/client&quot;;
+import { createElement } from &quot;react&quot;;
+import htm from &quot;htm&quot;;
+import App from &quot;./App.js&quot;;
+
+const html = htm.bind(createElement);
+const root = createRoot(document.getElementById(&quot;root&quot;));
+root.render(html`&lt;${App} /&gt;`);
+</code></pre>
+<p>Then, in the <code>App.js</code> file, change the component to the following</p>
+<pre><code class="language-javascript">import logo from &quot;./logo.svg&quot;;
+import &quot;./App.css&quot;;
+import { createElement } from &quot;react&quot;;
+import htm from &quot;htm&quot;;
+const html = htm.bind(createElement);
+
+function App() {
+  return html`&lt;div class=&quot;App&quot;&gt;
+    &lt;header class=&quot;App-header&quot;&gt;
+      &lt;img src=&quot;${logo}&quot; class=&quot;App-logo&quot; alt=&quot;logo&quot; /&gt;
+      &lt;p&gt;Edit &lt;code&gt;src/App.js&lt;/code&gt; and save to reload.&lt;/p&gt;
+      &lt;a
+        class=&quot;App-link&quot;
+        href=&quot;https://reactjs.org&quot;
+        target=&quot;_blank&quot;
+        rel=&quot;noopener noreferrer&quot;
+      &gt;
+        Learn React
+      &lt;/a&gt;
+    &lt;/header&gt;
+  &lt;/div&gt;`;
+}
+
+export default App;
+</code></pre>
+<p>You are now running your application with HTM for your templates. Your build and HMR will work exactly as you are accustomed to. I hope you have enjoyed delving into this alternative to JSX, and find it useful in a future situation you find yourself in.</p>
+<div class="comments"><h3>Comments</h3><ul><li><div class="user"><img src="https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F242489%2F7590ae2e-dd94-4d70-8bd3-d392b76a1133.png"/><div class="username">fjones</div></div><div class="message"><p>I know this is wildly off-topic (and the topic is super interesting!), but this highlights one of my pet-peeves about JS:</p>
+
+<blockquote>
+<p>You must Invoke the HTML method when returning HTML</p>
+</blockquote>
+
+<p>And then you go on to show <code>html</code> as a template-string function! JavaScript's use of functions for template strings is a very funny construct - more than interpolation, less than operator overloading. It's the kind of thing PHP would come up with!</p>
+
+<p>Sorry, just wanted to drop those thoughts somewhere and this seemed as good a place as any.</p>
+
+</div><ul><li><div class="user"><img src="https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg"/><div class="username">dperrymorrow</div></div><div class="message"><p>indeed, it took me a bit to wrap my head around what was going on there when i first started using tagged template literals. Very powerful, but quite heady</p>
+
+</div><ul></ul></li></ul></li></ul><footer><a href="https://dev.to/dperrymorrow/using-react-without-jsx-no-build-14gg" target="_blank">Leave a comment</a></footer></div></article><section class="promoted"><nav><ul><li><a href="/posts/you-no-longer-need-vuex-pinia-for-shared-state-in-vue">You don't need Vuex / Pinia for shared state in Vue.</a></li><li><a href="/posts/using-react-without-jsx-no-build" class="active">Using React without JSX == no build</a></li><li><a href="/posts/build-a-js-framework-with-80-lines-of-javascript">Build an 80 line JS Framework</a></li><li><a href="/posts/create-an-observable-object-using-proxy">Create an Observable Object using Proxy</a></li><li><a href="/posts/speed-up-your-code-with-promiseall">Speed up your code with Promise.all</a></li><li><a href="/posts/using-hotwiredturbo-but-patch-the-dom-vs-replacing">Make hotwired/turbo patch vs replace</a></li></ul></nav></section></main></body></html>

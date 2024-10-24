@@ -1,0 +1,219 @@
+<!DOCTYPE html><html lang="en"><head><title>Speed up your code with Promise.all</title><meta name="description" content="So one of the things I see commented on all the time in Javascript code reviews.   Say you have some..."/><meta name="viewport" content="width=device-width, user-scalable=no"/><link rel="stylesheet" href="/styles/app.css"/><script defer="defer" src="https://cloud.umami.is/script.js" data-website-id="9a998f6c-3cf0-4c00-adaf-bae775f82fe5"></script><script src="/scripts/prism.js" defer="defer"></script><script src="/scripts/app.js" defer="defer"></script></head><body><main><section class="nav"><a id="nav-toggle" href="#"><img src="/images/hamburger.svg"/></a><nav><ul><li><a href="/">Root</a></li><li><a href="/about">About</a></li><li><a href="/morrow_resume.pdf" download="Morrow-Resume.pdf">Resume</a></li></ul><ul><li><a href="/posts/you-no-longer-need-vuex-pinia-for-shared-state-in-vue">You don't need Vuex / Pinia for shared state in Vue.</a></li><li><a href="/posts/using-react-without-jsx-no-build">Using React without JSX == no build</a></li><li><a href="/posts/build-a-js-framework-with-80-lines-of-javascript">Build an 80 line JS Framework</a></li><li><a href="/posts/create-an-observable-object-using-proxy">Create an Observable Object using Proxy</a></li><li><a href="/posts/speed-up-your-code-with-promiseall" class="active">Speed up your code with Promise.all</a></li><li><a href="/posts/using-hotwiredturbo-but-patch-the-dom-vs-replacing">Make hotwired/turbo patch vs replace</a></li></ul></nav></section><header><h1><small><span>Nov 23 '22</span><span class="likes">♥ 54</span></small>Speed up your code with Promise.all</h1><img src="https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fvjtqs0o7c4bjh56h7mgh.png" alt="Speed up your code with Promise.all" loading="lazy"></header><article class="md"><p>So one of the things I see commented on all the time in Javascript code reviews. </p>
+<p>Say you have some code as such...</p>
+<pre><code class="language-javascript">async function myFunction() {
+  await someThing();
+  await someOtherThing();
+  await yetAnotherThing();
+}
+</code></pre>
+<blockquote>
+<p>Do we need to each of these one at a time? Cant we fork this and call them all together?</p>
+</blockquote>
+<p>What being pointed out here is that we have to wait on each one of these Promises to return before the next one can start. </p>
+<p>One of the most amazing things about working with Javascript is its concurrency. Meaning it can run your code in parallel instead of waiting for each Promise to finish before moving starting the next. Commonly referred to as <em>&quot;forking&quot;</em>.</p>
+<h2>Using Promise.all vs await each</h2><p>Since this ability is so powerful, lets make sure we are using it. Let&#39;s take a look at the example above and see how we can make that run in parallel.</p>
+<pre><code class="language-javascript">function delayedResponse() {
+  return new Promise((resolve, reject) =&gt; {
+    setTimeout(resolve, 1000);
+  });
+}
+
+async function time(label, fn) {
+  const start = new Date();
+  await fn();
+  console.log(
+    (new Date() - start) / 1000, `seconds to load ${label}`
+  );
+}
+
+time(&quot;sequential&quot;, async () =&gt; {
+  await delayedResponse();
+  await delayedResponse();
+  await delayedResponse();
+});
+
+time(&quot;parallel&quot;, async () =&gt; {
+  await Promise.all([
+    delayedResponse(), 
+    delayedResponse(), 
+    delayedResponse()
+  ]);
+});
+</code></pre>
+<p>Ok, here is some code that we can test this idea with. I have a function that returns a Promise that takes 1sec to resolve.</p>
+<pre><code class="language-javascript">function delayedResponse() {
+  return new Promise((resolve, reject) =&gt; {
+    setTimeout(resolve, 1000);
+  });
+}
+</code></pre>
+<p>and a function that times how long a function passed to it takes to run.</p>
+<pre><code class="language-javascript">async function time(label, fn) {
+  const start = new Date();
+  await fn();
+  console.log(
+    (new Date() - start) / 1000, `seconds to load ${label}`
+  );
+}
+</code></pre>
+<p>These are not important, I just wanted to explain what they were. The main thing that we are talking about here is the difference in speed with the two approaches we are timing here.</p>
+<p>Ok lets run this code and see what happens. </p>
+<pre><code class="language-shell">1.002 seconds to load parallel
+3.005 seconds to load sequential
+</code></pre>
+<p>Whoah... that&#39;s almost 3 times as fast for the parallel one. Makes sense, as there are three calls and each one takes a second. You can see how this would greatly effect your performance if you had many Promises to wait on. </p>
+<p>Say for example we had 6 calls instead of 3. What would the timing on that look like?</p>
+<pre><code class="language-shell">1.002 seconds to load parallel
+6.009 seconds to load sequential
+</code></pre>
+<p>You guessed it, twice as much on the difference. </p>
+<h2>Real world example</h2><p>Say for example you have a front end app that makes a few API requests before it&#39;s ready to render and become interactive. This could make a <strong>HUGE</strong> difference to your users.</p>
+<h2>Capturing the responses</h2><p>One of the common excuses I have seen for awaiting each Promise is that,</p>
+<blockquote>
+<p>But I need to save each response from each Promise</p>
+</blockquote>
+<pre><code class="language-javascript">async function () {
+  const myData = await someApiCall();
+  // do something with your data...
+}
+</code></pre>
+<p>You can still do that with <code>Promise.all</code>. Promise.all returns the results in an Array in the order that the Promises were invoked, not in the order that they resolve. This is a common misconception. </p>
+<p>Ok lets test this idea.</p>
+<pre><code class="language-javascript">function randomDuration() {
+  const min = 500;
+  const max = 1000;
+  return Math.random() * (max - min) + min;
+}
+
+function delayedResponse(msg) {
+  return new Promise((resolve, reject) =&gt; {
+    setTimeout(resolve, randomDuration(), msg + &quot;: done&quot;);
+  });
+}
+
+async function time(label, fn) {
+  const start = new Date();
+  await fn();
+  console.log(
+    (new Date() - start) / 1000, `seconds to load ${label}`
+  );
+}
+
+// the code we are benchmarking
+
+async function sequential() {
+  const res1 = await delayedResponse(&quot;first&quot;);
+  const res2 = await delayedResponse(&quot;second&quot;);
+  const res3 = await delayedResponse(&quot;third&quot;);
+  console.log([res1, res2, res3]);
+}
+
+async function parallel() {
+  const results = await Promise.all([
+    delayedResponse(&quot;first&quot;),
+    delayedResponse(&quot;second&quot;),
+    delayedResponse(&quot;third&quot;),
+  ]);
+  console.log(results);
+}
+
+time(&quot;sequential&quot;, sequential);
+time(&quot;parallel&quot;, parallel);
+</code></pre>
+<p>Ok the main difference here is that I am giving each Promise a random duration before it returns, between 1/2 and 1 second. That way I can show that they come back in the order invoked, not the order resolved. </p>
+<pre><code class="language-shell">[ &#39;first: done&#39;, &#39;second: done&#39;, &#39;third: done&#39; ]
+0.921 seconds to load parallel
+[ &#39;first: done&#39;, &#39;second: done&#39;, &#39;third: done&#39; ]
+2.393 seconds to load sequential
+</code></pre>
+<p>Notice that even though I randomized how long each Promise will take to resolve, the results array is in the order that I called them in. Fantastic.</p>
+<h2>Example where this won&#39;t work</h2><p>There are some cases where you cannot call all your promises at the same time. Take for example API calls like I mentioned above. Say you need part of the result from one, before you can call the next. </p>
+<p>For example say you are using REST routes that are nested...</p>
+<pre><code class="language-javascript">async function () {
+  const user = await Api.getUser();
+  const account = await Api.getAccount(user.id);
+  const articles = await Api.getArticles(user.id);
+}
+</code></pre>
+<p>Well, you cant call all these together, but you may be able to still group some. Just do the best you can :)</p>
+<pre><code class="language-javascript">async function () {
+  const user = await Api.getUser();
+  const [account, articles] = await Promise.all([
+    Api.getAccount(user.id),
+    Api.getArticles(user.id)
+  ]);
+}
+</code></pre>
+<h2>Promise.all vs Promise.allSettled</h2><p>One very important thing to note, If <strong>ANY</strong> of the promises reject. Promise.all will reject at the first failure. Think of it as fail fast.</p>
+<p>If you need to handle each rejection, and need a response for every Promise no matter what happens, use <code>Promise.allSettled</code> instead of <code>Promise.all</code></p>
+<div class="comments"><h3>Comments</h3><ul><li><div class="user"><img src="https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F286705%2F2cc41a53-8e9f-4591-b9d2-ec4a620b9950.jpeg"/><div class="username">charlesr1971</div></div><div class="message"><p>But the whole point about:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>async/await
+</code></pre>
+<div class="highlight__panel js-actions-panel">
+<div class="highlight__panel-action js-fullscreen-code-action">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewbox="0 0 24 24" class="highlight-action crayons-icon highlight-action--fullscreen-on"><title>Enter fullscreen mode</title>
+    <path d="M16 3h6v6h-2V5h-4V3zM2 3h6v2H4v4H2V3zm18 16v-4h2v6h-6v-2h4zM4 19h4v2H2v-6h2v4z"></path>
+</svg>
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewbox="0 0 24 24" class="highlight-action crayons-icon highlight-action--fullscreen-off"><title>Exit fullscreen mode</title>
+    <path d="M18 7h4v2h-6V3h2v4zM8 9H2V7h4V3h2v6zm10 8v4h-2v-6h6v2h-4zM8 15v6H6v-4H2v-2h6z"></path>
+</svg>
+
+</div>
+</div>
+</div>
+
+
+
+<p>Is that we create an order of execution. The call runs asynchronously but, the next call has to wait until it finishes. <br>
+In a way, you get the best of both worlds. </p>
+
+<p>If I want pure asynchronicity, I would choose your approach. </p>
+
+<p>But sometimes, it is good to be able to guarantee order, in an asynchronous world. 🙂</p>
+
+</div><ul><li><div class="user"><img src="https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg"/><div class="username">dperrymorrow</div></div><div class="message"><blockquote>
+<p>But the whole point about: <code>async/await</code> Is that we create an order of execution.</p>
+</blockquote>
+
+<p>Agreed, and that is the case in the example I use <a href="https://dev.to/dperrymorrow/speed-up-your-code-with-promiseall-3d4i#real-world-example" rel="nofollow">the example</a> where you need your data from the API before your client side application can run. </p>
+
+<p>I'm just pointing out if you <em>don't</em> need to wait for each Promise to resolve prior to the next one, don't do that. It's an unnecessary performance killer.</p>
+
+<p>This may seem obvious, but I wrote this post because I've see this performance pitfall often in PR reviews.</p>
+
+</div><ul><li><div class="user"><img src="https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F286705%2F2cc41a53-8e9f-4591-b9d2-ec4a620b9950.jpeg"/><div class="username">charlesr1971</div></div><div class="message"><p>Yes. Absolutely agreed. <br>
+I would never use:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>async/await 
+</code></pre>
+<div class="highlight__panel js-actions-panel">
+<div class="highlight__panel-action js-fullscreen-code-action">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewbox="0 0 24 24" class="highlight-action crayons-icon highlight-action--fullscreen-on"><title>Enter fullscreen mode</title>
+    <path d="M16 3h6v6h-2V5h-4V3zM2 3h6v2H4v4H2V3zm18 16v-4h2v6h-6v-2h4zM4 19h4v2H2v-6h2v4z"></path>
+</svg>
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewbox="0 0 24 24" class="highlight-action crayons-icon highlight-action--fullscreen-off"><title>Exit fullscreen mode</title>
+    <path d="M18 7h4v2h-6V3h2v4zM8 9H2V7h4V3h2v6zm10 8v4h-2v-6h6v2h-4zM8 15v6H6v-4H2v-2h6z"></path>
+</svg>
+
+</div>
+</div>
+</div>
+
+
+
+<p>If I didn’t need to rely on the order of execution. 🙂</p>
+
+</div><ul></ul></li></ul></li></ul></li><li><div class="user"><img src="https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F854410%2F3f8c50e8-083c-418b-809c-0ff7d3e65b99.png"/><div class="username">bacqueyrisses</div></div><div class="message"><p>Hey ! Great article. <br>
+I was wondering what's your theme on the screenshot ?<br>
+Thanks.</p>
+
+</div><ul><li><div class="user"><img src="https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg"/><div class="username">dperrymorrow</div></div><div class="message"><p><a href="https://marketplace.visualstudio.com/items?itemName=Equinusocio.vsc-community-material-theme" rel="nofollow">community material theme</a> and I'm using the <em>"ocean"</em> variant. Ive been stuck on that one for a while, really like it.</p>
+
+</div><ul></ul></li></ul></li></ul><footer><a href="https://dev.to/dperrymorrow/speed-up-your-code-with-promiseall-3d4i" target="_blank">Leave a comment</a></footer></div></article><section class="promoted"><nav><ul><li><a href="/posts/you-no-longer-need-vuex-pinia-for-shared-state-in-vue">You don't need Vuex / Pinia for shared state in Vue.</a></li><li><a href="/posts/using-react-without-jsx-no-build">Using React without JSX == no build</a></li><li><a href="/posts/build-a-js-framework-with-80-lines-of-javascript">Build an 80 line JS Framework</a></li><li><a href="/posts/create-an-observable-object-using-proxy">Create an Observable Object using Proxy</a></li><li><a href="/posts/speed-up-your-code-with-promiseall" class="active">Speed up your code with Promise.all</a></li><li><a href="/posts/using-hotwiredturbo-but-patch-the-dom-vs-replacing">Make hotwired/turbo patch vs replace</a></li></ul></nav></section></main></body></html>

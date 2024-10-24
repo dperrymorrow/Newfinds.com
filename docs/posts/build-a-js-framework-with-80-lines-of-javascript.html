@@ -1,0 +1,335 @@
+<!DOCTYPE html><html lang="en"><head><title>Build an 80 line JS Framework</title><meta name="description" content="Before I get started, I want to share where the final code is, as well as a working example.   source..."/><meta name="viewport" content="width=device-width, user-scalable=no"/><link rel="stylesheet" href="/styles/app.css"/><script defer="defer" src="https://cloud.umami.is/script.js" data-website-id="9a998f6c-3cf0-4c00-adaf-bae775f82fe5"></script><script src="/scripts/prism.js" defer="defer"></script><script src="/scripts/app.js" defer="defer"></script></head><body><main><section class="nav"><a id="nav-toggle" href="#"><img src="/images/hamburger.svg"/></a><nav><ul><li><a href="/">Root</a></li><li><a href="/about">About</a></li><li><a href="/morrow_resume.pdf" download="Morrow-Resume.pdf">Resume</a></li></ul><ul><li><a href="/posts/you-no-longer-need-vuex-pinia-for-shared-state-in-vue">You don't need Vuex / Pinia for shared state in Vue.</a></li><li><a href="/posts/using-react-without-jsx-no-build">Using React without JSX == no build</a></li><li><a href="/posts/build-a-js-framework-with-80-lines-of-javascript" class="active">Build an 80 line JS Framework</a></li><li><a href="/posts/create-an-observable-object-using-proxy">Create an Observable Object using Proxy</a></li><li><a href="/posts/speed-up-your-code-with-promiseall">Speed up your code with Promise.all</a></li><li><a href="/posts/using-hotwiredturbo-but-patch-the-dom-vs-replacing">Make hotwired/turbo patch vs replace</a></li></ul></nav></section><header><h1><small><span>Dec 22 '22</span><span class="likes">♥ 19</span></small>Build an 80 line JS Framework</h1><img src="https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ffdudad1sq5x9r7nhp98t.png" alt="Build an 80 line JS Framework" loading="lazy"></header><article class="md"><p>Before I get started, I want to share where the final code is, as well as a working example.</p>
+<ul>
+<li><a href="https://github.com/dperrymorrow/mini-reactive">source code repository</a></li>
+<li><a href="https://dperrymorrow.github.io/mini-reactive/">working example todo list</a></li>
+</ul>
+<p>We have all used <em>Reactive</em> javascript frameworks, but have you ever tinkered with making your own, or have been curious whats going on under the hood?</p>
+<blockquote>
+<p>By <em>&quot;reactive&quot;</em> I mean, you make a change to your data, and your template or DOM automatically update. No manual updating ect...</p>
+</blockquote>
+<p>Well, this post is about my attempt to make the smallest possible component that does the following.</p>
+<h2>Lets get started</h2><p>For our example, I&#39;m going to build a Todo list, where we can add, delete and mark done a list of items to complete. We will also be able to update the title as we type.</p>
+<p>Just an FYI, will be using native es modules, and no build steps in my examples for simplicity.</p>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ty1b7p3t56zvsef7l5i8.png" alt="Working example of todos app"></p>
+<p><a href="https://dperrymorrow.github.io/mini-reactive/">working app here</a></p>
+<pre><code class="language-html">&lt;div class=&quot;container&quot; id=&quot;app&quot;&gt;
+  &lt;!-- our app is rendered here --&gt;
+&lt;/div&gt;
+
+&lt;script type=&quot;module&quot;&gt;
+  import App from &quot;./Todos.js&quot;;
+
+  const $root = document.getElementById(&quot;app&quot;);
+  $root.innerHTML = new App($root).render();
+&lt;/script&gt;
+</code></pre>
+<p>So to start the application, we will render it to a DOM element in our HTML. We are also passing in the element to our class, we will need this later.</p>
+<h2>The Todos component</h2><pre><code class="language-javascript">import Component from &quot;./lib/Component.js&quot;;
+
+export default class Todos extends Component {
+  constructor() {
+    super(...arguments);
+
+    this.state = this.useState({
+      title: &quot;Things Todo&quot;,
+      todos: [
+        {
+          done: true,
+          title: &quot;Walk the Dog&quot;,
+        },
+        {
+          done: false,
+          title: &quot;Grocery Shop&quot;,
+        },
+        {
+          done: false,
+          title: &quot;X-Mas Shop&quot;,
+        },
+      ],
+    });
+  }
+
+  toggle({ target }, index) {
+    this.state.todos[index].done = target.checked;
+  }
+
+  updateTitle({ target }) {
+    this.state.title = target.value;
+  }
+
+  deleteTodo(ev, index) {
+    ev.preventDefault();
+    this.state.todos.splice(index, 1);
+  }
+
+  addTodo() {
+    const $titleInput = this.$root.querySelector(&quot;[name=newTodo]&quot;);
+
+    this.state.todos.push({
+      title: $titleInput.value,
+      done: false,
+    });
+
+    $titleInput.value = &quot;&quot;;
+    $titleInput.focus();
+  }
+
+  render() {
+    return /*html*/ `&lt;article&gt;
+      &lt;header&gt;
+        &lt;hgroup&gt;
+          &lt;h1&gt;${this.state.title}&lt;/h1&gt;
+          &lt;h2&gt;
+            An example of a mini reactive component, make changes and watch the
+            DOM update.
+          &lt;/h2&gt;
+        &lt;/hgroup&gt;
+      &lt;/header&gt;
+
+      &lt;input
+        type=&quot;text&quot;
+        value=&quot;${this.state.title}&quot;
+        data-on=&quot;input-&gt;updateTitle&quot;
+        data-args=&quot;title&quot;
+        autofocus
+      /&gt;
+
+      &lt;table role=&quot;grid&quot;&gt;
+        &lt;thead&gt;
+          &lt;tr&gt;
+            &lt;th&gt;Done&lt;/th&gt;
+            &lt;th&gt;Title&lt;/th&gt;
+            &lt;th&gt;&lt;/th&gt;
+          &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+          ${this.state.todos.reduce(
+            (html, todo, index) =&gt;
+              (html += /*html*/ `&lt;tr&gt;
+                &lt;td&gt;
+                  &lt;input
+                    type=&quot;checkbox&quot;
+                    data-on=&quot;click-&gt;toggle&quot;
+                    data-args=&quot;${index}&quot;
+                    ${todo.done ? &quot;checked&quot; : null}
+                  /&gt;
+                &lt;/td&gt;
+
+                &lt;td&gt;${todo.done ? `&lt;s&gt;${todo.title}&lt;/s&gt;` : todo.title}&lt;/td&gt;
+
+                &lt;td&gt;
+                  &lt;a href=&quot;#&quot; data-on=&quot;click-&gt;deleteTodo&quot; data-args=&quot;${index}&quot;&gt;
+                    Delete
+                  &lt;/a&gt;
+                &lt;/td&gt;
+              &lt;/tr&gt;`),
+            &quot;&quot;
+          )}
+        &lt;/tbody&gt;
+      &lt;/table&gt;
+
+      &lt;footer&gt;
+        &lt;div class=&quot;grid&quot;&gt;
+          &lt;input name=&quot;newTodo&quot; placeholder=&quot;Todo title&quot; type=&quot;text&quot; /&gt;
+          &lt;button data-on=&quot;click-&gt;addTodo&quot;&gt;Add&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/footer&gt;
+    &lt;/article&gt;`;
+  }
+}
+</code></pre>
+<p>It may look like a lot, but keep in mind this is an entire todo app and template. I&#39;ll go over each piece in detail, I just wanted to show you the end result first.</p>
+<h2>The constructor</h2><pre><code class="language-javascript">import Component from &quot;./lib/Component.js&quot;;
+
+export default class Todos extends Component {
+  constructor() {
+    super(...arguments);
+    ...
+  }
+</code></pre>
+<p>Here we are importing our <code>Component</code> class and extending it with our <code>Todos</code> class. We call super with any arguments passed into our class.</p>
+<h2>Component State</h2><p>Next, also in the constructor, we setup the state. This is what will be <em>observable</em>, meaning every time something in here is changed, our component will re-render, and the DOM will be patched with the changes.</p>
+<pre><code class="language-javascript">this.state = this.useState({
+  title: &quot;Things Todo&quot;,
+  todos: [
+    {
+      done: true,
+      title: &quot;Walk the Dog&quot;,
+    },
+    {
+      done: false,
+      title: &quot;Grocery Shop&quot;,
+    },
+    {
+      done: false,
+      title: &quot;X-Mas Shop&quot;,
+    },
+  ],
+});
+</code></pre>
+<h2>The template</h2><p>I just using generic template literals here, but we could return HTML however we wanted really, Mustache, JSX, HTM it doesn&#39;t really matter as far as our component is concerned. It just wants an HTML string returned.</p>
+<p>Our template uses our state, and renders the HTML. For example our header displays the title.</p>
+<pre><code class="language-html">&lt;h1&gt;${this.state.title}&lt;/h1&gt;
+</code></pre>
+<p>Each time our render function is called, the HTML will be updated with the latest version of <code>this.state</code></p>
+<h2>Event handling</h2><p>We have data, and we have HTML. But that doesn&#39;t do us much good if we can&#39;t trigger changes to the data, so we need some event handling.</p>
+<pre><code class="language-html">&lt;a href=&quot;#&quot; data-on=&quot;click-&gt;deleteTodo&quot; data-args=&quot;${index}&quot;&gt; Delete &lt;/a&gt;
+</code></pre>
+<p>I&#39;ve chosen to just use data attributes as triggers here.
+For example if you look at the delete todo link. On click trigger function <code>deleteTodo</code>. Simple enough.</p>
+<p>You will notice I also have an <code>data-args</code> attribute. This will pass these values as parameters to the method. In this case, it is the index that will let our function know <em>which</em> todo we are wishing to delete.</p>
+<h2>But how does this work?</h2><p>Yeah... remember the whole reason I started this post was to wanted to show some of the basic building blocks of a <em>reactive</em> framework.</p>
+<p>We have seen it from our <code>Todos</code> class that has state, template and event handlers. Let&#39;s now take a look at the <code>Component</code> class.</p>
+<p>Ok so here is the entire <code>Component</code> class which our <code>Todos</code> class extends.</p>
+<pre><code class="language-javascript">import Morphdom from &quot;https://unpkg.com/morphdom@2.6.1/dist/morphdom-esm.js&quot;;
+import observer from &quot;./observer.js&quot;;
+
+export default class Component {
+  handlers = [&quot;click&quot;, &quot;input&quot;];
+  observable;
+
+  constructor($root) {
+    this.$root = $root;
+    this.handlers.forEach((type) =&gt;
+      this.$root.addEventListener(type, this.#handleEvent.bind(this))
+    );
+  }
+
+  useState(value) {
+    return observer(value, this.updateDom.bind(this));
+  }
+
+  #handleEvent(ev) {
+    const { type, target } = ev;
+    const on = target.dataset.on;
+
+    if (!on) return;
+
+    const args = target.dataset.args ? target.dataset.args.split(&quot;,&quot;) : [];
+    const [eventType, method] = on.split(&quot;-&gt;&quot;);
+
+    if (eventType !== type) return;
+
+    if (!this[method]) {
+      console.error(
+        `${method} does not exist in component ${this.constructor.name}`,
+        ev.target
+      );
+    } else this[method].call(this, ev, ...args);
+  }
+
+  updateDom() {
+    Morphdom(this.$root.firstChild, this.render(), {
+      onBeforeElUpdated: (fromEl, toEl) =&gt; !fromEl.isEqualNode(toEl),
+    });
+  }
+
+  render() {
+    console.error(`${this.constructor.name} must provide a render function!`);
+  }
+}
+</code></pre>
+<p>Pretty tiny, just like I promised. It&#39;s really only a couple of methods.</p>
+<h2>The constructor</h2><p>Let&#39;s start with the constructor</p>
+<pre><code class="language-javascript">handlers = [&quot;click&quot;, &quot;input&quot;];
+
+constructor($root) {
+  this.$root = $root;
+  this.handlers.forEach((type) =&gt;
+    this.$root.addEventListener(type, this.#handleEvent.bind(this))
+  );
+}
+</code></pre>
+<p>We save a reference to the <code>$root</code> element, _we need this when we re-render, and add event handlers to the <code>$root</code> for each type of event we support. </p>
+<p>We could easily add many more types of events to listen to, but for this example these were all we needed.</p>
+<p>Notice that the <code>addEventListener</code> is added to the <code>$root</code> itself instead of on each element that has a <code>data-on</code> attribute. This allows us to just have one handler for each type of even, and also never have to add / remove event listeners ever again throughout the life of this component. Pretty handy. More on that in a second...</p>
+<h2>useState method</h2><pre><code class="language-javascript">useState(value) {
+  return observer(value, this.updateDom.bind(this));
+}
+</code></pre>
+<p>As we saw earlier, our Todos component called <code>useState</code> with our data, then saved the return value as <code>this.state</code>.</p>
+<p>But whats happening here? As discussed in the previous post <a href="https://dev.to/dperrymorrow/create-an-observable-object-using-proxy-3h62">Create an Observable Object using Proxy</a> we have the ability to create an <em>observable</em> Proxy object. We create one here, and return it, while passing our <code>updateDom</code> as the callback function. This will fire each time our data is changed.</p>
+<h2>Handling events</h2><pre><code class="language-javascript">#handleEvent(ev) {
+  const { type, target } = ev;
+  const on = target.dataset.on;
+
+  if (!on) return;
+
+  const args = target.dataset.args ? target.dataset.args.split(&quot;,&quot;) : [];
+  const [eventType, method] = on.split(&quot;-&gt;&quot;);
+
+  if (eventType !== type) return;
+
+  if (!this[method]) {
+    console.error(
+      `${method} does not exist in component ${this.constructor.name}`,
+      ev.target
+    );
+  } else this[method].call(this, ev, ...args);
+}
+</code></pre>
+<p>In our constructor we added event listeners to our <code>$root</code> element. This is the handler we passed in.</p>
+<pre><code class="language-javascript">const { type, target } = ev;
+const on = target.dataset.on;
+
+if (!on) return;
+</code></pre>
+<p>We check if the target has a <code>data-on</code> property, if not, no point in continuing further.</p>
+<pre><code class="language-javascript">const args = target.dataset.args ? target.dataset.args.split(&quot;,&quot;) : [];
+const [eventType, method] = on.split(&quot;-&gt;&quot;);
+
+if (eventType !== type) return;
+</code></pre>
+<p>Next we gather any <code>data-args</code> values as an array that we can pass to our method, and then see if our <code>eventType</code> matches the type on our element, example click of <code>click-&gt;deleteTodo</code></p>
+<pre><code class="language-javascript">if (!this[method]) {
+  console.error(
+    `${method} does not exist in component ${this.constructor.name}`,
+    ev.target
+  );
+} else this[method].call(this, ev, ...args);
+</code></pre>
+<p>Lastly, we make sure the method exists in our class, <em>in this case Todos</em>, if not <code>console.error</code> showing the element where the error came from helping us debug.</p>
+<p>If the method exists, we call it invoking <code>call</code> providing the scope <code>this</code> so that our method has the correct <code>this</code> when invoked. <em>can access <code>this.state</code> for example</em>. </p>
+<p>Call also gives us the ability to pass in arguments, we are passing in the <code>ev</code> <em>event</em> and then any <code>data-args</code> split into an array.</p>
+<h2>Updating the DOM</h2><p>Ok the whole point of this thing is to automatically update the DOM to reflect our template as the data changes. So how does that happen? It takes place in the <code>updateDom</code> function that we sent as the callback to our <em>observable</em>. This function gets called each time there is a <code>set</code> on our data, at any level.</p>
+<pre><code class="language-javascript">updateDom() {
+  Morphdom(this.$root.firstChild, this.render(), {
+    onBeforeElUpdated: (fromEl, toEl) =&gt; !fromEl.isEqualNode(toEl),
+  });
+}
+</code></pre>
+<p>It&#39;s super simple actually. And that is in large part to <a href="https://github.com/patrick-steele-idem/morphdom">Morphdom</a> which I&#39;m using to compare the output of <code>render()</code> to what is already on the DOM. Morphdom will patch the differences.</p>
+<p>The only extra thing I&#39;m doing here is bailing on traversing further down the DOM if the nodes are equal, preventing some checking of children if the parents are already deemed to be equal.</p>
+<h2>Summary</h2><p>And thats pretty much it. This little <code>Component</code> class certianly is not the next React killer, but it was a fun little experiment into some of the fundamental concepts of a front end framework which I would outline as follows.</p>
+<ul>
+<li>A template that renders HTML with your data</li>
+<li>Detecting when your data has changed</li>
+<li>event handlers managed on our template without having to do it manually after each render</li>
+<li>re-rendering your template with the new state of your data</li>
+<li>comparing the current DOM with your re-rendered HTML and patching the differences</li>
+</ul>
+<h2>Next steps</h2><p>So what if this was a real project, what would we be looking at building next? Whats missing? Here are some thoughts.</p>
+<p>Instead of re-rendering the entire component, and patching the difference, a way to target only the portions of the template that reference data that was changed. Frameworks like Preact and Svelte do this very well, surgically targeting DOM element and attributes that reference certain pieces of data. </p>
+<p>The ability to render sub components. Say we wanted to render a <code>Todo</code> component for each todo in our todos array. </p>
+<div class="comments"><h3>Comments</h3><ul><li><div class="user"><img src="https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F26068%2Fba1ab730-b1da-4996-b928-91757835587c.jpeg"/><div class="username">tracygjg</div></div><div class="message"><p>Hi David,<br>
+It looks like you have made the same mistake I make all to often with the markdown around your link to <code>(Create an Observable Object using Proxy)[https://dev.to/dperrymorrow/create-an-observable-object-using-proxy-3h62]</code>.</p>
+
+<p>Swap the parentheses and square brackets around to  <code>[Create an Observable Object using Proxy](https://dev.to/dperrymorrow/create-an-observable-object-using-proxy-3h62)</code>.</p>
+
+<p>Kind regard</p>
+
+</div><ul></ul></li><li><div class="user"><img src="https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F1640217%2F0c1d6bed-ee20-4323-8075-d106c11f5f17.jpeg"/><div class="username">yakupcemilk</div></div><div class="message"><p>Hello Mr. David Morrow, thank you for your wonderful article and project. I tried to build the framework you have created in this article, from start to finish, but, I get 404 error no matter Nodejs or Light-Server. How can I solve this problem, can you help me please?</p>
+
+</div><ul><li><div class="user"><img src="https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg"/><div class="username">dperrymorrow</div></div><div class="message"><p>I have added instructions to the readme on how to run the repo. </p>
+
+<ol>
+<li>clone this repo</li>
+<li>cd into directory</li>
+<li><code>npm install</code></li>
+<li><code>npm run dev</code></li>
+<li>go to localhost:8000 in your browser</li>
+</ol>
+
+</div><ul><li><div class="user"><img src="https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F1640217%2F0c1d6bed-ee20-4323-8075-d106c11f5f17.jpeg"/><div class="username">yakupcemilk</div></div><div class="message"><p>Thank you sir.</p>
+
+</div><ul></ul></li></ul></li></ul></li></ul><footer><a href="https://dev.to/dperrymorrow/build-a-js-framework-with-80-lines-of-javascript-1bne" target="_blank">Leave a comment</a></footer></div></article><section class="promoted"><nav><ul><li><a href="/posts/you-no-longer-need-vuex-pinia-for-shared-state-in-vue">You don't need Vuex / Pinia for shared state in Vue.</a></li><li><a href="/posts/using-react-without-jsx-no-build">Using React without JSX == no build</a></li><li><a href="/posts/build-a-js-framework-with-80-lines-of-javascript" class="active">Build an 80 line JS Framework</a></li><li><a href="/posts/create-an-observable-object-using-proxy">Create an Observable Object using Proxy</a></li><li><a href="/posts/speed-up-your-code-with-promiseall">Speed up your code with Promise.all</a></li><li><a href="/posts/using-hotwiredturbo-but-patch-the-dom-vs-replacing">Make hotwired/turbo patch vs replace</a></li></ul></nav></section></main></body></html>

@@ -5,7 +5,7 @@
   "scripts": {
     "scrape": "node ./_source/scripts/scrape-dev-to.mjs",
     "dev": "npx harp _source",
-    "build": "npx harp compile _source docs",
+    "build": "npx harp _source docs",
     "sort": "node _source/scripts/sort.js"
   },
   "repository": {
