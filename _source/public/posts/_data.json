@@ -1,4 +1,46 @@
 {
+  "a-simple-mostly-css-code-editor": {
+    "type_of": "article",
+    "id": 2067261,
+    "title": "A Simple, mostly CSS code editor",
+    "description": "In this article, I'm going to talk about how to make a very simple, browser based code editor using...",
+    "readable_publish_date": "Oct 30",
+    "slug": "a-simple-mostly-css-code-editor",
+    "path": "/dperrymorrow/a-simple-mostly-css-code-editor-1832",
+    "url": "https://dev.to/dperrymorrow/a-simple-mostly-css-code-editor-1832",
+    "comments_count": 0,
+    "public_reactions_count": 0,
+    "collection_id": null,
+    "published_timestamp": "2024-10-30T19:39:38Z",
+    "positive_reactions_count": 0,
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F5xos02lvzrbg8k8u3vtf.jpg",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F5xos02lvzrbg8k8u3vtf.jpg",
+    "canonical_url": "https://dev.to/dperrymorrow/a-simple-mostly-css-code-editor-1832",
+    "created_at": "2024-10-30T17:36:15Z",
+    "edited_at": null,
+    "crossposted_at": null,
+    "published_at": "2024-10-30T19:39:38Z",
+    "last_comment_at": "2024-10-30T19:39:38Z",
+    "reading_time_minutes": 4,
+    "tag_list": [
+      "webdev",
+      "javascript",
+      "css",
+      "programming"
+    ],
+    "tags": "webdev, javascript, css, programming",
+    "user": {
+      "name": "David Morrow",
+      "username": "dperrymorrow",
+      "twitter_username": "dperrymorrow",
+      "github_username": "dperrymorrow",
+      "user_id": 477467,
+      "website_url": "https://newfinds.com",
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg"
+    },
+    "comments": []
+  },
   "you-no-longer-need-vuex-pinia-for-shared-state-in-vue": {
     "type_of": "article",
     "id": 1864318,
@@ -13,8 +55,8 @@
     "collection_id": null,
     "published_timestamp": "2024-05-24T20:48:58Z",
     "positive_reactions_count": 4,
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Faq3xf8d1tja1mzp9e26b.png",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Faq3xf8d1tja1mzp9e26b.png",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Faq3xf8d1tja1mzp9e26b.png",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Faq3xf8d1tja1mzp9e26b.png",
     "canonical_url": "https://dev.to/dperrymorrow/you-no-longer-need-vuex-pinia-for-shared-state-in-vue-4ikp",
     "created_at": "2024-05-24T20:48:59Z",
     "edited_at": "2024-05-25T04:19:18Z",
@@ -36,8 +78,8 @@
       "github_username": "dperrymorrow",
       "user_id": 477467,
       "website_url": "https://newfinds.com",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg"
     },
     "comments": [
       {
@@ -52,8 +94,8 @@
           "github_username": "samthatcode",
           "user_id": 588971,
           "website_url": null,
-          "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F588971%2Fc89e4260-0c12-4323-9650-91dc7fdbd3a8.jpg",
-          "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F588971%2Fc89e4260-0c12-4323-9650-91dc7fdbd3a8.jpg"
+          "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F588971%2Fc89e4260-0c12-4323-9650-91dc7fdbd3a8.jpg",
+          "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F588971%2Fc89e4260-0c12-4323-9650-91dc7fdbd3a8.jpg"
         },
         "children": [
           {
@@ -68,8 +110,8 @@
               "github_username": "dperrymorrow",
               "user_id": 477467,
               "website_url": "https://newfinds.com",
-              "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg",
-              "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg"
+              "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg",
+              "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg"
             },
             "children": [
               {
@@ -84,8 +126,8 @@
                   "github_username": "samthatcode",
                   "user_id": 588971,
                   "website_url": null,
-                  "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F588971%2Fc89e4260-0c12-4323-9650-91dc7fdbd3a8.jpg",
-                  "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F588971%2Fc89e4260-0c12-4323-9650-91dc7fdbd3a8.jpg"
+                  "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F588971%2Fc89e4260-0c12-4323-9650-91dc7fdbd3a8.jpg",
+                  "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F588971%2Fc89e4260-0c12-4323-9650-91dc7fdbd3a8.jpg"
                 },
                 "children": []
               }
@@ -105,8 +147,8 @@
           "github_username": "patrickmonteiro",
           "user_id": 250408,
           "website_url": "https://abaetetech.com.br/",
-          "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F250408%2Fb53bf74c-89e0-4613-8606-122cb8996179.png",
-          "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F250408%2Fb53bf74c-89e0-4613-8606-122cb8996179.png"
+          "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F250408%2Fb53bf74c-89e0-4613-8606-122cb8996179.png",
+          "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F250408%2Fb53bf74c-89e0-4613-8606-122cb8996179.png"
         },
         "children": []
       }
@@ -127,7 +169,7 @@
     "published_timestamp": "2023-01-04T23:09:27Z",
     "positive_reactions_count": 9,
     "cover_image": null,
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fzg9jix25q6ac5pw238uc.png",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fzg9jix25q6ac5pw238uc.png",
     "canonical_url": "https://dev.to/dperrymorrow/using-react-without-jsx-no-build-14gg",
     "created_at": "2023-01-04T23:09:27Z",
     "edited_at": null,
@@ -149,8 +191,8 @@
       "github_username": "dperrymorrow",
       "user_id": 477467,
       "website_url": "https://newfinds.com",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg"
     },
     "comments": [
       {
@@ -165,8 +207,8 @@
           "github_username": "vad-systems",
           "user_id": 242489,
           "website_url": null,
-          "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F242489%2F7590ae2e-dd94-4d70-8bd3-d392b76a1133.png",
-          "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F242489%2F7590ae2e-dd94-4d70-8bd3-d392b76a1133.png"
+          "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F242489%2F7590ae2e-dd94-4d70-8bd3-d392b76a1133.png",
+          "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F242489%2F7590ae2e-dd94-4d70-8bd3-d392b76a1133.png"
         },
         "children": [
           {
@@ -181,8 +223,8 @@
               "github_username": "dperrymorrow",
               "user_id": 477467,
               "website_url": "https://newfinds.com",
-              "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg",
-              "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg"
+              "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg",
+              "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg"
             },
             "children": []
           }
@@ -204,8 +246,8 @@
     "collection_id": 20851,
     "published_timestamp": "2022-12-22T04:15:45Z",
     "positive_reactions_count": 19,
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ffdudad1sq5x9r7nhp98t.png",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ffdudad1sq5x9r7nhp98t.png",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ffdudad1sq5x9r7nhp98t.png",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ffdudad1sq5x9r7nhp98t.png",
     "canonical_url": "https://dev.to/dperrymorrow/build-a-js-framework-with-80-lines-of-javascript-1bne",
     "created_at": "2022-12-08T18:30:46Z",
     "edited_at": "2023-01-04T18:01:40Z",
@@ -227,8 +269,8 @@
       "github_username": "dperrymorrow",
       "user_id": 477467,
       "website_url": "https://newfinds.com",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg"
     },
     "comments": [
       {
@@ -243,8 +285,8 @@
           "github_username": "TracyGJG",
           "user_id": 26068,
           "website_url": null,
-          "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F26068%2Fba1ab730-b1da-4996-b928-91757835587c.jpeg",
-          "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F26068%2Fba1ab730-b1da-4996-b928-91757835587c.jpeg"
+          "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F26068%2Fba1ab730-b1da-4996-b928-91757835587c.jpeg",
+          "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F26068%2Fba1ab730-b1da-4996-b928-91757835587c.jpeg"
         },
         "children": []
       },
@@ -260,8 +302,8 @@
           "github_username": "yakupcemilk",
           "user_id": 1640217,
           "website_url": null,
-          "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F1640217%2F0c1d6bed-ee20-4323-8075-d106c11f5f17.jpeg",
-          "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F1640217%2F0c1d6bed-ee20-4323-8075-d106c11f5f17.jpeg"
+          "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F1640217%2F0c1d6bed-ee20-4323-8075-d106c11f5f17.jpeg",
+          "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F1640217%2F0c1d6bed-ee20-4323-8075-d106c11f5f17.jpeg"
         },
         "children": [
           {
@@ -276,8 +318,8 @@
               "github_username": "dperrymorrow",
               "user_id": 477467,
               "website_url": "https://newfinds.com",
-              "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg",
-              "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg"
+              "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg",
+              "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg"
             },
             "children": [
               {
@@ -292,8 +334,8 @@
                   "github_username": "yakupcemilk",
                   "user_id": 1640217,
                   "website_url": null,
-                  "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F1640217%2F0c1d6bed-ee20-4323-8075-d106c11f5f17.jpeg",
-                  "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F1640217%2F0c1d6bed-ee20-4323-8075-d106c11f5f17.jpeg"
+                  "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F1640217%2F0c1d6bed-ee20-4323-8075-d106c11f5f17.jpeg",
+                  "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F1640217%2F0c1d6bed-ee20-4323-8075-d106c11f5f17.jpeg"
                 },
                 "children": []
               }
@@ -317,8 +359,8 @@
     "collection_id": 20851,
     "published_timestamp": "2022-11-25T02:53:46Z",
     "positive_reactions_count": 22,
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fpa9stzltpvimmx8bsmm3.png",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fpa9stzltpvimmx8bsmm3.png",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fpa9stzltpvimmx8bsmm3.png",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fpa9stzltpvimmx8bsmm3.png",
     "canonical_url": "https://dev.to/dperrymorrow/create-an-observable-object-using-proxy-3h62",
     "created_at": "2022-11-25T02:53:46Z",
     "edited_at": "2022-12-08T18:32:24Z",
@@ -339,8 +381,8 @@
       "github_username": "dperrymorrow",
       "user_id": 477467,
       "website_url": "https://newfinds.com",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg"
     },
     "comments": [
       {
@@ -355,8 +397,8 @@
           "github_username": "bgrand-ch",
           "user_id": 385334,
           "website_url": "https://bgrand.ch",
-          "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F385334%2F164c527e-ee85-419f-87b6-a39a9985669a.jpg",
-          "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F385334%2F164c527e-ee85-419f-87b6-a39a9985669a.jpg"
+          "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F385334%2F164c527e-ee85-419f-87b6-a39a9985669a.jpg",
+          "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F385334%2F164c527e-ee85-419f-87b6-a39a9985669a.jpg"
         },
         "children": [
           {
@@ -371,8 +413,8 @@
               "github_username": "dperrymorrow",
               "user_id": 477467,
               "website_url": "https://newfinds.com",
-              "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg",
-              "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg"
+              "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg",
+              "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg"
             },
             "children": []
           }
@@ -394,8 +436,8 @@
     "collection_id": null,
     "published_timestamp": "2022-11-23T21:15:15Z",
     "positive_reactions_count": 54,
-    "cover_image": "https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fvjtqs0o7c4bjh56h7mgh.png",
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fvjtqs0o7c4bjh56h7mgh.png",
+    "cover_image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fvjtqs0o7c4bjh56h7mgh.png",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fvjtqs0o7c4bjh56h7mgh.png",
     "canonical_url": "https://dev.to/dperrymorrow/speed-up-your-code-with-promiseall-3d4i",
     "created_at": "2022-11-23T21:15:16Z",
     "edited_at": "2022-11-25T02:55:49Z",
@@ -416,8 +458,8 @@
       "github_username": "dperrymorrow",
       "user_id": 477467,
       "website_url": "https://newfinds.com",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg"
     },
     "comments": [
       {
@@ -432,8 +474,8 @@
           "github_username": "charlesr1971",
           "user_id": 286705,
           "website_url": null,
-          "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F286705%2F2cc41a53-8e9f-4591-b9d2-ec4a620b9950.jpeg",
-          "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F286705%2F2cc41a53-8e9f-4591-b9d2-ec4a620b9950.jpeg"
+          "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F286705%2F2cc41a53-8e9f-4591-b9d2-ec4a620b9950.jpeg",
+          "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F286705%2F2cc41a53-8e9f-4591-b9d2-ec4a620b9950.jpeg"
         },
         "children": [
           {
@@ -448,8 +490,8 @@
               "github_username": "dperrymorrow",
               "user_id": 477467,
               "website_url": "https://newfinds.com",
-              "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg",
-              "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg"
+              "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg",
+              "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg"
             },
             "children": [
               {
@@ -464,8 +506,8 @@
                   "github_username": "charlesr1971",
                   "user_id": 286705,
                   "website_url": null,
-                  "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F286705%2F2cc41a53-8e9f-4591-b9d2-ec4a620b9950.jpeg",
-                  "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F286705%2F2cc41a53-8e9f-4591-b9d2-ec4a620b9950.jpeg"
+                  "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F286705%2F2cc41a53-8e9f-4591-b9d2-ec4a620b9950.jpeg",
+                  "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F286705%2F2cc41a53-8e9f-4591-b9d2-ec4a620b9950.jpeg"
                 },
                 "children": []
               }
@@ -485,8 +527,8 @@
           "github_username": "bacqueyrisses",
           "user_id": 854410,
           "website_url": "https://www.bacqueyrisses.dev",
-          "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F854410%2F3f8c50e8-083c-418b-809c-0ff7d3e65b99.png",
-          "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F854410%2F3f8c50e8-083c-418b-809c-0ff7d3e65b99.png"
+          "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F854410%2F3f8c50e8-083c-418b-809c-0ff7d3e65b99.png",
+          "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F854410%2F3f8c50e8-083c-418b-809c-0ff7d3e65b99.png"
         },
         "children": [
           {
@@ -501,8 +543,8 @@
               "github_username": "dperrymorrow",
               "user_id": 477467,
               "website_url": "https://newfinds.com",
-              "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg",
-              "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg"
+              "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg",
+              "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg"
             },
             "children": []
           }
@@ -525,7 +567,7 @@
     "published_timestamp": "2022-11-23T19:15:30Z",
     "positive_reactions_count": 7,
     "cover_image": null,
-    "social_image": "https://media.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fyigs9luitk7ycmfb8mc0.png",
+    "social_image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fyigs9luitk7ycmfb8mc0.png",
     "canonical_url": "https://dev.to/dperrymorrow/using-hotwiredturbo-but-patch-the-dom-vs-replacing-5176",
     "created_at": "2022-11-23T19:15:31Z",
     "edited_at": "2022-11-25T21:53:40Z",
@@ -547,8 +589,8 @@
       "github_username": "dperrymorrow",
       "user_id": 477467,
       "website_url": "https://newfinds.com",
-      "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg",
-      "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg"
+      "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg",
+      "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F477467%2Fced9f6c0-d3b7-476e-bc56-aece0c6d05ba.jpeg"
     },
     "comments": [
       {
@@ -563,8 +605,8 @@
           "github_username": "knagode",
           "user_id": 874805,
           "website_url": null,
-          "profile_image": "https://media.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F874805%2F2f983b9e-3cd2-4b3e-9661-cfafc390f181.jpeg",
-          "profile_image_90": "https://media.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F874805%2F2f983b9e-3cd2-4b3e-9661-cfafc390f181.jpeg"
+          "profile_image": "https://media2.dev.to/dynamic/image/width=640,height=640,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F874805%2F2f983b9e-3cd2-4b3e-9661-cfafc390f181.jpeg",
+          "profile_image_90": "https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F874805%2F2f983b9e-3cd2-4b3e-9661-cfafc390f181.jpeg"
         },
         "children": []
       }
