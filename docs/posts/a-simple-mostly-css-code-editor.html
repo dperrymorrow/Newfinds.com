@@ -1,0 +1,153 @@
+<!DOCTYPE html><html lang="en"><head><title>A Simple, mostly CSS code editor</title><meta name="description" content="In this article, I'm going to talk about how to make a very simple, browser based code editor using..."/><meta name="viewport" content="width=device-width, user-scalable=no"/><link rel="stylesheet" href="/styles/app.css"/><script defer="defer" src="https://cloud.umami.is/script.js" data-website-id="9a998f6c-3cf0-4c00-adaf-bae775f82fe5"></script><script src="/scripts/prism.js" defer="defer"></script><script src="/scripts/app.js" defer="defer"></script></head><body><main><section class="nav"><a id="nav-toggle" href="#"><img src="/images/hamburger.svg"/></a><nav><ul><li><a href="/">Root</a></li><li><a href="/about">About</a></li><li><a href="/morrow_resume.pdf" download="Morrow-Resume.pdf">Resume</a></li></ul><ul><li><a href="/posts/you-dont-need-a-css-pre-processor">You don't need a CSS pre-processor</a></li><li><a href="/posts/a-simple-mostly-css-code-editor" class="active">A Simple, mostly CSS code editor</a></li><li><a href="/posts/you-no-longer-need-vuex-pinia-for-shared-state-in-vue">You don't need Vuex / Pinia for shared state in Vue.</a></li><li><a href="/posts/using-react-without-jsx-no-build">Using React without JSX == no build</a></li><li><a href="/posts/build-a-js-framework-with-80-lines-of-javascript">Build an 80 line JS Framework</a></li><li><a href="/posts/create-an-observable-object-using-proxy">Create an Observable Object using Proxy</a></li><li><a href="/posts/speed-up-your-code-with-promiseall">Speed up your code with Promise.all</a></li><li><a href="/posts/using-hotwiredturbo-but-patch-the-dom-vs-replacing">Make hotwired/turbo patch vs replace</a></li></ul></nav></section><header><h1><small><span>Oct 30</span><span class="likes">♥ 0</span></small>A Simple, mostly CSS code editor</h1><img src="https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F5xos02lvzrbg8k8u3vtf.jpg" alt="A Simple, mostly CSS code editor" loading="lazy"></header><article class="md"><p>In this article, I&#39;m going to talk about how to make a very simple, browser based code editor using mostly CSS. I originally built this when I needed to let users edit JSON in a CMS that I was building.</p>
+<blockquote>
+<p>If you just want to jump to the code and the working example, here you go. The code can be found <a href="https://github.com/dperrymorrow/simple-browser-code-editor/">here</a> and the working example <a href="https://dperrymorrow.github.io/simple-browser-code-editor/">here</a></p>
+</blockquote>
+<h2>Contenteditable sucks...</h2><p>So if you were ever pondered building your own code editor, you have probably looked at <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/contenteditable">contenteditable</a>. While <code>contenteditable</code> is great for many situations, there is one huge problem in regards to updating the content while you type. It is nearly impossible to place the cursor back to where it was after you syntax highlight the code in the editor as it changes. </p>
+<p>In my case, I wanted something very minimal without reaching for some huge, heavy handed library for this. I set out to see if I could build a very simple editor using mostly CSS, just using Javascript to create the syntax highlighted output, and update the preview. </p>
+<p>I wanted to type in a normal <code>&lt;textarea&gt;</code> but and just update a separate preview of the syntax highlighted code. </p>
+<h2>How the illusion works</h2><p><img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/djn20s65efratgt6ala6.png" alt="diagram of layers of code editor"></p>
+<h2>The HTML code</h2><pre><code class="language-html">&lt;div id=&quot;editor&quot;&gt;
+  &lt;div class=&quot;preview&quot;&gt;&lt;/div&gt;
+  &lt;textarea class=&quot;code&quot; spellcheck=&quot;false&quot;&gt;&lt;/textarea&gt;
+&lt;/div&gt;
+</code></pre>
+<ul>
+<li>A regular <code>&lt;textarea&gt;</code> with transparent text</li>
+<li>A <code>&lt;div&gt;</code> populated with your syntax highlighted code. </li>
+<li>A container wrapping your <code>&lt;textarea&gt;</code> and your preview <code>&lt;div&gt;</code> so that they can scroll together and remain lined up.</li>
+</ul>
+<h2>The CSS</h2><p>Here is the entire CSS that I used for the editor. </p>
+<pre><code class="language-css">html,
+body {
+  height: 100vh;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+}
+
+#editor {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  display: grid;
+  grid-template: 1fr / 1fr;
+  place-items: top;
+  overflow: auto;
+  padding: 2rem;
+  background-color: #1a1723;
+}
+
+#editor .code,
+#editor .preview {
+  all: unset;
+}
+
+#editor .code,
+#editor .preview {
+  height: auto;
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
+  font-family: Monaco, monospace;
+  font-size: 16px;
+  resize: none;
+  line-height: 24px;
+  white-space: pre-wrap;
+  overflow: hidden;
+}
+
+#editor .preview {
+  pointer-events: none;
+  color: #ccc;
+}
+
+#editor .code {
+  color: rgba(255, 255, 255, 0);
+  caret-color: magenta;
+}
+</code></pre>
+<h3>Overlapping the elements</h3><p>One of the key parts here is using display grid to overlay the textarea and the preview</p>
+<pre><code class="language-css">#editor {
+  ...
+  display: grid;
+  grid-template: 1fr / 1fr;
+  place-items: top;
+  overflow: auto;
+  ...
+}
+</code></pre>
+<p>I am using the <code>fr</code> unit to overlap the two elements inside the container. You can read more about <code>fr</code> at CSSTricks <a href="https://css-tricks.com/introduction-fr-css-unit/">here</a>.</p>
+<h3>Stying the textarea and preview identically</h3><p>You may notice that I apply the same rules to the preview and the textarea. This ensures that they overlap precisely.</p>
+<pre><code class="language-css">#editor .code,
+#editor .preview {
+  height: auto;
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
+  font-family: Monaco, monospace;
+  font-size: 16px;
+  resize: none;
+  line-height: 24px;
+  white-space: pre-wrap;
+  overflow: hidden;
+}
+</code></pre>
+<h3>Make the textarea transparent</h3><p>Using <code>rgba</code> for the text color allows me to have the text entirely transparent, so it seems like you are selecting and editing the preview. </p>
+<pre><code class="language-css">#editor .code {
+  color: rgba(255, 255, 255, 0);
+  caret-color: magenta;
+}
+</code></pre>
+<h2>A small bit of Javascript</h2><p>We do need a small amount of Javascript to tie this all together. Let&#39;s take a look at what we need.</p>
+<pre><code class="language-javascript">const $preview = document.querySelector(&quot;#editor .preview&quot;);
+const $code = document.querySelector(&quot;#editor .code&quot;);
+
+function mirror() {
+  // make textarea grow to height of content so we can scroll together
+  $code.style.height = $code.scrollHeight;
+  // update the preview underlay with the syntax highlight
+  $preview.innerHTML = Prism.highlight(
+    $code.value,
+    Prism.languages.javascript,
+    &quot;javascript&quot;,
+  );
+}
+// insert two spaces on tab
+$code.addEventListener(&quot;keydown&quot;, (ev) =&gt; {
+  if (ev.code === &quot;Tab&quot;) {
+    ev.preventDefault();
+    $code.setRangeText(&quot;  &quot;, $code.selectionStart, $code.selectionStart, &quot;end&quot;);
+    mirror();
+  }
+});
+
+$code.addEventListener(&quot;input&quot;, mirror);
+mirror();
+</code></pre>
+<blockquote>
+<p>We will be using <a href="https://prismjs.com/">Prism</a> for this, but you could use anything you like. </p>
+</blockquote>
+<h3>The <code>mirror()</code> function is doing a couple of things here.</h3><pre><code class="language-javascript">$code.style.height = $code.scrollHeight;
+</code></pre>
+<p>This ensures that as you type, the height of the <code>&lt;textarea&gt;</code> grows, so that the container will scroll instead of the <code>&lt;textarea&gt;</code> itself. You have probably seen this used to make &quot;auto-growing&quot; textareas before.</p>
+<pre><code class="language-javascript">$preview.innerHTML = Prism.highlight(
+    $code.value,
+    Prism.languages.javascript,
+    &quot;javascript&quot;,
+  );
+</code></pre>
+<p>Then we are using Prism to take the code from the <code>&lt;textarea&gt;</code> syntax highlight it and place the result in the preview <code>&lt;div&gt;</code></p>
+<h3>Supporting tab indentation</h3><p>Anytime you are editing code, you need to be able to indent, and this bit of code allows us to add in spaces when someone hits tab, and then call <code>mirror()</code> again to update the preview.</p>
+<pre><code class="language-javascript">$code.addEventListener(&quot;keydown&quot;, (ev) =&gt; {
+  if (ev.code === &quot;Tab&quot;) {
+    ev.preventDefault();
+    $code.setRangeText(&quot;  &quot;, $code.selectionStart, $code.selectionStart, &quot;end&quot;);
+    mirror();
+  }
+});
+</code></pre>
+<p>Finally, we add an eventListener for input on the <code>&lt;textarea&gt;</code> and update the preview with <code>mirror()</code> on each change. Then we call <code>mirror()</code> initially, in case there is already code in the <code>&lt;textarea&gt;</code> at page load. </p>
+<p>That&#39;s it! Obviously, if you were be editing thousands and thousands of lines of code, you might hit performance issues updating all that syntax highlighted code. One way to improve on this idea would be to create a &quot;virtual&quot; scroller, and only highlight the code that is visible in the containers view. This is how VsCode does their editor. </p>
+<p>If you would like to play around with this, you can find the
+<a href="https://github.com/dperrymorrow/simple-browser-code-editor/">code</a> and a <a href="https://dperrymorrow.github.io/simple-browser-code-editor/">working example</a> on GitHub</p>
+<div class="comments"><h3>Comments</h3><ul><li><div class="user"><img src="https://media2.dev.to/dynamic/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F2214241%2F8cff0893-1e8a-4f49-b900-795f6a562cb0.png"/><div class="username">philip_zhang_854092d88473</div></div><div class="message"><p>EchoAPI is incredibly useful for verifying API responses that influence CSS-driven components, helping ensure a seamless user experience.</p>
+
+</div><ul></ul></li></ul><footer><a href="https://dev.to/dperrymorrow/a-simple-mostly-css-code-editor-1832" target="_blank">Leave a comment</a></footer></div></article><section class="promoted"><nav><ul><li><a href="/posts/you-dont-need-a-css-pre-processor">You don't need a CSS pre-processor</a></li><li><a href="/posts/a-simple-mostly-css-code-editor" class="active">A Simple, mostly CSS code editor</a></li><li><a href="/posts/you-no-longer-need-vuex-pinia-for-shared-state-in-vue">You don't need Vuex / Pinia for shared state in Vue.</a></li><li><a href="/posts/using-react-without-jsx-no-build">Using React without JSX == no build</a></li><li><a href="/posts/build-a-js-framework-with-80-lines-of-javascript">Build an 80 line JS Framework</a></li><li><a href="/posts/create-an-observable-object-using-proxy">Create an Observable Object using Proxy</a></li><li><a href="/posts/speed-up-your-code-with-promiseall">Speed up your code with Promise.all</a></li><li><a href="/posts/using-hotwiredturbo-but-patch-the-dom-vs-replacing">Make hotwired/turbo patch vs replace</a></li></ul></nav></section></main></body></html>

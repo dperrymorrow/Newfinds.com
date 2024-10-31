@@ -1,0 +1,96 @@
+<!DOCTYPE html><html lang="en"><head><title>You don't need a CSS pre-processor</title><meta name="description" content="Native CSS has come a long way in recent months/years. In this post I am going to go over the major..."/><meta name="viewport" content="width=device-width, user-scalable=no"/><link rel="stylesheet" href="/styles/app.css"/><script defer="defer" src="https://cloud.umami.is/script.js" data-website-id="9a998f6c-3cf0-4c00-adaf-bae775f82fe5"></script><script src="/scripts/prism.js" defer="defer"></script><script src="/scripts/app.js" defer="defer"></script></head><body><main><section class="nav"><a id="nav-toggle" href="#"><img src="/images/hamburger.svg"/></a><nav><ul><li><a href="/">Root</a></li><li><a href="/about">About</a></li><li><a href="/morrow_resume.pdf" download="Morrow-Resume.pdf">Resume</a></li></ul><ul><li><a href="/posts/you-dont-need-a-css-pre-processor" class="active">You don't need a CSS pre-processor</a></li><li><a href="/posts/a-simple-mostly-css-code-editor">A Simple, mostly CSS code editor</a></li><li><a href="/posts/you-no-longer-need-vuex-pinia-for-shared-state-in-vue">You don't need Vuex / Pinia for shared state in Vue.</a></li><li><a href="/posts/using-react-without-jsx-no-build">Using React without JSX == no build</a></li><li><a href="/posts/build-a-js-framework-with-80-lines-of-javascript">Build an 80 line JS Framework</a></li><li><a href="/posts/create-an-observable-object-using-proxy">Create an Observable Object using Proxy</a></li><li><a href="/posts/speed-up-your-code-with-promiseall">Speed up your code with Promise.all</a></li><li><a href="/posts/using-hotwiredturbo-but-patch-the-dom-vs-replacing">Make hotwired/turbo patch vs replace</a></li></ul></nav></section><header><h1><small><span>Oct 31</span><span class="likes">♥ 0</span></small>You don't need a CSS pre-processor</h1><img src="https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F13a7nkou6cw3f2zchwto.jpg" alt="You don't need a CSS pre-processor" loading="lazy"></header><article class="md"><p>Native CSS has come a long way in recent months/years. In this post I am going to go over the major reasons that folks have used css pre-processors such as SASS, LESS, and Stylus, and show you how you can accomplish these same things with native CSS.</p>
+<h2>Separating files</h2><p>Separating files is one main reason folks reach for a pre-processor. For quite some time now though you have been able to import another file into a CSS file. It looks like this.</p>
+<pre><code class="language-css">@import url(&quot;./utils.css&quot;);
+</code></pre>
+<p>You can use a relative or an absolute path, the same way you would for an href on an anchor tag, or any other resource.</p>
+<p>The main difference between this an a pre-processor would be that while a pre-processor would combine then at compile, CSS is going to make an http request at runtime.</p>
+<h2>Nesting rules</h2><p>Ok this is the main reason for using a pre-processor. At least it&#39;s my main reason for using one in the past.</p>
+<p>But CSS now supports nesting, and it works mostly how you are used to from using pre-processors.</p>
+<pre><code class="language-css">header {
+  h1 {
+    font-weight: bold;
+  }
+
+  h2 {
+    font-weight: normal;
+  }
+}
+</code></pre>
+<p>Pretty awesome, what a huge advantage to writing CSS like we have for decades. </p>
+<pre><code class="language-css">header h1 {
+  font-weight: bold;
+}
+
+header h2 {
+  font-weight: normal;
+}
+</code></pre>
+<h3>Sudo selectors</h3><p>Sudo selectors work the same way in native css that you may be accustomed to from pre-processors as well.</p>
+<pre><code class="language-css">button {
+  color: blue;
+
+  &amp;:hover {
+    color: purple;
+  }
+}
+</code></pre>
+<p>You can read more about <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_nesting/Using_CSS_nesting">nesting</a> at MDN.</p>
+<h2>Variables</h2><p>A long time reason for pre-processors was variables. You can have all your colors, spacing ect in one file and globally update it everywhere. </p>
+<p>Well you can do that in native CSS now, for some time. In fact in several ways it&#39;s better than the pre-processors. </p>
+<h3>Global variables</h3><p>Global variables are enclosed in a <code>:root</code> rule. These can be referenced anywhere. </p>
+<pre><code class="language-css">:root {
+  --bg-color: #333;
+}
+</code></pre>
+<p>To use a variable, it must be referenced with the <code>var</code> tag</p>
+<pre><code class="language-css">button {
+  background-color: var(--bg-color);
+}
+</code></pre>
+<h3>Scoped variables</h3><p>You can also scope variables on selectors, for example...</p>
+<pre><code class="language-css">header {
+  --bg-color: #999;
+}
+</code></pre>
+<p>So in this case, referencing <code>var(--bg-color);</code> within the header selector will result in <code>#999</code>;</p>
+<h3>Re-assigning values at runtime</h3><p>So the main advantage with css variables over a pre-processor, is that they can be overrode at runtime, where a pre-processor once its compiled, it&#39;s permanent. </p>
+<p>So for example if you have a website that you want to support light and dark modes. This can be achieved very easily using css vars.</p>
+<pre><code class="language-css">:root {
+  --bg-color: white;
+}
+
+body {
+  background-color: var(--bg-color);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: black;
+  }
+}
+</code></pre>
+<p>To achieve something like this with a pre-processor, you would need to toggle a class on the body using Javascript, and override all the rules with a <code>.dark</code> class or something of the sort.</p>
+<h2>Computation</h2><p>Most pre-processors such as LESS, Stylus, or SASS let you do math on things. Like if you want to divide a variable in half ect.</p>
+<p>You can do that in native css using the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/calc">calc</a> function.</p>
+<pre><code class="language-css">:root {
+  --spacing: 2em;
+}
+
+header {
+  margin-top: calc(var(--spacing) / 2);
+}
+</code></pre>
+<p>how cool is that?</p>
+<h2>Transforming colors</h2><p>So another popular feature <em>(at least to me)</em> is to lighten and darken colors in a css pre-processor. You can do this in native css now as well using <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix">color-mix</a>.</p>
+<pre><code class="language-css">header {
+  background-color: color-mix(in oklab, red 50%, white);
+}
+</code></pre>
+<p>The above would be the equivalent to what you are used to doing with a <code>lighten(red, 50%)</code> in a preprocessor. </p>
+<p>To darken just mix with black instead of white</p>
+<pre><code class="language-css">header {
+  background-color: color-mix(in oklab, red 50%, black);
+}
+</code></pre>
+<p>I hope next time you are choosing what tools to use on a project, you will give native css a try. It has come a long way.</p>
+<div class="comments"><h3>Comments</h3><footer><a href="https://dev.to/dperrymorrow/you-dont-need-a-css-pre-processor-nj3" target="_blank">Leave a comment</a></footer></div></article><section class="promoted"><nav><ul><li><a href="/posts/you-dont-need-a-css-pre-processor" class="active">You don't need a CSS pre-processor</a></li><li><a href="/posts/a-simple-mostly-css-code-editor">A Simple, mostly CSS code editor</a></li><li><a href="/posts/you-no-longer-need-vuex-pinia-for-shared-state-in-vue">You don't need Vuex / Pinia for shared state in Vue.</a></li><li><a href="/posts/using-react-without-jsx-no-build">Using React without JSX == no build</a></li><li><a href="/posts/build-a-js-framework-with-80-lines-of-javascript">Build an 80 line JS Framework</a></li><li><a href="/posts/create-an-observable-object-using-proxy">Create an Observable Object using Proxy</a></li><li><a href="/posts/speed-up-your-code-with-promiseall">Speed up your code with Promise.all</a></li><li><a href="/posts/using-hotwiredturbo-but-patch-the-dom-vs-replacing">Make hotwired/turbo patch vs replace</a></li></ul></nav></section></main></body></html>
