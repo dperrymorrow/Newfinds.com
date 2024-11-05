@@ -4,11 +4,11 @@ In this article, I'm going to talk about how to make a very simple, browser base
 
 ## Contenteditable sucks... 
 
-So if you were ever pondered building your own code editor, you have probably looked at [contenteditable](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/contenteditable). While `contenteditable` is great for many situations, there is one huge problem in regards to updating the content while you type. It is nearly impossible to place the cursor back to where it was after you syntax highlight the code in the editor as it changes. 
+So if you were ever pondered building your own code editor, you have probably looked at [contenteditable](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/contenteditable). While `contenteditable` is great for many situations, but there is one huge problem. It is nearly impossible to place the cursor back where it was after you syntax highlight the code in the editor as it changes. 
 
 In my case, I wanted something very minimal without reaching for some huge, heavy handed library for this. I set out to see if I could build a very simple editor using mostly CSS, just using Javascript to create the syntax highlighted output, and update the preview. 
 
-I wanted to type in a normal `<textarea>` but and just update a separate preview of the syntax highlighted code. 
+I wanted to type in a normal `<textarea>` and just update the preview of the syntax highlighted code in another element. 
 
 ## How the illusion works
 
