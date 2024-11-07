@@ -1,26 +1,5 @@
-section.nav {
+aside.nav {
   padding: var(--padding-md);
-  position: sticky;
-  top: 0;
-  position: -webkit-sticky;
-  z-index: 10000;
-
-  #nav-toggle {
-    position: absolute;
-    top: var(--padding-xs);
-    right: calc(var(--padding-lg) + 1px - var(--padding-xs));
-    background-color: var(--foreground);
-    padding: var(--padding-xs);
-    border-radius: 0.5em;
-
-    img {
-      max-width: 2em;
-    }
-
-    &:hover {
-      opacity: 0.7;
-    }
-  }
 
   &.active {
     border-bottom: 1px solid var(--border);
@@ -33,41 +12,57 @@ section.nav {
     }
   }
 
-  nav {
-    display: none;
-  }
-}
+  section.about {
+    display: flex;
+    margin-bottom: var(--padding-md);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: var(--padding-md);
+    align-items: center;
 
-nav {
-  font-family: var(--font-header);
+    img {
+      border-radius: 50%;
+      box-shadow: inner 0px 0px 3px 3px rgba(0, 0, 0, 0.5);
+      border: 3px solid var(--border);
+      margin-right: var(--padding-sm);
+      max-width: 150px;
+    }
 
-  a {
-    text-decoration: none;
-    font-size: 1.1em;
-    color: var(--bg-dark);
-    line-height: 1.2em;
-    display: block;
-    padding: var(--padding-xs);
-    transition: all 0.3s ease;
-    font-weight: 400;
-    border-bottom: none;
-
-    &:hover,
-    &.active {
-      color: var(--link-txt);
-      background-color: var(--link-bg);
-      border-color: var(--link-txt);
+    a {
+      font-size: 1.1em;
     }
   }
 
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
+  nav {
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
 
-  li {
-    margin: 0;
-    /* padding: var(--padding-xs) 0; */
+    li {
+      margin: 0;
+      /* padding: var(--padding-xs) 0; */
+    }
+
+    a {
+      text-decoration: none;
+      font-size: 0.9em;
+      color: var(--nav-txt);
+      line-height: 1.2em;
+      display: block;
+      padding: var(--padding-xs);
+      transition: all 0.3s ease;
+      font-weight: 400;
+      border-bottom: none;
+      font-family: var(--font-header);
+
+      &:hover,
+      &.active {
+        border-radius: 0.3em;
+        color: var(--link-txt);
+        background-color: var(--link-bg);
+        border-color: var(--link-txt);
+      }
+    }
   }
 }

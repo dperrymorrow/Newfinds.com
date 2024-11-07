@@ -1,20 +1,20 @@
 
 
-section.nav
+aside.nav
 
-  a#nav-toggle(href="#")
-    img(src="/images/hamburger.svg")
+  section.about
+    img(src="/images/me-beard.jpg" loading="lazy" alt="picture of David Morrow" )
+
+    nav
+      ul.pages
+        li
+          a(class=current.source == 'index' ? 'active' : '' href="/") Root
+        li
+          a(class=current.source == 'about' ? 'active' : '' href="/about") About
+        li
+          a(href="/morrow_resume.pdf", download="Morrow-Resume.pdf") Resume
 
   nav
-    ul
-      li
-        a(href="/") Root
-      li(class=current.source == 'about' ? 'active' : '')
-        a(href="/about") About
-      li
-        a(href="/morrow_resume.pdf", download="Morrow-Resume.pdf") Resume
-
-
     ul
       for article in public.posts._data
         li

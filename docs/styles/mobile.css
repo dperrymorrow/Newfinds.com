@@ -1,7 +1,7 @@
 @media (max-width: 950px) {
-  html,
   body {
-    display: block !important;
+    flex-direction: column-reverse;
+    font-size: calc(var(--font-size) * 0.9) !important;
   }
 
   article.md {
@@ -14,24 +14,32 @@
     > p:first-child {
       font-size: 1.3rem;
     }
+
+    h3 {
+      padding-left: 0;
+    }
   }
 
-  section.nav {
-    padding: var(--padding-xs);
-    min-height: 3em;
+  aside.nav {
+    padding: var(--padding-md) var(--padding-xs);
 
-    #nav-toggle {
-      right: var(--padding-xs);
+    section.about {
+      align-items: center;
+      justify-content: center;
+
+      img {
+        max-width: 130px;
+        margin-right: var(--padding-xs);
+      }
+
+      a {
+        font-size: 1em;
+      }
     }
   }
 
   header {
     padding-top: 0px !important;
-  }
-
-  section.promoted {
-    padding: var(--padding-md) var(--padding-xs) !important;
-    font-size: 1.1em !important;
   }
 
   .caption {

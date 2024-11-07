@@ -1,6 +1,5 @@
 article.md {
   padding: var(--padding-lg);
-  font-size: 1.1rem;
 
   > p:first-child {
     color: var(--txt-light);
@@ -28,7 +27,7 @@ article.md {
   h3,
   h4,
   h5 {
-    color: var(--bg-dark);
+    color: var(--txt-dark);
     font-family: var(--font-header);
     font-weight: 400;
   }
@@ -124,11 +123,10 @@ article.md {
   pre {
     background-color: var(--syntax-bg);
     font-size: 0.9em;
-    color: var(--foreground);
+    color: var(--txt);
     font-family: Monaco, monospace;
     padding: var(--padding-sm);
     margin: 0;
-    border-top: 2px solid var(--bg);
   }
 
   hr {
@@ -159,7 +157,7 @@ article.md {
   }
 
   p {
-    line-height: 1.9em;
+    line-height: 1.5em;
     margin-top: var(--padding-sm);
   }
 

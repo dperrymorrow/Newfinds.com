@@ -45,6 +45,10 @@
       border-radius: 1em;
       border-top-left-radius: 0px;
       padding: var(--padding-xs) var(--padding-md);
+
+      p {
+        line-height: 1.4em;
+      }
     }
 
     ul {

@@ -6,8 +6,6 @@ html(lang="en")
 
   body
     main
-      != partial("./_nav")
-
       header
         h1= title
         img(src=coverImage alt=title loading="lazy")
@@ -16,4 +14,4 @@ html(lang="en")
       article.md
         != yield
 
-      != partial("./_promoted")
+    != partial("./_nav")
