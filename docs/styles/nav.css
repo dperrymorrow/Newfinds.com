@@ -1,5 +1,6 @@
 aside.nav {
-  padding: var(--padding-md);
+  padding: var(--padding-lg);
+  padding-left: var(--padding-lg);
 
   &.active {
     border-bottom: 1px solid var(--border);

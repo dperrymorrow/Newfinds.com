@@ -45,6 +45,7 @@
       border-radius: 1em;
       border-top-left-radius: 0px;
       padding: var(--padding-xs) var(--padding-md);
+      margin-left: var(--padding-sm);
 
       p {
         line-height: 1.4em;

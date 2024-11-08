@@ -44,17 +44,18 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --nav-txt: #595a64;
-    --bg: #181a1e;
-    --bg-2: rgb(62, 62, 73);
-    --foreground: #292c33;
-    --txt: #9e9da5;
-    --border: rgb(67, 79, 82);
+    --bg: #13191f;
+    --bg-2: #303845;
+    --foreground: #1e262f;
+    --txt: #8b9ba4;
+    --border: #485156;
     --link-txt: rgb(197, 69, 214);
     --link-bg: #6f407066;
-    --txt-light: rgb(188, 193, 196);
+    --txt-light: #bdd4df;
     --txt-dark: #adbdca;
-    --highlight-bg: #7f80754d;
-    --highlight-txt: rgb(212, 212, 212);
+    --highlight-bg-dark: #ecf0aa;
+    --highlight-bg: rgba(136, 131, 93, 0.2);
+    --highlight-txt: #e2dccb;
     --bg-dark: rgb(52, 62, 67);
   }
 }

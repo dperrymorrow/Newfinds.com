@@ -29,7 +29,7 @@ article.md {
   h5 {
     color: var(--txt-dark);
     font-family: var(--font-header);
-    font-weight: 400;
+    font-weight: 300;
   }
 
   img {
@@ -40,10 +40,8 @@ article.md {
   h3 {
     background-color: var(--bg-2);
     padding: var(--padding-sm);
-    border-bottom: 1px solid var(--border);
     margin-top: var(--padding-md);
-    border-top-left-radius: var(--border-radius);
-    border-top-right-radius: var(--border-radius);
+    border-radius: var(--border-radius);
     padding-bottom: var(--padding-xs);
   }
 
@@ -56,7 +54,6 @@ article.md {
     margin-top: var(--padding-md);
     margin-bottom: var(--padding-xs);
     padding: var(--padding-sm);
-    border-bottom: 1px solid var(--border);
     line-height: 1.2em;
     padding-bottom: var(--padding-xs);
 
@@ -75,6 +72,7 @@ article.md {
       line-height: 1em;
       background-color: var(--highlight-bg);
       padding: 0em 0.25em;
+      font-size: 0.9em;
       border-radius: var(--border-radius);
       color: var(--highlight-txt);
     }
@@ -126,7 +124,6 @@ article.md {
     color: var(--txt);
     font-family: Monaco, monospace;
     padding: var(--padding-sm);
-    margin: 0;
   }
 
   hr {
@@ -142,7 +139,7 @@ article.md {
     margin: var(--padding-md) 0;
     border-radius: var(--border-radius);
     padding: var(--padding-sm);
-    font-size: 1.15em;
+    /* font-size: 1.15em; */
     background-color: var(--highlight-bg);
 
     > p {
