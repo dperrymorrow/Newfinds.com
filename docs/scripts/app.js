@@ -11,12 +11,6 @@ Array.from(document.querySelectorAll(".language-vue")).forEach((block) => {
   Prism.highlightElement(block);
 });
 
-document.querySelector("#nav-toggle").addEventListener("click", (ev) => {
-  ev.stopPropagation();
-  ev.preventDefault();
-  document.querySelector("section.nav").classList.toggle("active");
-});
-
-document.body.addEventListener("click", (ev) => {
-  document.querySelector("section.nav").classList.remove("active");
+Array.from(document.querySelectorAll("h1, h2, h3")).forEach(($el) => {
+  $el.setAttribute("id", $el.innerText.toLowerCase().replace(/\s+/g, "-"));
 });
